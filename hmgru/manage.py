@@ -43,7 +43,7 @@ def timer(startTime, endTime):
         if((startTime<endTime and startTime<currentTime and endTime>currentTime) or 
         (startTime>endTime and startTime>currentTime and endTime<currentTime)):
             #something when wrong so we reactive te serv or serv was active lately
-            print("Autocall will running on Current time: "+currentTime)
+            #print("Autocall will running on Current time: "+currentTime)
             break
 
         #waiting time
