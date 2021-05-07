@@ -1,11 +1,13 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from datetime import datetime
 
 from database.models.DatosRed import DatosRed
 from gestor.serializers.DatosRedSerializer import DatosRedSerializer
 
 import environ
 import subprocess
+import ast
 
 class DatosRedView(APIView):
 
@@ -18,22 +20,45 @@ class DatosRedView(APIView):
         data = request.data
 
         ip = data['ip']
-        previos = dict(data['octetos_previos'])
+        previos = ast.literal_eval(data['octetos_previos'])
 
-        #previos_entrada = int(previos['entrada'])
-        #previos_salida = int(previos['salida'])
+        previos_entrada = 0 if (previos is None) else int(previos['entrada'])
+        previos_salida =  0 if (previos is None) else int(previos['entrada'])
 
         nuevos = self.snmp(ip)
         
         respuesta = {
-            'octetos_entrada': nuevos[0],
-            'octetos_salida': nuevos[1]
+            'entrada': int(nuevos[0]),
+            'salida': int(nuevos[1])
         }
 
-        #if previos_entrada == 0:
-         #   print(Treu)
-            #return Response(respuesta)
+        if previos_entrada != 0:
+            Bps_entrada = ((respuesta['entrada'] - int(previos_entrada)) * 8) / (float(self.Meta().env('TIMELAPSE')) * 1000)
+            Bps_salida = ((respuesta['salida'] - int(previos_salida)) * 8) / (float(self.Meta().env('TIMELAPSE')) * 1000)
 
+            Mbps_entrada = Bps_entrada / 1024 / 1000
+            Mbps_salida = Bps_salida / 1024 / 1000
+
+            if Mbps_entrada < 0:
+                Mbps_entrada = -Mbps_entrada
+
+            if Mbps_salida < 0:
+                Mbps_salida = -Mbps_salida
+
+            timestamp = datetime.now()
+            datos = {
+                'tipo': 0,
+                'entrada': Mbps_entrada,
+                'salida': Mbps_salida,
+                'createdAt': timestamp
+            }
+
+            serializador_datos_red = DatosRedSerializer(data = datos)
+            if serializador_datos_red.is_valid():
+                datos_red = serializador_datos_red.save()
+                print(datos_red)
+
+        #print(respuesta)
         return Response(respuesta)
 
     def snmp(self, ip):

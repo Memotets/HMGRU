@@ -4,8 +4,10 @@ import os
 import sys
 import time
 import threading
+import environ
 
 from scriptsConsultas import *
+
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hmgru.settings')
@@ -23,20 +25,20 @@ def main():
         ) from exc
     execute_from_command_line(sys.argv)
 
-def autocall(startTime, endTime):
+def autocall(startTime, endTime, octetos):
     currentTime = time.strftime("%H:%M:%S")
     while (currentTime != endTime):#avoid recusive problems
         currentTime = time.strftime("%H:%M:%S")
         #Call request
         #print("Autocall running on Current time: "+currentTime)
-        consultaGeneral()
-        time.sleep(0.01) #espera de 10 ms
-    timer(startTime,endTime)
+        octetos = consultaGeneral(previos = octetos)
+        time.sleep(float(env('TIMELAPSE'))) #espera de 20 ms
+    timer(startTime, endTime, octetos)
 
-
-
-def timer(startTime, endTime):
+def timer(startTime, endTime, octetos):
     currentTime = time.strftime("%H:%M:%S")
+
+    print(currentTime)
     while (currentTime != startTime):#avoid recusive problems
         currentTime = time.strftime("%H:%M:%S")
         #in case something went wrong
@@ -48,7 +50,8 @@ def timer(startTime, endTime):
 
         #waiting time
         #print("Autocall not calling: "+currentTime)
-        consultaGeneral()
+        #octetos = consultaGeneral(octetos)
+
         if (startTime ==  "07:00:00" and endTime == "16:00:00"):
             currentSec = time.strftime("%S")
             currentMin = time.strftime("%M")
@@ -64,10 +67,13 @@ def timer(startTime, endTime):
         else:
             #Test cases
             time.sleep(1)
-    autocall(startTime, endTime)
 
-timerThreat = threading.Thread(target=timer,args=("21:15:00", "21:23:00",))
+    autocall(startTime, endTime, octetos)
+
+timerThreat = threading.Thread(target=timer,args=("13:15:00", "23:59:00", {'entrada': 0, 'salida': 0}))
+env = environ.Env()
 
 if __name__ == '__main__':
-    #timerThreat.start()
+    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/hmgru/.env')
+    timerThreat.start()
     main()
