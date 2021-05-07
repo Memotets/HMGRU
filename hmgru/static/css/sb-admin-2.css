@@ -9983,6 +9983,10 @@ a:focus {
   background-color: #3a3b45 !important;
 }
 
+.bg-polyred{
+  background-color: #891A1A !important;
+}
+
 .o-hidden {
   overflow: hidden !important;
 }

@@ -16,7 +16,7 @@
     <!-- Custom fonts for this template-->
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
-    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
 
 </head>
 
@@ -26,10 +26,10 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center bg-gradient-danger" href="">
                 <div class="sidebar-brand-text mx-3">HMGRU</div>
             </a>
 
@@ -44,12 +44,14 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Grafica General</span></a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-chart-area"></i>
                     <span>Grafica Edificio</span></a>
             </li>
 
@@ -64,11 +66,13 @@
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-list"></i>
                     <span>Tabla General</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-building"></i>
                     <span>Tabla Edificio</span></a>
             </li>
 
@@ -76,6 +80,7 @@
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-file-pdf"></i>
                     <span>Generar reporte</span></a>
             </li>
 
@@ -89,7 +94,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-gray-900 topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -102,7 +107,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Common User</span>
+                                <span class="mr-2 d-none d-lg-inline small">Common User</span>
                                 <img class="img-profile rounded-circle"
                                     src="{% static 'img/undraw_profile.svg' %}">
                             </a>
