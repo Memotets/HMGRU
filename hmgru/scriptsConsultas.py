@@ -1,6 +1,7 @@
 from urllib import request, parse
+import ast
 
-def consultaGeneral():
+def consultaGeneral(previos = {'entrada': 0, 'salida': 0}):
     '''
      El hilo que maneja las consultas inicia antes que el servior, por lo que es necesario poner un try-excetp
      que asegure las consultas no se dentengan antes de iniciar el sistema
@@ -9,7 +10,7 @@ def consultaGeneral():
         # Diccionario de datos que se enviarán en la consult http
         datos = {
             'ip': '148.204.142.252',
-            'octetos_previos': 0,
+            'octetos_previos': previos,
         }
 
         # Codificación de los datos para su envío
@@ -19,7 +20,13 @@ def consultaGeneral():
         # Asignar un valor a 'data' hace que la consulta sea por POST y en lugar de GET
         req = request.Request('http://148.204.142.162:3031/gestor/DatosRed/', data = datos)
 
-        # Envío de la consulta, si es necesario la respuesta se puede asiganr en una variable
-        request.urlopen(req)
+        # Envío de la consulta y procesamiento de la respuesta
+        res = request.urlopen(req).read() # Lectura de la respuesta
+        dec = res.decode('UTF-8') # Decodificacion de la respuesta como bytes
+        lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
+
+        print(lectura)
+        
+        return lectura
     except Exception as e:
         print(e)

@@ -18,15 +18,20 @@ class DatosRedView(APIView):
         data = request.data
 
         ip = data['ip']
-        previos = int(data['octetos_previos'])
+        previos = dict(data['octetos_previos'])
+
+        #previos_entrada = int(previos['entrada'])
+        #previos_salida = int(previos['salida'])
+
         nuevos = self.snmp(ip)
         
         respuesta = {
-            octetos_entrada: nuevos[0],
-            octetos_salida: nuevos[1]
+            'octetos_entrada': nuevos[0],
+            'octetos_salida': nuevos[1]
         }
 
-        #if previos != 0:
+        #if previos_entrada == 0:
+         #   print(Treu)
             #return Response(respuesta)
 
         return Response(respuesta)
@@ -42,7 +47,7 @@ class DatosRedView(APIView):
 
         # Comandos snmp para los octetos en la ip definida
         snmp_entrada = "snmpwalk -v3 -l authPriv -u %s -a MD5 -A %s -X %s %s .1.3.6.1.2.1.2.2.1.10" %(usuario, clave, clave, ip) # Octetos de entrada
-        snmp_salida = "snmpwalk -v3 -l authPriv -u %s -a MD5 -A %s -X %s %s .1.3.6.1.2.1.2.2.1.10" %(usuario, clave, clave, ip) # Octetos de salida
+        snmp_salida = "snmpwalk -v3 -l authPriv -u %s -a MD5 -A %s -X %s %s .1.3.6.1.2.1.2.2.1.16" %(usuario, clave, clave, ip) # Octetos de salida
 
         # Proceso de ejecución de los comandos SNMP
         consulta_entrada = subprocess.Popen(snmp_entrada.split(), stdout=subprocess.PIPE)
@@ -54,7 +59,7 @@ class DatosRedView(APIView):
 
         # Separamos la salida y retiramos el OID de la consutla, dejando unicamente el OID de las intefaces leidas y sus octetos leidos
         datos_entrada = respuesta_entrada.decode().split('iso.3.6.1.2.1.2.2.1.10')
-        datos_salida = respuesta_salida.decode().split('iso.3.6.1.2.1.2.2.1.10')
+        datos_salida = respuesta_salida.decode().split('iso.3.6.1.2.1.2.2.1.16')
 
         # Octetos de la lectura de entrada
         octetos_entrada = [
