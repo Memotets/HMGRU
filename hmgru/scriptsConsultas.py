@@ -8,7 +8,8 @@ def consultaGeneral():
     try:
         # Diccionario de datos que se enviarán en la consult http
         datos = {
-            'ip': '148.204.142.252'
+            'ip': '148.204.142.252',
+            'octetos_previos': 0,
         }
 
         # Codificación de los datos para su envío

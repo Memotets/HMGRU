@@ -69,5 +69,5 @@ def timer(startTime, endTime):
 timerThreat = threading.Thread(target=timer,args=("21:15:00", "21:23:00",))
 
 if __name__ == '__main__':
-    timerThreat.start()
+    #timerThreat.start()
     main()
