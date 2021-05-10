@@ -1,12 +1,14 @@
 from urllib import request, parse
 import ast
+import time
 
-def consultaGeneral(previos = {'entrada': 0, 'salida': 0}):
+def consultaGeneral(previos):
     '''
      El hilo que maneja las consultas inicia antes que el servior, por lo que es necesario poner un try-excetp
      que asegure las consultas no se dentengan antes de iniciar el sistema
     '''
     try:
+
         # Diccionario de datos que se enviarán en la consult http
         datos = {
             'ip': '148.204.142.252',
@@ -24,9 +26,8 @@ def consultaGeneral(previos = {'entrada': 0, 'salida': 0}):
         res = request.urlopen(req).read() # Lectura de la respuesta
         dec = res.decode('UTF-8') # Decodificacion de la respuesta como bytes
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
-
-        print(lectura)
         
         return lectura
     except Exception as e:
         print(e)
+        time.sleep(1)

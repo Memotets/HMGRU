@@ -15,12 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.views.generic import TemplateView
+from pages.views import GeneralGraphView
 from hmgru.views import *
 
 urlpatterns = [
     path('pruebas/', pruebas),
-    path('layout/', TemplateView.as_view(template_name='layout.html')),
+    path('General/', GeneralGraphView.as_view()),
     path('admin/', admin.site.urls),
     path('gestor/', include('gestor.urls'))
 ]

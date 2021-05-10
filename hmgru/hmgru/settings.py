@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a&(l6)y&dg##)syugbn04jyu4h4i%wn#gng&kfur&vabs578!1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["148.204.142.162"]
 
@@ -39,8 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'environ',
+    'mod_wsgi.server',
     'database.apps.DatabaseConfig',
-    'gestor.apps.GestorConfig'
+    'gestor.apps.GestorConfig',
+    'pages.apps.PagesConfig'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'hmgru.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Templates/'),],
+        'DIRS': [os.path.join(BASE_DIR, 'pages/templates/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,12 +126,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+STARIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_URL = '/static/'
+STATIC_URL = '/pages/templates/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'pages/templates/static'),
 )
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

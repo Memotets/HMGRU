@@ -75,5 +75,5 @@ env = environ.Env()
 
 if __name__ == '__main__':
     environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/hmgru/.env')
-    timerThreat.start()
+   # timerThreat.start()
     main()
