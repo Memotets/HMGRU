@@ -587,6 +587,10 @@ pre code {
   flex-wrap: wrap;
   margin-right: -0.75rem;
   margin-left: -0.75rem;
+  border-radius: 0.5rem;
+}
+.row-primary{
+  border: 3px solid #000000;
 }
 
 .no-gutters {
@@ -4492,7 +4496,13 @@ input[type="button"].btn-block {
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid #e3e6f0;
-  border-radius: 0.35rem;
+  border-radius: 0.5rem;
+}
+
+.card-center {
+  display: flex;
+  justify-content: center !important;
+  border: 1px solid #f70202;
 }
 
 .card > hr {
@@ -9650,6 +9660,9 @@ a.text-light:hover, a.text-light:focus {
 .text-dark {
   color: #5a5c69 !important;
 }
+.text-polyred{
+  color: #891A1A !important;
+}
 
 a.text-dark:hover, a.text-dark:focus {
   color: #373840 !important;
@@ -10106,6 +10119,14 @@ a:focus {
 
 .border-bottom-dark {
   border-bottom: 0.25rem solid #5a5c69 !important;
+}
+
+.border-left-polyred {
+  border-left: 0.25rem solid #891A1A !important;
+}
+
+.border-bottom-polyred {
+  border-bottom: 0.25rem solid #891A1A !important;
 }
 
 .progress-sm {

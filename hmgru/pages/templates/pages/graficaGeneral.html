@@ -1,7 +1,152 @@
 {% extends 'layouts/index.html' %}
 {% load static %}
+{% block pageTitle %}Grafica general{% endblock pageTitle %}
+{% block titleOnBlock %}Gráfica general{% endblock titleOnBlock %}
+{% block customCSS %}{% endblock customCSS %}
 
 {% block content %}
    <!-- Your HTML Code -->
-   <h3>Soy la tipica pagina de inicio</h3>
+   <div class="col-xl-10 col-lg-7 mb-5">
+      <div class="card offset-md-2">
+          <div class="card-header">
+              <h6 class="font-weight-bold text-truncate">Grafica generica</h6>
+          </div>
+          <div class="card-body">
+              <div class="chart-area">
+                  <canvas class="" id="myChart"></canvas>
+              </div>
+          </div>
+      </div>
+  </div>
+
+   <!-- Earnings (Monthly) Card Example -->
+   
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Entrada</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Salida</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">215</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+   <!-- Earnings (Monthly) Card Example -->
+   <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Mbps</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">615</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Earnings (Annual)</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
 {% endblock content %}
+
+{% block customJS %}
+<script>
+
+   var ctx = document.getElementById('myChart').getContext('2d');
+   var myChart = new Chart(ctx, {
+       type: 'line',
+       data: {
+           labels: [],
+           datasets: [{
+               label: 'Mbps',
+               data: [],
+               backgroundColor: 'rgba(200, 20, 20, 0.2)',
+               borderColor: 'rgba(200, 20, 20, 1)',
+               borderWidth: 1
+           }]
+       },
+       options: {
+           scales: {
+               y: {
+                   beginAtZero: true
+               }
+           }
+       }
+   });
+
+   var myVar= setInterval(validator, 2000, myChart);
+
+   function validator(chart){
+       var randomNum = Math.ceil(Math.random()*50)
+       var d = new Date();
+       if (chart.data.labels.length == 10){
+           updateData(myChart, d.toLocaleTimeString(), randomNum);
+       }
+       else{
+           addData(myChart, d.toLocaleTimeString(), randomNum);
+       }
+   }
+
+   function updateData(chart, label, data) {
+       chart.data.labels.shift();
+       chart.data.labels.push(label);
+       chart.data.datasets.forEach((dataset) => {
+           dataset.data.shift();
+           dataset.data.push(data);
+       });
+       chart.update();
+   }
+
+   function addData(chart, label, data) {
+       chart.data.labels.push(label);
+       chart.data.datasets.forEach((dataset) => {
+           dataset.data.push(data);
+       });
+       chart.update();
+   }
+
+</script>
+{% endblock customJS %}

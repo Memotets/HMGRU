@@ -11,12 +11,13 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>generic title</title>
+    <title>HMGRU - {% block pageTitle %}{% endblock pageTitle %}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
     <!-- Custom styles for this template-->
     <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
+    {% block customCSS %}{% endblock customCSS %}
 
 </head>
 
@@ -144,11 +145,11 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">generic title</h1>
+                        <h1 class="h3 mb-0 text-gray-800">{% block titleOnBlock %}  {% endblock titleOnBlock %}</h1>
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">
+                    <div class="row row-primary">
                         {% block content %}  {% endblock content %}
 
                     </div>
@@ -210,10 +211,7 @@
 
     <!-- Page level plugins -->
     <script src="{% static 'vendor/chart.js/Chart.min.js' %}"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="{% static 'js/demo/chart-area-demo.js' %}"></script>
-    <script src="{% static 'js/demo/chart-pie-demo.js' %}"></script>
+    {% block customJS %}{% endblock customJS %}
 
 </body>
 
