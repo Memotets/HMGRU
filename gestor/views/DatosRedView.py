@@ -125,4 +125,4 @@ class DatosRedView(APIView):
 
         # Carga del archivo .env para obtener las credenciales
         env = environ.Env()
-        environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/hmgru/.env')
+        environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')

@@ -16,10 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from pages.views import GeneralGraphView
-#from hmgru.views import *
+from hmgru.views import pruebas
 
 urlpatterns = [
-#    path('pruebas/', pruebas),
+    path('pruebas/', pruebas),
     path('admin/', admin.site.urls),
     path('general/', include('pages.urls')),
     path('gestor/', include('gestor.urls')),

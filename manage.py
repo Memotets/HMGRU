@@ -6,7 +6,7 @@ import time
 import threading
 import environ
 
-from scriptsConsultas import *
+#from scriptsConsultas import *
 
 
 def main():
@@ -31,7 +31,7 @@ def autocall(startTime, endTime, octetos):
         currentTime = time.strftime("%H:%M:%S")
         #Call request
         #print("Autocall running on Current time: "+currentTime)
-        octetos = consultaGeneral(previos = octetos)
+        #octetos = consultaGeneral(previos = octetos)
         time.sleep(float(env('TIMELAPSE'))) #espera de 20 ms
     timer(startTime, endTime, octetos)
 
@@ -70,10 +70,10 @@ def timer(startTime, endTime, octetos):
 
     autocall(startTime, endTime, octetos)
 
-timerThreat = threading.Thread(target=timer,args=("13:15:00", "23:59:00", {'entrada': 0, 'salida': 0}))
+timerThreat = threading.Thread(target=timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
 env = environ.Env()
 
 if __name__ == '__main__':
-    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/hmgru/.env')
-   # timerThreat.start()
+    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+    timerThreat.start()
     main()
