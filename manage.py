@@ -6,7 +6,7 @@ import time
 import threading
 import environ
 
-#from scriptsConsultas import *
+from scriptsConsultas import *
 
 
 def main():
@@ -17,6 +17,12 @@ def main():
 
         settings.default_addr = "148.204.142.162"
         settings.default_port = "3031"
+
+        #timerThreat = threading.Thread(target=timer,args=("01:00:00", "01:30:00", {'entrada': 0, 'salida': 0}))
+        #env = environ.Env()
+
+        #environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+        #timerThreat.start()
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "
@@ -29,9 +35,9 @@ def autocall(startTime, endTime, octetos):
     currentTime = time.strftime("%H:%M:%S")
     while (currentTime != endTime):#avoid recusive problems
         currentTime = time.strftime("%H:%M:%S")
+
         #Call request
-        #print("Autocall running on Current time: "+currentTime)
-        #octetos = consultaGeneral(previos = octetos)
+        octetos = consultaGeneral(previos = octetos)
         time.sleep(float(env('TIMELAPSE'))) #espera de 20 ms
     timer(startTime, endTime, octetos)
 
@@ -49,9 +55,6 @@ def timer(startTime, endTime, octetos):
             break
 
         #waiting time
-        #print("Autocall not calling: "+currentTime)
-        #octetos = consultaGeneral(octetos)
-
         if (startTime ==  "07:00:00" and endTime == "16:00:00"):
             currentSec = time.strftime("%S")
             currentMin = time.strftime("%M")
@@ -70,10 +73,10 @@ def timer(startTime, endTime, octetos):
 
     autocall(startTime, endTime, octetos)
 
-timerThreat = threading.Thread(target=timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
-env = environ.Env()
+#timerThreat = threading.Thread(target=timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
+#env = environ.Env()
 
 if __name__ == '__main__':
-    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
-    timerThreat.start()
+    #environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+    #timerThreat.start()
     main()

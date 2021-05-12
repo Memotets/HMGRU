@@ -8,8 +8,8 @@ from scriptsConsultas import *
 
 def pruebas(request):
 
-    data = consultaGeneral()
+    data = consultaGeneral({'entrada': 0, 'salida': 0})
 
-    print(data)
+    #print(data)
 
     return HttpResponse(data)

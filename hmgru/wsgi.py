@@ -11,6 +11,11 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+from hmgru.AutocallController import AutocallController
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hmgru.settings')
 
 application = get_wsgi_application()
+
+controller = AutocallController()
+controller.initThread()
