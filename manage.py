@@ -16,10 +16,10 @@ def main():
         from django.core.management.commands.runserver import Command as settings
 
         settings.default_addr = "148.204.142.162"
-        settings.default_port = "3031"
+        settings.default_port = "3032"
 
-        #timerThreat = threading.Thread(target=timer,args=("01:00:00", "01:30:00", {'entrada': 0, 'salida': 0}))
-        #env = environ.Env()
+        timerThreat = threading.Thread(target=timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
+        env = environ.Env()
 
         #environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
         #timerThreat.start()
@@ -73,10 +73,5 @@ def timer(startTime, endTime, octetos):
 
     autocall(startTime, endTime, octetos)
 
-#timerThreat = threading.Thread(target=timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
-#env = environ.Env()
-
 if __name__ == '__main__':
-    #environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
-    #timerThreat.start()
     main()

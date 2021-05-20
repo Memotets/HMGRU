@@ -3,18 +3,13 @@ from rest_framework.response import Response
 from datetime import datetime
 
 from database.models.DatosRed import DatosRed
-from gestor.serializers.DatosRedSerializer import DatosRedSerializer
+from database.serializers.DatosRedSerializer import DatosRedSerializer
 
 import environ
 import subprocess
 import ast
 
 class DatosRedView(APIView):
-
-    def get(self, request):
-        datos = DatosRed.objects.all()
-        datos_serializer = DatosRedSerializer(datos, many = True)
-        return Response(datos_serializer.data)
 
     def post(self, request):
         data = request.data
@@ -23,7 +18,7 @@ class DatosRedView(APIView):
         previos = ast.literal_eval(data['octetos_previos'])
 
         previos_entrada = 0 if (previos is None) else int(previos['entrada'])
-        previos_salida =  0 if (previos is None) else int(previos['entrada'])
+        previos_salida =  0 if (previos is None) else int(previos['salida'])
 
         nuevos = self.snmp(ip)
         

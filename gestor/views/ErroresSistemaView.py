@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 
 from database.models.ErroresSistema import ErroresSistema
-from gestor.serializers.ErroresSistemaSerializer import ErroresSistemaSerializer
+from gestor.serializers_old.ErroresSistemaSerializer import ErroresSistemaSerializer
 
 class ErroresSistemaView(APIView):
 

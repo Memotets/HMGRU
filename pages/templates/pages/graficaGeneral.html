@@ -9,7 +9,7 @@
     <div class="col-xl-12 mb-5">
         <div class="card">
             <div class="card-header">
-                <h6 class="font-weight-bold text-truncate">Grafica generica</h6>
+                <h6 class="font-weight-bold text-truncate">Grafica general</h6>
             </div>
             <div class="card-body">
                 <div id="margin" class="chart-area">
@@ -28,7 +28,7 @@
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
                           Entrada</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+                      <div id="entrada" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
                   </div>
                   <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -46,7 +46,7 @@
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
                           Salida</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">215</div>
+                      <div id="salida" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
                   </div>
                   <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -63,7 +63,7 @@
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
                           Mbps</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">615</div>
+                      <div id="mbps" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
                   </div>
                   <div class="col-auto">
                       <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -80,8 +80,8 @@
               <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
-                          Earnings (Annual)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                       Ultimo registro</div>
+                      <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
                   </div>
                   <div class="col-auto">
                       <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -93,6 +93,7 @@
 {% endblock content %}
 
 {% block customJS %}
+
 <script>
 
    var ctx = document.getElementById('myChart').getContext('2d');
@@ -119,17 +120,32 @@
        }
    });
 
-   var myVar= setInterval(validator, 2000, myChart);
+   var myVar= setInterval(validator, 1000, myChart);
 
-   function validator(chart){
-       var randomNum = Math.ceil(Math.random()*50)
-       var d = new Date();
-       if (chart.data.labels.length == 10){
-           updateData(myChart, d.toLocaleTimeString(), randomNum);
-       }
-       else{
-           addData(myChart, d.toLocaleTimeString(), randomNum);
-       }
+   function validator(chart){   
+        fetch("http://148.204.142.162:3031/database/grafica/?tipo=0anw").then(
+            function(u){
+                return u.json();
+            }
+        ).then(
+            function(json){
+
+                let randomNum = json.salida+json.entrada;
+                var date =  json.createdAt;
+                [yyyy,mm,dd,hh,mi,ss] = date.split(/[/:\.\-T]/)
+                let hour = `${hh}:${mi}:${ss}`
+                document.getElementById("entrada").innerHTML = ""+json.entrada.toFixed(3);
+                document.getElementById("salida").innerHTML = ""+json.salida.toFixed(3);
+                document.getElementById("mbps").innerHTML = ""+randomNum.toFixed(3);
+                document.getElementById("date").innerHTML =`${dd}-${mm}-${yyyy} ${hh}:${mi}:${ss}`;
+                if (chart.data.labels.length == 10){
+                    updateData(myChart, hour, randomNum);
+                }
+                else{
+                    addData(myChart, hour, randomNum);
+                }
+            }
+        )
    }
 
    function updateData(chart, label, data) {
