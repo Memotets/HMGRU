@@ -5,7 +5,7 @@ class DatosRed(models.Model):
     tipo = models.IntegerField()
     entrada = models.FloatField()
     salida = models.FloatField()
-    createdAt = models.DateTimeField(auto_now=False, auto_now_add=False)
+    createdAt = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     class Meta: 
         app_label = 'database'

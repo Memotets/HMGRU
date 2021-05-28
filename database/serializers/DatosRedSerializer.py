@@ -7,6 +7,6 @@ class DatosRedSerializer(serializers.ModelSerializer):
         return DatosRed.objects.create(**validated_data)
         
     class Meta:
-        app_label = 'gestor'
+        app_label = 'database'
         model = DatosRed
         fields = ['tipo', 'entrada', 'salida', 'createdAt']

@@ -23,7 +23,11 @@ SECRET_KEY = 'a&(l6)y&dg##)syugbn04jyu4h4i%wn#gng&kfur&vabs578!1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["148.204.142.162"]
+ALLOWED_HOSTS = [
+	"localhost",
+	"127.0.0.1",
+	"148.204.142.162",
+]
 
 
 # Application definition
@@ -74,22 +78,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hmgru.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-"""
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'HMGRU_DB'
+        'NAME': 'HMGRU_DB',
+        #'USERNAME': 'username',
+        #'PASSWORD': 'PASS'
     }
 }
 
@@ -127,13 +123,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-#STATIC_URL = os.path.join(BASE_DIR, 'pages/templates/static/')
-#STATIC_URL = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'pages/templates/static'),
 )
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

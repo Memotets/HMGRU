@@ -16,7 +16,7 @@ class AutocallController:
             currentTime = time.strftime("%H:%M:%S")
             #Call request
             octetos = consultaGeneral(previos = octetos)
-            time.sleep(float(self.env('TIMELAPSE'))) #espera de 20 ms
+            time.sleep(self.env.float('TIMELAPSE')) #espera de 10 ms
         self.timer(startTime, endTime, octetos)
 
     def timer(self, startTime, endTime, octetos):
@@ -33,7 +33,6 @@ class AutocallController:
                 break
 
             #waiting time
-
             if (startTime ==  "07:00:00" and endTime == "16:00:00"):
                 currentSec = time.strftime("%S")
                 currentMin = time.strftime("%M")

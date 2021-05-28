@@ -28,8 +28,8 @@ class DatosRedView(APIView):
         }
 
         if previos_entrada != 0:
-            Bps_entrada = ((respuesta['entrada'] - int(previos_entrada)) * 8) / (float(self.Meta().env('TIMELAPSE')) * 1000)
-            Bps_salida = ((respuesta['salida'] - int(previos_salida)) * 8) / (float(self.Meta().env('TIMELAPSE')) * 1000)
+            Bps_entrada = ((respuesta['entrada'] - int(previos_entrada)) * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
+            Bps_salida = ((respuesta['salida'] - int(previos_salida)) * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
 
             Mbps_entrada = Bps_entrada / 1024 / 1000
             Mbps_salida = Bps_salida / 1024 / 1000
@@ -78,7 +78,7 @@ class DatosRedView(APIView):
         respuesta_salida, errores_salida = consulta_salida.communicate()
 
         # Separamos la salida y retiramos el OID de la consutla, dejando unicamente el OID de las intefaces leidas y sus octetos leidos
-        datos_entrada = respuesta_entrada.decode().split('iso.3.6.1.2.1.2.2.1.10')
+        datos_entrada = respuesta_entrada.decode().split('iso.3.6.1.2.1.2.2.1.10') #.123 ext 32 1235167813
         datos_salida = respuesta_salida.decode().split('iso.3.6.1.2.1.2.2.1.16')
 
         # Octetos de la lectura de entrada
