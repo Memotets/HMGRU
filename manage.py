@@ -4,7 +4,7 @@ import os
 import sys
 
 from scriptsConsultas import *
-
+from hmgru.AutocallController import AutocallController
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hmgru.settings')
@@ -14,7 +14,6 @@ def main():
 
         settings.default_addr = "148.204.142.162"
         settings.default_port = "3032"
-
     except ImportError as exc:
         raise ImportError(
             "Couldn't import Django. Are you sure it's installed and "

@@ -20,7 +20,7 @@ def consultaGeneral(previos):
 
         # Creaci+on de la consulta http, es importante terminar con el '/' si se enviará por método POST
         # Asignar un valor a 'data' hace que la consulta sea por POST y en lugar de GET
-        req = request.Request('http://148.204.142.162:3031/gestor/DatosRed/', data = datos)
+        req = request.Request('http://148.204.142.162:3032/gestor/DatosRed/', data = datos)
 
         # Envío de la consulta y procesamiento de la respuesta
         res = request.urlopen(req).read() # Lectura de la respuesta
