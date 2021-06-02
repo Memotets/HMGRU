@@ -1,3 +1,4 @@
+from wop.pages.views import BuildingGraphView
 from django.contrib import admin
 from django.urls import path
 from pages.views import GeneralGraphView
@@ -5,5 +6,5 @@ from pages.views import GeneralGraphView
 
 urlpatterns = [
     path('', GeneralGraphView),
-    #path('APIweb/', DatosGeneralView.as_view()),
+    path('Edificios/', BuildingGraphView),
 ]

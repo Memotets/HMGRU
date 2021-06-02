@@ -9,3 +9,6 @@ from django.views.generic import TemplateView
 
 def GeneralGraphView(request):
     return render(request, "pages/graficaGeneral.html", {})
+    
+def BuildingGraphView(request):
+    return render(request, "pages/graficaEdificios.html", {})
