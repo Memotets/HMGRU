@@ -17,5 +17,5 @@ class DatosRedSerializer(serializers.ModelSerializer):
     class Meta:
         app_label = 'database'
         model = DatosRed
-        fields = ['tipo', 'entrada', 'salida', 'createdAt']
+        fields = ['tipo', 'entrada', 'salida', 'edificio', 'createdAt']
         

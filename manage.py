@@ -3,7 +3,6 @@
 import os
 import sys
 
-from scriptsConsultas import *
 from hmgru.AutocallController import AutocallController
 
 def main():

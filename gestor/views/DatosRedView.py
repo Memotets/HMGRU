@@ -40,17 +40,17 @@ class DatosRedView(APIView):
             nuevos_entrada += entrada
             nuevos_salida += salida
 
-        print(len(octetos_entrada))
-
         if previos_entrada != 0 and previos_salida != 0 and previos_entrada_edificio != 0 and previos_salida_edificio != 0:
             #self.guardarConsulta((nuevos_entrada - int(previos_entrada)), (nuevos_salida - int(previos_salida)), 0)  
 
             edificios = self.Meta().edificios
-            
+
             for i in range(0, 8):
                 edificio = edificios[i]
+
                 dif_entrada: int = octetos_entrada[i] - int(previos_entrada_edificio[i])
                 dif_salida: int = octetos_salida[i] - int(previos_salida_edificio[i])
+
                 self.guardarConsulta(dif_entrada, dif_salida, 1, edificio=edificio)
 
         respuesta = {
@@ -108,13 +108,11 @@ class DatosRedView(APIView):
         }
 
         if edificio is not None:
-            print(edificio)
             datos['edificio'] = edificio
 
         serializador_datos_red = DatosRedSerializer(data = datos)
         if serializador_datos_red.is_valid():
             datos_red = serializador_datos_red.save()
-            print(datos_red)
         else:
             print("Data not valid")
     

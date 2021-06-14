@@ -12,12 +12,15 @@ class DatosRed(models.Model):
     edificio = models.EmbeddedField(
         model_container=Edificio,
         null = True
-    ),
+    )
     nodo = models.EmbeddedField(
         model_container=Nodo,
         null = True
     )
     createdAt = models.DateTimeField(auto_now=False, auto_now_add=True)
+
+    def __str__(self):
+        return "(tipo: %i, entrada: %f, salida: %f)" %(self.tipo, self.entrada, self.salida)
 
     class Meta: 
         app_label = 'database'
