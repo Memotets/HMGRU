@@ -14,11 +14,10 @@
                     <div class="col-4 text-right">
                         <select class="focus mb-0" name="menu" onchange="toggle(this)">
                         <option disabled selected> Chose any </option>
-                        {% for edificio in edificios %}
-                        <object value= "{% edificio.ip %}" > {%edificios.nombre%} </object>
+                        {% for ed in edificios %}
+                        <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
                         {% endfor %}
-                        <option value="5">5</option>
-                        <option value="10">10</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -132,39 +131,46 @@
         }
     });
     //variable global que simula el edificio
-    var numEdificio;
+    var ipEdificio;
     // intervalo de llamado del nuevo dato
     var myVar= setInterval(validator, 1000, myChart);
 
     //funcion toggle que setea el nuevo valor 
     function toggle(el){
-        numEdificio = el.options[el.selectedIndex].value;
-        document.getElementById("TituloGrafica").innerHTML = "Grafica de edificio "+numEdificio;// cambio de titulo
+        ipEdificio = el.options[el.selectedIndex].value;
+        document.getElementById("TituloGrafica").innerHTML = "Grafica de "+el.options[el.selectedIndex].text;// cambio de titulo
         deleteData(myChart);//simulación de cambio de grafica
     }
-        
-    function validator(chart){
-        //si mi valor no esta definido por toggle, no hago nada
-        if(!numEdificio) return 0;
-        //llamada de valores aleatorios, aqui es donde se presentara la consulta a db
-         let randomNum = Math.ceil(Math.random()*numEdificio)
-         var date =  new Date();
-         //formato de hora actual de Date
-         let hour = date.toLocaleTimeString();
-
-         //llenado de información sobre el ultimo punto de la grafica
-         document.getElementById("entrada").innerHTML = ""+(randomNum * (3/5)).toFixed(3);
-         document.getElementById("salida").innerHTML = ""+(randomNum * (2/5)).toFixed(3);
-         document.getElementById("mbps").innerHTML = ""+randomNum;
-         document.getElementById("date").innerHTML =hour;
-
-         //dibujado del nuevo punto en la grafica
-         if (chart.data.labels.length == 10){
-             updateData(myChart, hour, randomNum);
-         }
-         else{
-             addData(myChart, hour, randomNum);
-         }
+    //funcion dentro del intervalo para llamar al nuevo valor
+    async function validator(chart){
+        if(!ipEdificio) return 0;
+        //validador si la ip consulta a API y de busqueda por el usuario sean iguales
+        var ipEdificiovalidator = ipEdificio;
+        //Consulta api de ultimo dato por edificio
+        const response = await fetch("http://148.204.142.162:3032/database/grafica/?tipo=1&ip="+ipEdificio);
+        //respuesta json
+        const json = await response.json();
+        if (ipEdificio !=ipEdificiovalidator) return 0;
+        if (json){
+            //seteo de valores para la vista
+            let randomNum = json.salida+json.entrada;
+            var date =  json.createdAt;
+            //split especifico para dar formato de fecha legible
+            [yyyy,mm,dd,hh,mi,ss] = date.split(/[/:\.\-T]/)
+            let hour = `${hh}:${mi}:${ss}` //uso en grafica
+            //fixed usado para no confundir al usuario por errores de js
+            document.getElementById("entrada").innerHTML = ""+json.entrada.toFixed(3);
+            document.getElementById("salida").innerHTML = ""+json.salida.toFixed(3);
+            document.getElementById("mbps").innerHTML = ""+randomNum.toFixed(3);
+            document.getElementById("date").innerHTML =`${dd}-${mm}-${yyyy} ${hh}:${mi}:${ss}`;
+            //en caso de tener 10 valores, desplazar grafica
+            if (chart.data.labels.length == 10){
+                updateData(myChart, hour, randomNum);
+            }//en caso contrario, agregarlos
+            else{
+                addData(myChart, hour, randomNum);
+            }
+        }
     }
  
     //Eliminación de datos de la grafica
@@ -174,6 +180,10 @@
             dataset.data = [];
         });
         chart.update();
+        document.getElementById("entrada").innerHTML = "";
+        document.getElementById("salida").innerHTML = "";
+        document.getElementById("mbps").innerHTML = "";
+        document.getElementById("date").innerHTML ="";
     }
     
     //actualización de puntos en la grafica dezplansando perdiendo el primer registro
@@ -194,6 +204,13 @@
         });
         chart.update();
     }
- 
+//simulacion de sleep
+    function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+            currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
+    }
  </script>
 {% endblock customJS %}

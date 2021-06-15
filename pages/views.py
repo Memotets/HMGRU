@@ -20,9 +20,9 @@ def BuildingGraphView(request):
         env.dict('CAFETERIA'),
         env.dict('GOBIERNO'),
         env.dict('AULAS_I'),
-        env.dict('AULAS_II'),
+        env.dict('AULAS_II')
     ]
 
-    return render(request, "pages/graficaEdificios.html", {edificios})
+    return render(request, "pages/graficaEdificio.html", {"edificios": edificios})
     
 
