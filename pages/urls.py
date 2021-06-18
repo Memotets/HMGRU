@@ -5,6 +5,6 @@ from pages.views import BuildingGraphView
 #from pages.APIViews.datoGeneralView import DatosGeneralView
 
 urlpatterns = [
-    path('', GeneralGraphView),
-    path('Edificios/', BuildingGraphView),
+    path('grafica/general/', GeneralGraphView, name="grafica.general"),
+    path('grafica/edificios/', BuildingGraphView, name="grafica.edificios"),
 ]

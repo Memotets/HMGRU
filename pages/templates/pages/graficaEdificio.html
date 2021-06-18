@@ -1,0 +1,216 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block pageTitle %}Grafica de edificios{% endblock pageTitle %}
+{% block titleOnBlock %}Gráfica de Edificios{% endblock titleOnBlock %}
+{% block customCSS %}{% endblock customCSS %}
+
+{% block content %}
+   <!-- Your HTML Code -->
+    <div class="col-xl-12 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Grafica de edificio</h6></div>
+                    <div class="col-4 text-right">
+                        <select class="focus mb-0" name="menu" onchange="toggle(this)">
+                        <option disabled selected> Chose any </option>
+                        {% for ed in edificios %}
+                        <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
+                        {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="margin" class="chart-area">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Earnings (Monthly) Card Example -->
+   
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Entrada</div>
+                      <div id="entrada" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Salida</div>
+                      <div id="salida" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+   <!-- Earnings (Monthly) Card Example -->
+   <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Mbps</div>
+                      <div id="mbps" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                       Ultimo registro</div>
+                      <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    //obtencion de canvas donde se presentara la grafica
+    var ctx = document.getElementById('myChart').getContext('2d');
+    
+    //creacion de grafica sin datos
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Mbps',
+                data: [],
+                backgroundColor: 'rgba(200, 20, 20, 0.2)',
+                borderColor: 'rgba(200, 20, 20, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+             responsive: true,
+             maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    //variable global que simula el edificio
+    var ipEdificio;
+    // intervalo de llamado del nuevo dato
+    var myVar= setInterval(validator, 1000, myChart);
+
+    //funcion toggle que setea el nuevo valor 
+    function toggle(el){
+        ipEdificio = el.options[el.selectedIndex].value;
+        document.getElementById("TituloGrafica").innerHTML = "Grafica de "+el.options[el.selectedIndex].text;// cambio de titulo
+        deleteData(myChart);//simulación de cambio de grafica
+    }
+    //funcion dentro del intervalo para llamar al nuevo valor
+    async function validator(chart){
+        if(!ipEdificio) return 0;
+        //validador si la ip consulta a API y de busqueda por el usuario sean iguales
+        var ipEdificiovalidator = ipEdificio;
+        //Consulta api de ultimo dato por edificio
+        const response = await fetch("http://148.204.142.162:3031/database/grafica/?tipo=1&ip="+ipEdificio);
+        //respuesta json
+        const json = await response.json();
+        if (ipEdificio !=ipEdificiovalidator) return 0;
+        if (json){
+            //seteo de valores para la vista
+            let randomNum = json.salida+json.entrada;
+            var date =  json.createdAt;
+            //split especifico para dar formato de fecha legible
+            [yyyy,mm,dd,hh,mi,ss] = date.split(/[/:\.\-T]/)
+            let hour = `${hh}:${mi}:${ss}` //uso en grafica
+            //fixed usado para no confundir al usuario por errores de js
+            document.getElementById("entrada").innerHTML = ""+json.entrada.toFixed(3);
+            document.getElementById("salida").innerHTML = ""+json.salida.toFixed(3);
+            document.getElementById("mbps").innerHTML = ""+randomNum.toFixed(3);
+            document.getElementById("date").innerHTML =`${dd}-${mm}-${yyyy} ${hh}:${mi}:${ss}`;
+            //en caso de tener 10 valores, desplazar grafica
+            if (chart.data.labels.length == 10){
+                updateData(myChart, hour, randomNum);
+            }//en caso contrario, agregarlos
+            else{
+                addData(myChart, hour, randomNum);
+            }
+        }
+    }
+ 
+    //Eliminación de datos de la grafica
+    function deleteData(chart){
+        chart.data.labels= [];
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data = [];
+        });
+        chart.update();
+        document.getElementById("entrada").innerHTML = "";
+        document.getElementById("salida").innerHTML = "";
+        document.getElementById("mbps").innerHTML = "";
+        document.getElementById("date").innerHTML ="";
+    }
+    
+    //actualización de puntos en la grafica dezplansando perdiendo el primer registro
+    function updateData(chart, label, data) {
+        chart.data.labels.shift();
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.shift();
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+    //agregado de punto a la grafica sin perdida de puntos
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+//simulacion de sleep
+    function sleep(milliseconds) {
+        const date = Date.now();
+        let currentDate = null;
+        do {
+            currentDate = Date.now();
+        } while (currentDate - date < milliseconds);
+    }
+ </script>
+{% endblock customJS %}

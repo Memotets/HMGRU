@@ -20,47 +20,50 @@ class DatosRedView(APIView):
         previos_entrada = 0 if (previos is None) else int(previos['entrada'])
         previos_salida =  0 if (previos is None) else int(previos['salida'])
 
-        nuevos = self.snmp(ip)
-        
+        previos_entrada_edificio = 0 if (previos is None) else previos['edificios_entrada']
+        previos_salida_edificio =  0 if (previos is None) else previos['edificios_salida']
+
+        datos_entrada, datos_salida = self.snmp(ip)
+
+        nuevos_entrada: int = 0
+        nuevos_salida: int = 0
+
+        octetos_entrada = []
+        octetos_salida = []
+        for i in range(57, 65):
+            entrada = int(datos_entrada[i].split()[3])
+            salida = int(datos_salida[i].split()[3])
+
+            octetos_entrada.append(entrada)
+            octetos_salida.append(salida)
+            
+            nuevos_entrada += entrada
+            nuevos_salida += salida
+
+        if previos_entrada != 0 and previos_salida != 0 and previos_entrada_edificio != 0 and previos_salida_edificio != 0:
+            self.guardarConsulta((nuevos_entrada - int(previos_entrada)), (nuevos_salida - int(previos_salida)), 0)  
+
+            edificios = self.Meta().edificios
+
+            for i in range(0, 8):
+                edificio = edificios[i]
+
+                dif_entrada: int = octetos_entrada[i] - int(previos_entrada_edificio[i])
+                dif_salida: int = octetos_salida[i] - int(previos_salida_edificio[i])
+
+                self.guardarConsulta(dif_entrada, dif_salida, 1, edificio=edificio)
+
         respuesta = {
-            'entrada': int(nuevos[0]),
-            'salida': int(nuevos[1])
+            'entrada': nuevos_entrada,
+            'salida': nuevos_salida,
+            'edificios_entrada':  octetos_entrada,
+            'edificios_salida': octetos_salida
         }
-
-        if previos_entrada != 0:
-            Bps_entrada = ((respuesta['entrada'] - int(previos_entrada)) * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
-            Bps_salida = ((respuesta['salida'] - int(previos_salida)) * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
-
-            Mbps_entrada = Bps_entrada / 1024 / 1000
-            Mbps_salida = Bps_salida / 1024 / 1000
-
-            if Mbps_entrada < 0:
-                Mbps_entrada = -Mbps_entrada
-
-            if Mbps_salida < 0:
-                Mbps_salida = -Mbps_salida
-
-            timestamp = datetime.now()
-            datos = {
-                'tipo': 0,
-                'entrada': Mbps_entrada,
-                'salida': Mbps_salida,
-                'createdAt': timestamp
-            }
-
-            serializador_datos_red = DatosRedSerializer(data = datos)
-            if serializador_datos_red.is_valid():
-                datos_red = serializador_datos_red.save()
-                print(datos_red)
-
         #print(respuesta)
+
         return Response(respuesta)
 
     def snmp(self, ip):
-        # Variables donde se almacenará la suma de los octetos de entrada y salida de los edificios
-        suma_octetos_entrada = 0
-        suma_octetos_salida = 0
-
         # Obteniendo el usuairo y la contraseña desde el .env
         usuario = self.Meta.env('SNMP_USER')
         clave = self.Meta.env('SNMP_PASS')
@@ -81,38 +84,38 @@ class DatosRedView(APIView):
         datos_entrada = respuesta_entrada.decode().split('iso.3.6.1.2.1.2.2.1.10') #.123 ext 32 1235167813
         datos_salida = respuesta_salida.decode().split('iso.3.6.1.2.1.2.2.1.16')
 
-        # Octetos de la lectura de entrada
-        octetos_entrada = [
-            int(datos_entrada[57].split()[3]),
-            int(datos_entrada[58].split()[3]),
-            int(datos_entrada[59].split()[3]),
-            int(datos_entrada[60].split()[3]),
-            int(datos_entrada[61].split()[3]),
-            int(datos_entrada[62].split()[3]),
-            int(datos_entrada[63].split()[3]),
-            int(datos_entrada[64].split()[3]),
-        ]
+        return datos_entrada, datos_salida
 
-        # Octetos de la lectura de salida
-        octetos_salida = [
-            int(datos_salida[57].split()[3]),
-            int(datos_salida[58].split()[3]),
-            int(datos_salida[59].split()[3]),
-            int(datos_salida[60].split()[3]),
-            int(datos_salida[61].split()[3]),
-            int(datos_salida[62].split()[3]),
-            int(datos_salida[63].split()[3]),
-            int(datos_salida[64].split()[3]),
-        ]
-        
-        # Suma de los octetos de entrada
-        for octetos in octetos_entrada:
-           suma_octetos_entrada += octetos
+    def guardarConsulta(self, dif_entrada, dif_salida, tipo, edificio=None, nodo=None): 
+        Bps_entrada = (dif_entrada * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
+        Bps_salida = (dif_salida * 8) / (self.Meta().env.float('TIMELAPSE') * 1000)
 
-        for octetos in octetos_salida:
-            suma_octetos_salida += octetos
+        Mbps_entrada = Bps_entrada / 1024 / 1000
+        Mbps_salida = Bps_salida / 1024 / 1000
 
-        return (suma_octetos_entrada, suma_octetos_salida)
+        if Mbps_entrada < 0:
+            Mbps_entrada = -Mbps_entrada
+
+        if Mbps_salida < 0:
+            Mbps_salida = -Mbps_salida
+
+        timestamp = datetime.now()
+        datos = {
+            'tipo': tipo,
+            'entrada': Mbps_entrada,
+            'salida': Mbps_salida,
+            'createdAt': timestamp
+        }
+
+        if edificio is not None:
+            datos['edificio'] = edificio
+
+        serializador_datos_red = DatosRedSerializer(data = datos)
+        if serializador_datos_red.is_valid():
+            datos_red = serializador_datos_red.save()
+        else:
+            print("Data not valid")
+    
 
     class Meta:
         # App a la que pertencese la clase
@@ -121,3 +124,14 @@ class DatosRedView(APIView):
         # Carga del archivo .env para obtener las credenciales
         env = environ.Env()
         environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+
+        edificios = [
+            env.dict('LIGEROS_I'),
+            env.dict('LIGEROS_II'),
+            env.dict('PESADOS_II'),
+            env.dict('PESADOS_I'),
+            env.dict('CAFETERIA'),
+            env.dict('GOBIERNO'),
+            env.dict('AULAS_I'),
+            env.dict('AULAS_II'),
+        ]

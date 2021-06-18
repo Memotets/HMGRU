@@ -2,7 +2,7 @@ import time
 import threading
 import environ
 
-from scriptsConsultas import *
+from hmgru.scriptsConsultas import *
 
 class AutocallController:
 
@@ -12,7 +12,7 @@ class AutocallController:
 
     def autocall(self, startTime, endTime, octetos):
         currentTime = time.strftime("%H:%M:%S")
-        while (currentTime != endTime):#avoid recusive problems
+        while (currentTime < endTime):#avoid recusive problems
             currentTime = time.strftime("%H:%M:%S")
             #Call request
             octetos = consultaGeneral(previos = octetos)
@@ -52,5 +52,5 @@ class AutocallController:
         self.autocall(startTime, endTime, octetos)
 
     def initThread(self):
-        timerThreat = threading.Thread(target=self.timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0}))
+        timerThreat = threading.Thread(target=self.timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0, 'edificios_entrada': 0, 'edificios_salida': 0}))
         timerThreat.start()
