@@ -31,7 +31,7 @@ class NodosView(APIView):
         for nodo in nodos.data:
             # Ejemplo de registro:
             # {'4': 'fe.1.4'}
-            ids[nodo['oid']] = nodo['idPuerto']
+            ids[nodo['oid']] = (nodo['_id'] ,nodo['idPuerto'])
 
         response = {
             'nodos': nodos.data,

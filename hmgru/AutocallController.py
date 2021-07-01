@@ -24,6 +24,13 @@ class AutocallController:
 
         print(currentTime)
         while (currentTime != startTime):#avoid recusive problems
+            octetos = {
+                'entrada': 0, 
+                'salida': 0, 
+                'edificios_entrada': 0, 
+                'edificios_salida': 0
+            }
+            
             currentTime = time.strftime("%H:%M:%S")
             #in case something went wrong
             if((startTime<endTime and startTime<currentTime and endTime>currentTime) or 

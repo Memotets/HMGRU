@@ -2,7 +2,7 @@ from djongo import models
 from database.models.Edificio import Edificio
 
 class Nodos(models.Model):
-    _id = models.ObjectIdField
+    _id = models.ObjectIdField()
     oid = models.TextField()
     identificadorCable = models.TextField()
     idPuerto = models.TextField()

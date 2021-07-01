@@ -1,1 +1,1 @@
-from gestor.views.DatosRedView import DatosRedView
+from gestor.views.DatosRedView import DatosRed_general_view
