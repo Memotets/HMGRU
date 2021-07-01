@@ -2,7 +2,7 @@ from urllib import request, parse
 import ast
 import time
 
-def consultaGeneral(previos):
+def consultaGeneral(port, previos):
     '''
      El hilo que maneja las consultas inicia antes que el servior, por lo que es necesario poner un try-excetp
      que asegure las consultas no se dentengan antes de iniciar el sistema
@@ -18,6 +18,9 @@ def consultaGeneral(previos):
         # Codificación de los datos para su envío
         datos = parse.urlencode(datos).encode()
 
+        url = 'http://148.204.142.162:%s/gestor/DatosRed/' %(port)
+        #print(url)
+        '''
         # Creaci+on de la consulta http, es importante terminar con el '/' si se enviará por método POST
         # Asignar un valor a 'data' hace que la consulta sea por POST y en lugar de GET
         req = request.Request('http://148.204.142.162:3031/gestor/DatosRed/', data = datos)
@@ -28,6 +31,7 @@ def consultaGeneral(previos):
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
         
         return lectura
+        '''
     except Exception as e:
         print(e)
         time.sleep(1)

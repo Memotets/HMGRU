@@ -105,10 +105,10 @@
 {% block customJS %}
 <script>
     //obtencion de canvas donde se presentara la grafica
-    var ctx = document.getElementById('myChart').getContext('2d');
+    let ctx = document.getElementById('myChart').getContext('2d');
     
     //creacion de grafica sin datos
-    var myChart = new Chart(ctx, {
+    let myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: [],
@@ -130,10 +130,10 @@
             }
         }
     });
-    //variable global que simula el edificio
-    var ipEdificio;
+    //letiable global que simula el edificio
+    let ipEdificio;
     // intervalo de llamado del nuevo dato
-    var myVar= setInterval(validator, 1000, myChart);
+    let mylet= setInterval(validator, 1000, myChart);
 
     //funcion toggle que setea el nuevo valor 
     function toggle(el){
@@ -144,17 +144,22 @@
     //funcion dentro del intervalo para llamar al nuevo valor
     async function validator(chart){
         if(!ipEdificio) return 0;
+
+        port = {{ port }}
+        
         //validador si la ip consulta a API y de busqueda por el usuario sean iguales
-        var ipEdificiovalidator = ipEdificio;
+        let ipEdificiovalidator = ipEdificio;
+
         //Consulta api de ultimo dato por edificio
-        const response = await fetch("http://148.204.142.162:3031/database/grafica/?tipo=1&ip="+ipEdificio);
+        const response = await fetch("http://148.204.142.162:"+port+"/database/grafica/?tipo=1&ip="+ipEdificio);
         //respuesta json
+
         const json = await response.json();
         if (ipEdificio !=ipEdificiovalidator) return 0;
         if (json){
             //seteo de valores para la vista
             let randomNum = json.salida+json.entrada;
-            var date =  json.createdAt;
+            let date =  json.createdAt;
             //split especifico para dar formato de fecha legible
             [yyyy,mm,dd,hh,mi,ss] = date.split(/[/:\.\-T]/)
             let hour = `${hh}:${mi}:${ss}` //uso en grafica

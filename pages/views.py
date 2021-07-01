@@ -5,7 +5,10 @@ import environ
 from django.views.generic import TemplateView
 
 def GeneralGraphView(request):
-    return render(request, "pages/graficaGeneral.html", {})
+    env = environ.Env()
+    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+
+    return render(request, "pages/graficaGeneral.html", {"port": env("PORT")})
 
 def BuildingGraphView(request):
     # Carga del archivo .env para obtener las credenciales
@@ -23,6 +26,8 @@ def BuildingGraphView(request):
         env.dict('AULAS_II')
     ]
 
-    return render(request, "pages/graficaEdificio.html", {"edificios": edificios})
+    port = env("PORT")
+
+    return render(request, "pages/graficaEdificio.html", {"edificios": edificios, "port": port})
     
 

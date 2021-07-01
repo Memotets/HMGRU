@@ -96,8 +96,8 @@
 
 <script>
 
-   var ctx = document.getElementById('myChart').getContext('2d');
-   var myChart = new Chart(ctx, {
+   let ctx = document.getElementById('myChart').getContext('2d');
+   let myChart = new Chart(ctx, {
        type: 'line',
        data: {
            labels: [],
@@ -120,10 +120,12 @@
        }
    });
 
-   var myVar= setInterval(validator, 1000, myChart);
+   let mylet= setInterval(validator, 1000, myChart);
 
    function validator(chart){   
-        fetch("http://148.204.142.162:3031/database/grafica/?tipo=0").then(
+        port = {{ port }};
+
+        fetch("http://148.204.142.162:"+port+"/database/grafica/?tipo=0").then(
             function(u){
                 return u.json();
             }
@@ -131,7 +133,7 @@
             function(json){
 
                 let randomNum = json.salida+json.entrada;
-                var date =  json.createdAt;
+                let date =  json.createdAt;
                 [yyyy,mm,dd,hh,mi,ss] = date.split(/[/:\.\-T]/)
                 let hour = `${hh}:${mi}:${ss}`
                 document.getElementById("entrada").innerHTML = ""+json.entrada.toFixed(3);

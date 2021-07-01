@@ -1,8 +1,7 @@
-from django.db.models.fields import NullBooleanField
 from djongo import models
 
 from database.models.Edificio import Edificio
-from database.models.Nodos import Nodo
+from database.models.Nodos import Nodos
 
 class DatosRed(models.Model):
     _id = models.ObjectIdField()
@@ -13,10 +12,7 @@ class DatosRed(models.Model):
         model_container=Edificio,
         null = True
     )
-    nodo = models.EmbeddedField(
-        model_container=Nodo,
-        null = True
-    )
+    nodo = models.ForeignKey(Nodos, on_delete=models.DO_NOTHING, null=True)
     createdAt = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):
