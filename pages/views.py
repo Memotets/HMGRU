@@ -10,6 +10,12 @@ def GeneralGraphView(request):
 
     return render(request, "pages/graficaGeneral.html", {"port": env("PORT")})
 
+def BuildingListView(request):
+    env = environ.Env()
+    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+
+    return render(request, "pages/listaEdificios.html", {"port": env("PORT")})
+
 def BuildingGraphView(request):
     # Carga del archivo .env para obtener las credenciales
     env = environ.Env()
