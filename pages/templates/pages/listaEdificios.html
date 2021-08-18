@@ -4,7 +4,7 @@
 {% block titleOnBlock %}Lista de edificios{% endblock titleOnBlock %}
 
 {% block customCSS %}
-<link href="{% static vendor/dataTables/datatables.min.css %}">
+<link href="{% static 'vendor/dataTables/datatables.min.css' %}">
 <style>
     .table .table-bordered{
         color: #000 ;
@@ -253,6 +253,6 @@
 {% endblock content %}
 
 {% block customJS %}
-<script src="{% static vendor/dataTables/datatables.min.js %}s"></script>
-<script src="{% static js/demo/datatables-demo.js %}"></script>
+<script src="{% static 'vendor/dataTables/datatables.min.js' %}s"></script>
+<script src="{% static 'js/demo/datatables-demo.js' %}"></script>
 {% endblock customJS %}
