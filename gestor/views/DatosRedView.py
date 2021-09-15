@@ -10,6 +10,7 @@ import environ
 import subprocess
 import ast
 
+""" calcula el comsumo de red de toda la unidad asi como el total de cada edificio """
 @api_view(['POST'])
 def DatosRed_general_view(request):
     
@@ -65,51 +66,87 @@ def DatosRed_general_view(request):
 
         return Response(response)
 
+""" calcula el consumo de los nodos de un edificio """
 @api_view(['POST'])
-def DatosRed_lista_nodos(request):
+def  DatosRed_lista_nodos(request):
 
     if(request.method == 'POST'):
         data = request.data
 
-        ip = data['ip']
+        # Separación de los parametros de entrada en la consulta
+        ip = data['ip'] 
         oids = data['oids']
-        previos = ast.literal_eval(data['previos'])
+        previos = ast.literal_eval(data['previos']) 
 
-        previos_entrada = 0 if (previos is None) else int(previos['entrada'])
-        previos_salida =  0 if (previos is None) else int(previos['salida'])
+        # Listas con los cotetos de entrada y salida de la consulta anterior
+        previos_entrada = [] if (previos is None) else previos['entrada'] 
+        previos_salida =  [] if (previos is None) else previos['salida'] 
 
-        octetos_entrada = []
-        octetos_salida = []
-        _ids = []
+        # Lista con los octetos de entrada y salida de la consulta actual
+        octetos_entrada = [] 
+        octetos_salida = [] 
 
-        consumo_entrada = []
-        consumo_salida = []
+        # lista de oids a los que se les calculo el consumo
+        _ids = [] 
 
+        # Lista del calculo del consumo de entrada y salida de los nodos en seguimiento
+        consumo_entrada = [] 
+        consumo_salida = [] 
+
+        # consulta de los octetos actuales en los nodos del edificio
         datos_entrada, datos_salida = snmp(ip)
 
-        limit = len(datos_entrada)
+        limit = len(datos_entrada) 
         for i in range(0, limit):
-            key = '%i' %(i)
+        
+            #Si hay un vacio en la lista se salta a la siguiente iteracion para evitar problemas con los indices
+            if(datos_entrada[i] == ''):
+                continue
 
-            if key in oids:
-                entrada = int(datos_entrada[i].split()[3])
+            """
+                Separa el consumo de entrada para obtener el oid de la iteración actual
+                de paso obteniendo el dato en bruto del consumo en sí para su posterior uso
+                en caso de que sea un nodo en seguimiento 
+            """
+            entrada_splitted = datos_entrada[i].split()
+            oid = int(entrada_splitted[0].split('.')[1])
+            
+            """
+                Se consulta si el oid de la iteración actual se encuentra en la lista de 
+                seguimiento del edificio
+            """
+            if oid in oids:
+                """ separacion de los cotetos leidos del resto de la cadena de respuesta """
+                entrada = int(entrada_splitted[3])
                 salida = int(datos_salida[i].split()[3])
 
+                """ 
+                    Se almacenan los octetos leidos en la lista correspondiente para el 
+                    posterior calculo del consumo
+                """
                 octetos_entrada.append(entrada)
                 octetos_salida.append(salida)
-                _ids.append(oids[key][0])
 
-        if previos_entrada != 0:
+                # se añade el oid a la lista de los que se les calculo el consumo
+                _ids.append(oid)
+
+        """ calculo del consumio de red de cada nodo"""
+        if len(previos_entrada) > 0:
             for i in range(0, len(previos_entrada)):
-                dif_entrada: int = octetos_salida[i] - previos_entrada[i]
-                dif_salida: int = octetos_salida[i] - previos_salida[i]
+                try:
+                    dif_entrada: int = octetos_entrada[i] - previos_entrada[i]
+                    dif_salida: int = octetos_salida[i] - previos_salida[i]
 
-                Mbps_entrada, Mbps_salida = guardarConsulta(dif_entrada, dif_salida, nodo=_ids[i])
+                    # Guardado del consumo del nodo en base a su oid almacenado en la lista "_ids"
+                    Mbps_entrada, Mbps_salida = guardarConsulta(dif_entrada, dif_salida, 2, nodo=_ids[i]) 
 
-                consumo_entrada.append(Mbps_entrada)
-                consumo_salida.append(Mbps_salida)
+                    consumo_entrada.append(Mbps_entrada)
+                    consumo_salida.append(Mbps_salida)
+                except:
+                    print("current index %i" %i)
+                    break
         else:
-            for i in range(0, len(previos_entrada)):
+            for i in range(0, len(oids)):
                 consumo_entrada.append(0)
                 consumo_salida.append(0)
 

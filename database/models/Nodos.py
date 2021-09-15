@@ -3,7 +3,7 @@ from database.models.Edificio import Edificio
 
 class Nodos(models.Model):
     _id = models.ObjectIdField()
-    oid = models.TextField()
+    oid = models.IntegerField()
     identificadorCable = models.TextField()
     idPuerto = models.TextField()
     edificio = models.EmbeddedField(

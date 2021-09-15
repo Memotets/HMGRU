@@ -19,7 +19,7 @@ class NodosView(APIView):
             #   'oid': <oid del nodo>,
             #   'idPuerto' <idPuerto del nodo>
             # }
-        nodos_query = Nodos.objects.filter(edificio={'ip' : ip})
+        nodos_query = Nodos.objects.filter(edificio={'ip' : ip}).order_by('oid')
         nodos = NodosSerializer(nodos_query, many = True)
 
         # Diccionario para reestructrar la presentacion de los datos
@@ -27,10 +27,10 @@ class NodosView(APIView):
         
         # Reestructuracion de los datos para tener un diccionario con el formato
             # clave = oid
-            # valor = idPuerto
+            # valor = (mongo_oid, idPuerto)
         for nodo in nodos.data:
             # Ejemplo de registro:
-            # {'4': 'fe.1.4'}
+            # {'4': ('sc1684evsv11638ev21z', 'fe.1.4')}
             ids[nodo['oid']] = (nodo['_id'] ,nodo['idPuerto'])
 
         response = {
