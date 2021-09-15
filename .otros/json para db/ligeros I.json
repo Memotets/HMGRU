@@ -1,0 +1,2042 @@
+[
+    {
+        "oid": 13,
+        "identificadorCable": "IDF1P1Nip13",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.13",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 14,
+        "identificadorCable": "IDF1P1Nip14",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.14",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 15,
+        "identificadorCable": "IDF1P1Nip15",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.15",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 16,
+        "identificadorCable": "IDF1P1Nip16",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.16",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 17,
+        "identificadorCable": "IDF1P1Nip17",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.17",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 18,
+        "identificadorCable": "IDF1P1Nip18",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.18",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 19,
+        "identificadorCable": "IDF1P1Nip19",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.19",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 20,
+        "identificadorCable": "IDF1P1Nip20",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.20",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 21,
+        "identificadorCable": "IDF1P1Nip21",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.21",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 22,
+        "identificadorCable": "IDF1P1Nip22",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.22",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 23,
+        "identificadorCable": "IDF1P1Nip23",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.23",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 24,
+        "identificadorCable": "IDF1P1Nip24",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.24",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 37,
+        "identificadorCable": "IDF1P2Nip37",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.37",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 38,
+        "identificadorCable": "IDF1P2Nip38",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.38",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 42,
+        "identificadorCable": "IDF1P2Nip42",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.42",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Omar Alfonso Medina",
+        "ip": "10.1.141.11"
+    },
+    {
+        "oid": 43,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.43",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Ligeros I PB",
+        "ip": "-"
+    },
+    {
+        "oid": 44,
+        "identificadorCable": "IDF1P2Nip44",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.44",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 45,
+        "identificadorCable": "IDF1P2Nip45",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.45",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 46,
+        "identificadorCable": "IDF1P2Nip46",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.46",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 47,
+        "identificadorCable": "IDF1P2Nip47",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.47",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 48,
+        "identificadorCable": "IDF1P2Nip48",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.1.48",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 53,
+        "identificadorCable": "IDF1P5Nip97",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.1",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 54,
+        "identificadorCable": "IDF1P5Nip98",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.2",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 55,
+        "identificadorCable": "IDF1P5Nip99",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.3",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 56,
+        "identificadorCable": "IDF1P5Nip100",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.4",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 57,
+        "identificadorCable": "IDF1P5Nip101",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.5",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 58,
+        "identificadorCable": "IDF1P5Nip102",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.6",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 59,
+        "identificadorCable": "IDF1P5Nip103",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.7",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 60,
+        "identificadorCable": "IDF1P5Nip104",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.8",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 61,
+        "identificadorCable": "IDF1P5Nip105",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.9",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 62,
+        "identificadorCable": "IDF1P5Nip106",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.10",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 63,
+        "identificadorCable": "IDF1P5Nip107",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.11",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 64,
+        "identificadorCable": "IDF1P5Nip108",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.12",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 65,
+        "identificadorCable": "IDF1P5Nip109",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.13",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 66,
+        "identificadorCable": "IDF1P5Nip110",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.14",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 67,
+        "identificadorCable": "IDF1P5Nip111",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.15",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 68,
+        "identificadorCable": "IDF1P5Nip112",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.16",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 69,
+        "identificadorCable": "IDF1P5Nip113",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.17",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 70,
+        "identificadorCable": "IDF1P5Nip114",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.18",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 71,
+        "identificadorCable": "IDF1P5Nip115",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.19",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 72,
+        "identificadorCable": "IDF1P5Nip116",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.20",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 73,
+        "identificadorCable": "IDF1P5Nip117",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.21",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 74,
+        "identificadorCable": "IDF1P5Nip118",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.22",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 75,
+        "identificadorCable": "IDF1P5Nip119",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.23",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 76,
+        "identificadorCable": "IDF1P5Nip120",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.24",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 77,
+        "identificadorCable": "IDF1P6Nip121",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.25",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 78,
+        "identificadorCable": "IDF1P6Nip122",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.26",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 79,
+        "identificadorCable": "IDF1P6Nip123",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.27",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 80,
+        "identificadorCable": "IDF1P6Nip124",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.28",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 81,
+        "identificadorCable": "IDF1P6Nip125",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.29",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 82,
+        "identificadorCable": "IDF1P6Nip126",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.30",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 83,
+        "identificadorCable": "IDF1P6Nip127",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.31",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 84,
+        "identificadorCable": "IDF1P6Nip128",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.32",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 85,
+        "identificadorCable": "IDF1P6Nip129",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.33",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 86,
+        "identificadorCable": "IDF1P6Nip130",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.34",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 87,
+        "identificadorCable": "IDF1P6Nip131",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.35",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 88,
+        "identificadorCable": "IDF1P6Nip132",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.36",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 89,
+        "identificadorCable": "IDF1P6Nip133",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.37",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 90,
+        "identificadorCable": "IDF1P6Nip134",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.38",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Jonathan Belmontes Zacarias",
+        "ip": "10.1.141.14"
+    },
+    {
+        "oid": 91,
+        "identificadorCable": "IDF1P6Nip135",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.39",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Acces Point",
+        "ip": "10.1.141.13"
+    },
+    {
+        "oid": 93,
+        "identificadorCable": "IDF1P6Nip137",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.2.41",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Jesús Eloy Castillo Herrera",
+        "ip": "10.1.141.9"
+    },
+    {
+        "oid": 105,
+        "identificadorCable": "IDF1P9Nip193",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.1",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 106,
+        "identificadorCable": "IDF1P9Nip194",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.2",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 107,
+        "identificadorCable": "IDF1P9Nip195",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.3",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 108,
+        "identificadorCable": "IDF1P9Nip196",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.4",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 109,
+        "identificadorCable": "IDF1P9Nip197",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.5",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 110,
+        "identificadorCable": "IDF1P9Nip198",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.6",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 111,
+        "identificadorCable": "IDF1P9Nip199",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.7",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 112,
+        "identificadorCable": "IDF1P9Nip200",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.8",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 113,
+        "identificadorCable": "IDF1P9Nip201",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.9",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 114,
+        "identificadorCable": "IDF1P9Nip202",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.10",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 115,
+        "identificadorCable": "IDF1P9Nip203",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.11",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 116,
+        "identificadorCable": "IDF1P9Nip204",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.12",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 129,
+        "identificadorCable": "IDF1P10Nip217",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.25",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 130,
+        "identificadorCable": "IDF1P10Nip218",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.26",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 131,
+        "identificadorCable": "IDF1P10Nip219",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.27",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 132,
+        "identificadorCable": "IDF1P10Nip220",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.28",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 133,
+        "identificadorCable": "IDF1P10Nip221",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.29",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 134,
+        "identificadorCable": "IDF1P10Nip222",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.30",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 135,
+        "identificadorCable": "IDF1P10Nip223",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.31",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 136,
+        "identificadorCable": "IDF1P10Nip224",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.32",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 137,
+        "identificadorCable": "IDF1P10Nip225",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.33",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 138,
+        "identificadorCable": "IDF1P10Nip226",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.34",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 139,
+        "identificadorCable": "IDF1P10Nip227",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.35",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 140,
+        "identificadorCable": "IDF1P10Nip228",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.36",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 148,
+        "identificadorCable": "IDF1P10Nip236",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.3.44",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Felipe Iturriaga Cortés",
+        "ip": "10.1.141.1"
+    },
+    {
+        "oid": 169,
+        "identificadorCable": "IDF1P3Nip61",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.13",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 170,
+        "identificadorCable": "IDF1P3Nip62",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.14",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 171,
+        "identificadorCable": "IDF1P3Nip63",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.15",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 172,
+        "identificadorCable": "IDF1P3Nip64",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.16",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 173,
+        "identificadorCable": "IDF1P3Nip65",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.17",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 174,
+        "identificadorCable": "IDF1P3Nip66",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.18",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 175,
+        "identificadorCable": "IDF1P3Nip67",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.19",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 176,
+        "identificadorCable": "IDF1P3Nip68",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.20",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 177,
+        "identificadorCable": "IDF1P3Nip69",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.21",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 178,
+        "identificadorCable": "IDF1P3Nip70",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.22",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 179,
+        "identificadorCable": "IDF1P3Nip71",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.23",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 180,
+        "identificadorCable": "IDF1P3Nip72",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.24",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 188,
+        "identificadorCable": "IDF1P4Nip80",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.32",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Sonia Arlet Rodriguez García",
+        "ip": "10.1.141.7"
+    },
+    {
+        "oid": 189,
+        "identificadorCable": "IDF1P4Nip81",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.33",
+        "lugar": "CECYT",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Claudia Vianey Martinez",
+        "ip": "10.1.141.3"
+    },
+    {
+        "oid": 192,
+        "identificadorCable": "IDF1P4Nip84",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.36",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 193,
+        "identificadorCable": "IDF1P4Nip85",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.37",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 194,
+        "identificadorCable": "IDF1P4Nip86",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.38",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 195,
+        "identificadorCable": "IDF1P4Nip87",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.39",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 196,
+        "identificadorCable": "IDF1P4Nip88",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.40",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 197,
+        "identificadorCable": "IDF1P4Nip89",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.41",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 198,
+        "identificadorCable": "IDF1P4Nip90",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.42",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 199,
+        "identificadorCable": "IDF1P4Nip91",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.43",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 200,
+        "identificadorCable": "IDF1P4Nip92",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.44",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 201,
+        "identificadorCable": "IDF1P4Nip93",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.45",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 202,
+        "identificadorCable": "IDF1P4Nip94",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.46",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 203,
+        "identificadorCable": "IDF1P4Nip95",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.47",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 204,
+        "identificadorCable": "IDF1P4Nip96",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.4.48",
+        "lugar": "CECYT-LBC1",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 209,
+        "identificadorCable": "IDF1P7Nip145",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.1",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 210,
+        "identificadorCable": "IDF1P7Nip146",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.2",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 211,
+        "identificadorCable": "IDF1P7Nip147",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.3",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 212,
+        "identificadorCable": "IDF1P7Nip148",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.4",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 213,
+        "identificadorCable": "IDF1P7Nip149",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.5",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 214,
+        "identificadorCable": "IDF1P7Nip150",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.6",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 215,
+        "identificadorCable": "IDF1P7Nip151",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.7",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 216,
+        "identificadorCable": "IDF1P7Nip152",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.8",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 217,
+        "identificadorCable": "IDF1P7Nip153",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.9",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 218,
+        "identificadorCable": "IDF1P7Nip154",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.10",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 219,
+        "identificadorCable": "IDF1P7Nip155",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.11",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 220,
+        "identificadorCable": "IDF1P7Nip156",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.12",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 222,
+        "identificadorCable": "IDF1P7Nip158",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.14",
+        "lugar": "UPIIZ-CELEX",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 233,
+        "identificadorCable": "IDF1P8Nip169",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.25",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 234,
+        "identificadorCable": "IDF1P8Nip170",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.26",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 235,
+        "identificadorCable": "IDF1P8Nip171",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.27",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 236,
+        "identificadorCable": "IDF1P6Nip172",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.28",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 237,
+        "identificadorCable": "IDF1P6Nip173",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.29",
+        "lugar": "UPIIZ-LBDISEÑO",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 238,
+        "identificadorCable": "IDF1P8Nip174",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.30",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Carlos Daniel Rico Mandujano",
+        "ip": "10.1.141.21"
+    },
+    {
+        "oid": 241,
+        "identificadorCable": "IDF1P8Nip177",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.33",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 242,
+        "identificadorCable": "IDF1P8Nip178",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.34",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 243,
+        "identificadorCable": "IDF1P8Nip179",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.35",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    },
+    {
+        "oid": 247,
+        "identificadorCable": "IDF1P8Nip180",
+        "edificio": {
+            "nombre": "Ligeros I",
+            "ip": "10.204.142.252"
+        },
+        "idPuerto": "fe.5.36",
+        "lugar": "CECYT-LBC2",
+        "planta": "ALTA",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "Alumno",
+        "ip": "0.0.0.0"
+    }
+]

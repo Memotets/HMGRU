@@ -1,0 +1,722 @@
+[
+    {
+        "oid": 1,
+        "identificadorCable": "IDF6 P1Nip1",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.1",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I 3er piso B",
+        "ip": "-"
+    },
+    {
+        "oid": 2,
+        "identificadorCable": "IDF6 P1Nip2",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.2",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA MAGNA",
+        "ip": ""
+    },
+    {
+        "oid": 3,
+        "identificadorCable": "IDF6 P1Nip3",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.3",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 121",
+        "ip": ""
+    },
+    {
+        "oid": 4,
+        "identificadorCable": "IDF6 P1Nip4",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.4",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 122",
+        "ip": ""
+    },
+    {
+        "oid": 5,
+        "identificadorCable": "IDF6 P1Nip5",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.5",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 123",
+        "ip": ""
+    },
+    {
+        "oid": 6,
+        "identificadorCable": "IDF6 P1Nip6",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.6",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 124",
+        "ip": ""
+    },
+    {
+        "oid": 7,
+        "identificadorCable": "IDF6 P1Nip7",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.7",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 125",
+        "ip": ""
+    },
+    {
+        "oid": 8,
+        "identificadorCable": "IDF6 P1Nip8",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.8",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I 3er piso A",
+        "ip": "-"
+    },
+    {
+        "oid": 9,
+        "identificadorCable": "IDF6 P1Nip9",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.9",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 126",
+        "ip": ""
+    },
+    {
+        "oid": 10,
+        "identificadorCable": "IDF6 P1Nip10",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.10",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 1 - Isabel Yee",
+        "ip": ""
+    },
+    {
+        "oid": 11,
+        "identificadorCable": "IDF6 P1Nip11",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.11",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 2 - Margarito",
+        "ip": ""
+    },
+    {
+        "oid": 12,
+        "identificadorCable": "IDF6 P1Nip12",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.12",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 3 - Juan Alvarado",
+        "ip": ""
+    },
+    {
+        "oid": 13,
+        "identificadorCable": "IDF6 P1Nip13",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.13",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 4 - Laura Pinedo",
+        "ip": ""
+    },
+    {
+        "oid": 14,
+        "identificadorCable": "IDF6 P1Nip14",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.14",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 5 - Panayotis",
+        "ip": ""
+    },
+    {
+        "oid": 15,
+        "identificadorCable": "IDF6 P1Nip15",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.15",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 6 - Polet",
+        "ip": ""
+    },
+    {
+        "oid": 16,
+        "identificadorCable": "IDF6 P1Nip16",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.16",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I 2do piso B",
+        "ip": "-"
+    },
+    {
+        "oid": 17,
+        "identificadorCable": "IDF6 P1Nip17",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.17",
+        "lugar": "UPIIZ",
+        "planta": "PISO 3",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "AP A",
+        "ip": ""
+    },
+    {
+        "oid": 18,
+        "identificadorCable": "IDF6 P1Nip18",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.18",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 111",
+        "ip": ""
+    },
+    {
+        "oid": 19,
+        "identificadorCable": "IDF6 P1Nip19",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.19",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 112",
+        "ip": ""
+    },
+    {
+        "oid": 20,
+        "identificadorCable": "IDF6 P1Nip20",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.20",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 113",
+        "ip": ""
+    },
+    {
+        "oid": 21,
+        "identificadorCable": "IDF6 P1Nip21",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.21",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 114",
+        "ip": ""
+    },
+    {
+        "oid": 22,
+        "identificadorCable": "IDF6 P1Nip22",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.22",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 115",
+        "ip": ""
+    },
+    {
+        "oid": 23,
+        "identificadorCable": "IDF6 P1Nip23",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.23",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I 2do piso A",
+        "ip": "-"
+    },
+    {
+        "oid": 24,
+        "identificadorCable": "IDF6 P1Nip24",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.24",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 116",
+        "ip": ""
+    },
+    {
+        "oid": 25,
+        "identificadorCable": "IDF6 P1Nip25",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.25",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 1 - Teodoro Ibarra",
+        "ip": ""
+    },
+    {
+        "oid": 26,
+        "identificadorCable": "IDF6 P1Nip26",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.26",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 2 - Fernando Olivera",
+        "ip": ""
+    },
+    {
+        "oid": 27,
+        "identificadorCable": "IDF6 P1Nip27",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.27",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 3 - Maricela",
+        "ip": ""
+    },
+    {
+        "oid": 28,
+        "identificadorCable": "IDF6 P1Nip28",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.28",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 4 - Julio Urbina",
+        "ip": ""
+    },
+    {
+        "oid": 29,
+        "identificadorCable": "IDF6 P1Nip29",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.29",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 5 - Uriel Villegas",
+        "ip": ""
+    },
+    {
+        "oid": 30,
+        "identificadorCable": "IDF6 P1Nip30",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.30",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 6 - Brisa Rico",
+        "ip": ""
+    },
+    {
+        "oid": 31,
+        "identificadorCable": "IDF6 P1Nip31",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.31",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I primer piso B",
+        "ip": "-"
+    },
+    {
+        "oid": 32,
+        "identificadorCable": "IDF6 P1Nip32",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.32",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AP A",
+        "ip": ""
+    },
+    {
+        "oid": 33,
+        "identificadorCable": "IDF6 P2Nip33",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.33",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 101",
+        "ip": ""
+    },
+    {
+        "oid": 34,
+        "identificadorCable": "IDF6 P2Nip34",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.34",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 102",
+        "ip": ""
+    },
+    {
+        "oid": 35,
+        "identificadorCable": "IDF6 P2Nip35",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.35",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 103",
+        "ip": ""
+    },
+    {
+        "oid": 36,
+        "identificadorCable": "IDF6 P2Nip36",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.36",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 104",
+        "ip": ""
+    },
+    {
+        "oid": 37,
+        "identificadorCable": "IDF6 P2Nip37",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.37",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 105",
+        "ip": ""
+    },
+    {
+        "oid": 38,
+        "identificadorCable": "IDF6 P2Nip38",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.38",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Aulas I primer piso A",
+        "ip": "-"
+    },
+    {
+        "oid": 39,
+        "identificadorCable": "IDF6 P2Nip39",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.39",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "AULA 106",
+        "ip": ""
+    },
+    {
+        "oid": 40,
+        "identificadorCable": "IDF6 P2Nip40",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.40",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 1 - Cacarizo",
+        "ip": ""
+    },
+    {
+        "oid": 41,
+        "identificadorCable": "IDF6 P2Nip41",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.41",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 2 - Victor Gutierrez",
+        "ip": ""
+    },
+    {
+        "oid": 42,
+        "identificadorCable": "IDF6 P2Nip42",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.42",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBO 3 - Christophe",
+        "ip": ""
+    },
+    {
+        "oid": 43,
+        "identificadorCable": "IDF6P3Nip1",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.43",
+        "lugar": "UPIIZ",
+        "planta": "PISO 2",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBOS AFUERA",
+        "ip": ""
+    },
+    {
+        "oid": 46,
+        "identificadorCable": "xxxxx",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.46",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "PREFECTURA",
+        "ip": ""
+    },
+    {
+        "oid": 47,
+        "identificadorCable": "xxxxx",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.47",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "HUB",
+        "ip": ""
+    },
+    {
+        "oid": 48,
+        "identificadorCable": "IDF6 P2Nip24",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "fe.1.48",
+        "lugar": "UPIIZ",
+        "planta": "PISO 1",
+        "vlan": "143",
+        "activoAdministrativo": "1",
+        "usuario": "CUBOS AFUERA",
+        "ip": ""
+    },
+    {
+        "oid": 49,
+        "identificadorCable": "CAMARA",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "ge.1.49",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "977",
+        "activoAdministrativo": "1",
+        "usuario": "Aulas 1",
+        "ip": "Aulas 1"
+    },
+    {
+        "oid": 50,
+        "identificadorCable": "CAMARA",
+        "edificio": {
+            "nombre": "Aulas I",
+            "ip": "10.204.142.247"
+        },
+        "idPuerto": "ge.1.50",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "977",
+        "activoAdministrativo": "1",
+        "usuario": "Aulas 1",
+        "ip": "Aulas 1"
+    }
+]

@@ -1,9 +1,10 @@
-Django
+Django==3.0.6
 django-environ
 djangorestframework
 djongo
 pymongo
 pytz
 sqlparse
+paramiko
 gunicorn
 psycopg2-binary

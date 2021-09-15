@@ -1,0 +1,1022 @@
+[
+    {
+        "oid": 2,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.2",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Gobierno pa Consejo",
+        "ip": "-"
+    },
+    {
+        "oid": 3,
+        "identificadorCable": "IDF5P1Nip03",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.3",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE CEGET",
+        "ip": "148.204.142.33"
+    },
+    {
+        "oid": 4,
+        "identificadorCable": "IDF5P1Nip4",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.4",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE UPIS",
+        "ip": "148.204.142.74"
+    },
+    {
+        "oid": 5,
+        "identificadorCable": "IDF5P5Nip05",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.5",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE FORMACIÓN INTEGRAL INSTITUCIONAL",
+        "ip": "148.204.142.52"
+    },
+    {
+        "oid": 7,
+        "identificadorCable": "IDF5P1Nip07",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.7",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "IMPRESORA ACADÉMICA",
+        "ip": "148.204.142.12"
+    },
+    {
+        "oid": 8,
+        "identificadorCable": "IDF5P1Nip08",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.8",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "AISTENTE RECURSOS FINANCIEROS",
+        "ip": "148.204.142.76"
+    },
+    {
+        "oid": 11,
+        "identificadorCable": "IDF5P1Nip11",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.11",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE SSEIS",
+        "ip": "148.204.142.70"
+    },
+    {
+        "oid": 12,
+        "identificadorCable": "IDF5P1Nip12",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.12",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "SUBDIRECTOR SSEIS",
+        "ip": "148.204.142.46"
+    },
+    {
+        "oid": 13,
+        "identificadorCable": "IDF5P1Nip13",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.13",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE EVALUACIÓN Y SEGUIMIENTO ACADÉMICO",
+        "ip": "148.204.142.49"
+    },
+    {
+        "oid": 14,
+        "identificadorCable": "IDF5P1Nip14",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.14",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE UTECV",
+        "ip": "148.204.142.50"
+    },
+    {
+        "oid": 15,
+        "identificadorCable": "IDF5P1Nip15",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.15",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "SUBDIRECTOR ACADÉMICO",
+        "ip": "148.204.142.39"
+    },
+    {
+        "oid": 16,
+        "identificadorCable": "IDF5P!Nip16",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.16",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE DEPARTAMENTO PROFESIONAL ESPECÍFICA",
+        "ip": "148.204.142.37"
+    },
+    {
+        "oid": 17,
+        "identificadorCable": "IDF5P1Nip17",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.17",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE ACADÉMICA",
+        "ip": "148.204.142.88"
+    },
+    {
+        "oid": 18,
+        "identificadorCable": "IDF5P1Nip18",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.18",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE",
+        "ip": "148.204.142.54"
+    },
+    {
+        "oid": 23,
+        "identificadorCable": "IDF5S1Nip23",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.23",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE DIRECCIÓN",
+        "ip": "148.204.142.69"
+    },
+    {
+        "oid": 24,
+        "identificadorCable": "IDF5P1Nip24",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.24",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "FORMACIÓN BÁSICA DISCipLINARIA",
+        "ip": "148.204.142.41"
+    },
+    {
+        "oid": 25,
+        "identificadorCable": "IDFP4Nip10",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.25",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.180"
+    },
+    {
+        "oid": 26,
+        "identificadorCable": "IDF5P4Nip2",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.26",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.172"
+    },
+    {
+        "oid": 27,
+        "identificadorCable": "IDF5P4Nip11",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.27",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.179"
+    },
+    {
+        "oid": 28,
+        "identificadorCable": "IDF5P4Nip13",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.28",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.181"
+    },
+    {
+        "oid": 29,
+        "identificadorCable": "IDF5P3Nip62",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.29",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.177"
+    },
+    {
+        "oid": 30,
+        "identificadorCable": "IDF5P4Nip12",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.30",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.182"
+    },
+    {
+        "oid": 31,
+        "identificadorCable": "IDF5P3Nip68",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.31",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.169"
+    },
+    {
+        "oid": 32,
+        "identificadorCable": "N/A",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.32",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.174"
+    },
+    {
+        "oid": 33,
+        "identificadorCable": "IDF5P4Nip1",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.33",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.171"
+    },
+    {
+        "oid": 34,
+        "identificadorCable": "IDF5P4Nip4",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.34",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.173"
+    },
+    {
+        "oid": 36,
+        "identificadorCable": "IDF5P4Nip20",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.36",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE DEPARTAMENTO DE SERVICIOS ESTUDIANTILES",
+        "ip": "148.204.142.51"
+    },
+    {
+        "oid": 37,
+        "identificadorCable": "p5nip3/pcnip4 Acces Point",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.37",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE RECURSOS MATERIALES",
+        "ip": "148.204.142.104"
+    },
+    {
+        "oid": 39,
+        "identificadorCable": "CAMARA",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.39",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "977",
+        "activoAdministrativo": "1",
+        "usuario": "Gobierno",
+        "ip": "Gobierno"
+    },
+    {
+        "oid": 40,
+        "identificadorCable": "IDF5P4Nip22",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.40",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DEL DEPARTAMENTO DE UNIDADES DE APRENDIZAJE DEL ÁREA BÁSICA",
+        "ip": "148.204.142.107"
+    },
+    {
+        "oid": 45,
+        "identificadorCable": "IDF5p2Nip32",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.45",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE SUBDIRECCIÓN ACADÉMICA",
+        "ip": "148.204.142.115"
+    },
+    {
+        "oid": 47,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.47",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Gobierno CECyT",
+        "ip": "-"
+    },
+    {
+        "oid": 48,
+        "identificadorCable": "CAMARA",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.1.48",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "977",
+        "activoAdministrativo": "1",
+        "usuario": "Gobierno",
+        "ip": "Gobierno"
+    },
+    {
+        "oid": 53,
+        "identificadorCable": "IDF5P2Nip27",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.1",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "SUBDIRECTOR ADMINISTRATIVO",
+        "ip": "148.204.142.55"
+    },
+    {
+        "oid": 54,
+        "identificadorCable": "IDF5P2Nip26",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.2",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE SUBDIRECCIÓN ADMINISTRATIVA",
+        "ip": "148.204.142.72"
+    },
+    {
+        "oid": 55,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.3",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Gobierno pa via",
+        "ip": "-"
+    },
+    {
+        "oid": 56,
+        "identificadorCable": "IDF5P2Nip28",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.4",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE RECURSOS FINANCIEROS",
+        "ip": "148.204.142.45"
+    },
+    {
+        "oid": 57,
+        "identificadorCable": "IDF5P2Nip29",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.5",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE CAPITAL HUMANO",
+        "ip": "148.204.142.42"
+    },
+    {
+        "oid": 58,
+        "identificadorCable": "IDF5p2nip30",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.6",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE SUBDIRECCIÓN ACADÉMICA",
+        "ip": "148.204.142.109"
+    },
+    {
+        "oid": 59,
+        "identificadorCable": "IDF5p2nip31",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.7",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "SUBDIRECTOR ACADÉMICO",
+        "ip": "148.204.142.63"
+    },
+    {
+        "oid": 62,
+        "identificadorCable": "IDF5P2Nip34",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.10",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE FINANCIEROS",
+        "ip": "148.204.142.119"
+    },
+    {
+        "oid": 63,
+        "identificadorCable": "p2nip35",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.11",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DEL DEPARTAMENTO DE UNDIADES DE APRENDIZAJES DEL ÁREA TECNOLÓGICA Y ESPECIALIDAD",
+        "ip": "148.204.142.61"
+    },
+    {
+        "oid": 64,
+        "identificadorCable": "p2nip36",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.12",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE UNIDADES DE PARENDIZAJE DEL ÁREA HUMANÍSTICA",
+        "ip": "148.204.142.64"
+    },
+    {
+        "oid": 65,
+        "identificadorCable": "IDF5P2Nip37",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.13",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE RECURSOS MATERIALES",
+        "ip": "148.204.142.103"
+    },
+    {
+        "oid": 66,
+        "identificadorCable": "p2nip42",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.14",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "RESPONSABLE DE EXTENSIÓN Y APOYOS EDUCATIVOS",
+        "ip": "148.204.142.111"
+    },
+    {
+        "oid": 67,
+        "identificadorCable": "p2nip39",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.15",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "APOYO A DEPARTAMENTO DE UNIDADES DE APRENDIZAJE DEL ÁREA HUMANÍSTICA",
+        "ip": "148.204.142.112"
+    },
+    {
+        "oid": 68,
+        "identificadorCable": "IDF5P2Nip40",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.16",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "RECURSOS FINANCIEROS",
+        "ip": "148.204.142.59"
+    },
+    {
+        "oid": 71,
+        "identificadorCable": "p2nip43",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.19",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIS",
+        "ip": "148.204.142.120"
+    },
+    {
+        "oid": 73,
+        "identificadorCable": "IDF5P2Nip45",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.21",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ENCARGADO DEL ACTIVO FIJO",
+        "ip": "148.204.142.75"
+    },
+    {
+        "oid": 74,
+        "identificadorCable": "IDF5P2Nip46",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.22",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ENCARGADO DE COMPRAS",
+        "ip": "148.204.142.79"
+    },
+    {
+        "oid": 75,
+        "identificadorCable": "IDF5P2Nip47",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.23",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "IMPRESORA MATERIALES",
+        "ip": "148.204.142.17"
+    },
+    {
+        "oid": 76,
+        "identificadorCable": "IDF5P2Nip48",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.24",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE DEPARTAMENTO DE RECURSOS MATERIALES",
+        "ip": "148.204.142.35"
+    },
+    {
+        "oid": 80,
+        "identificadorCable": "IDF5P3Nip52",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.28",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "DECANO",
+        "ip": "148.204.142.34"
+    },
+    {
+        "oid": 81,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.29",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Gobierno pb via",
+        "ip": "-"
+    },
+    {
+        "oid": 82,
+        "identificadorCable": "ID5P3Nip54",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.30",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE GESTIÓN ESCOLAR",
+        "ip": "148.204.142.47"
+    },
+    {
+        "oid": 83,
+        "identificadorCable": "IDFP3Nip55",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.31",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE GESTIÓN ESCOLAR",
+        "ip": "148.204.142.91"
+    },
+    {
+        "oid": 84,
+        "identificadorCable": "IDFP3Nip56",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.32",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ENCARGADO DE CULTURA Y DEPORTE",
+        "ip": "148.204.142.80"
+    },
+    {
+        "oid": 85,
+        "identificadorCable": "IDF5P3Nip57",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.33",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE GESTIÓN ESCOLAR",
+        "ip": "148.204.142.48"
+    },
+    {
+        "oid": 87,
+        "identificadorCable": "IDF5P3Nip59",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.35",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "JEFE DE EXTENSIÓN Y SERVICIOS EDUCATIVOS",
+        "ip": "148.204.142.38"
+    },
+    {
+        "oid": 88,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.36",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Gobierno pb Gestion",
+        "ip": "-"
+    },
+    {
+        "oid": 89,
+        "identificadorCable": "IDF5P3Nip61",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.37",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.178"
+    },
+    {
+        "oid": 90,
+        "identificadorCable": "IDF5P3Nip6",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.38",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.176"
+    },
+    {
+        "oid": 91,
+        "identificadorCable": "IDF5P4Nip5",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.39",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.175"
+    },
+    {
+        "oid": 92,
+        "identificadorCable": "ID5P3Nip64",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.40",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "DOCTOR",
+        "ip": "148.204.142.100"
+    },
+    {
+        "oid": 93,
+        "identificadorCable": "IDF5P3Nip65",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.41",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "SERVICIO MÉDICO",
+        "ip": "148.204.142.78"
+    },
+    {
+        "oid": 96,
+        "identificadorCable": "IDF5P4Nip3",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.44",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "BIBLIOTECA",
+        "ip": "148.204.142.170"
+    },
+    {
+        "oid": 97,
+        "identificadorCable": "IDF5S2Nip45",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.45",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ASISTENTE CAPITAL HUMANO",
+        "ip": "148.204.142.73"
+    },
+    {
+        "oid": 100,
+        "identificadorCable": "IDF5S2Nip48",
+        "edificio": {
+            "nombre": "Govierno",
+            "ip": "10.204.142.245"
+        },
+        "idPuerto": "fe.2.48",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "APOYO ACADÉMICA",
+        "ip": "148.204.142.71"
+    }
+]

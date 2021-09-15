@@ -30,16 +30,9 @@
                 <div class="col-4 text-right">
                     <select class="focus mb-0" name="menu" onchange="toggle(this)">
                     <option disabled selected> Chose any </option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                    <option value="25">25</option>
-                    <option value="30">30</option>
-                    <option value="35">35</option>
-                    <option value="40">40</option>
-                    <option value="45">45</option>
-                    <option value="50">50</option>
+                    {% for ed in edificios %}
+                    <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
+                    {% endfor %}
                   </select>
                 </div>
             </div>
@@ -49,202 +42,26 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>IOD</th>
-                            <th>IP</th>
-                            <th>Entrada</th>
-                            <th>Salida</th>
+                            <th>Estado</th>
+                            <th>id Puerto</th>
+                            <th>Subida</th>
+                            <th>Bajada</th>
                             <th>Mbps</th>
                             <th>Acciones</th>
+                            <th>Seguimiento</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>IOD</th>
-                            <th>IP</th>
-                            <th>Entrada</th>
-                            <th>Salida</th>
+                            <th>Estado</th>
+                            <th>id Puerto</th>
+                            <th>Subida</th>
+                            <th>Bajada</th>
                             <th>Mbps</th>
                             <th>Acciones</th>
+                            <th>Seguimiento</th>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
-                        <tr>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td>2011/07/25</td>
-                            <td>$170,750</td>
-                        </tr>
-                        <tr>
-                            <td>Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-                            <td>2009/01/12</td>
-                            <td>$86,000</td>
-                        </tr>
-                        <tr>
-                            <td>Cedric Kelly</td>
-                            <td>Senior Javascript Developer</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2012/03/29</td>
-                            <td>$433,060</td>
-                        </tr>
-                        <tr>
-                            <td>Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-                            <td>2008/11/28</td>
-                            <td>$162,700</td>
-                        </tr>
-                        <tr>
-                            <td>Brielle Williamson</td>
-                            <td>Integration Specialist</td>
-                            <td>New York</td>
-                            <td>61</td>
-                            <td>2012/12/02</td>
-                            <td>$372,000</td>
-                        </tr>
-                        <tr>
-                            <td>Herrod Chandler</td>
-                            <td>Sales Assistant</td>
-                            <td>San Francisco</td>
-                            <td>59</td>
-                            <td>2012/08/06</td>
-                            <td>$137,500</td>
-                        </tr>
-                        <tr>
-                            <td>Rhona Davidson</td>
-                            <td>Integration Specialist</td>
-                            <td>Tokyo</td>
-                            <td>55</td>
-                            <td>2010/10/14</td>
-                            <td>$327,900</td>
-                        </tr>
-                        <tr>
-                            <td>Colleen Hurst</td>
-                            <td>Javascript Developer</td>
-                            <td>San Francisco</td>
-                            <td>39</td>
-                            <td>2009/09/15</td>
-                            <td>$205,500</td>
-                        </tr>
-                        <tr>
-                            <td>Sonya Frost</td>
-                            <td>Software Engineer</td>
-                            <td>Edinburgh</td>
-                            <td>23</td>
-                            <td>2008/12/13</td>
-                            <td>$103,600</td>
-                        </tr>
-                        <tr>
-                            <td>Jena Gaines</td>
-                            <td>Office Manager</td>
-                            <td>London</td>
-                            <td>30</td>
-                            <td>2008/12/19</td>
-                            <td>$90,560</td>
-                        </tr>
-                        <tr>
-                            <td>Quinn Flynn</td>
-                            <td>Support Lead</td>
-                            <td>Edinburgh</td>
-                            <td>22</td>
-                            <td>2013/03/03</td>
-                            <td>$342,000</td>
-                        </tr>
-                        <tr>
-                            <td>Charde Marshall</td>
-                            <td>Regional Director</td>
-                            <td>San Francisco</td>
-                            <td>36</td>
-                            <td>2008/10/16</td>
-                            <td>$470,600</td>
-                        </tr>
-                        <tr>
-                            <td>Haley Kennedy</td>
-                            <td>Senior Marketing Designer</td>
-                            <td>London</td>
-                            <td>43</td>
-                            <td>2012/12/18</td>
-                            <td>$313,500</td>
-                        </tr>
-                        <tr>
-                            <td>Tatyana Fitzpatrick</td>
-                            <td>Regional Director</td>
-                            <td>London</td>
-                            <td>19</td>
-                            <td>2010/03/17</td>
-                            <td>$385,750</td>
-                        </tr>
-                        <tr>
-                            <td>Michael Silva</td>
-                            <td>Marketing Designer</td>
-                            <td>London</td>
-                            <td>66</td>
-                            <td>2012/11/27</td>
-                            <td>$198,500</td>
-                        </tr>
-                        <tr>
-                            <td>Paul Byrd</td>
-                            <td>Chief Financial Officer (CFO)</td>
-                            <td>New York</td>
-                            <td>64</td>
-                            <td>2010/06/09</td>
-                            <td>$725,000</td>
-                        </tr>
-                        <tr>
-                            <td>Gloria Little</td>
-                            <td>Systems Administrator</td>
-                            <td>New York</td>
-                            <td>59</td>
-                            <td>2009/04/10</td>
-                            <td>$237,500</td>
-                        </tr>
-                        <tr>
-                            <td>Bradley Greer</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td>41</td>
-                            <td>2012/10/13</td>
-                            <td>$132,000</td>
-                        </tr>
-                        <tr>
-                            <td>Dai Rios</td>
-                            <td>Personnel Lead</td>
-                            <td>Edinburgh</td>
-                            <td>35</td>
-                            <td>2012/09/26</td>
-                            <td>$217,500</td>
-                        </tr>
-                        <tr>
-                            <td>Jenette Caldwell</td>
-                            <td>Development Lead</td>
-                            <td>New York</td>
-                            <td>30</td>
-                            <td>2011/09/03</td>
-                            <td>$345,000</td>
-                        </tr>
-                        <tr>
-                            <td>Yuri Berry</td>
-                            <td>Chief Marketing Officer (CMO)</td>
-                            <td>New York</td>
-                            <td>40</td>
-                            <td>2009/06/25</td>
-                            <td>$675,000</td>
-                        </tr>
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -253,6 +70,238 @@
 {% endblock content %}
 
 {% block customJS %}
-<script src="{% static 'vendor/dataTables/datatables.min.js' %}s"></script>
-<script src="{% static 'js/demo/datatables-demo.js' %}"></script>
+<script src="{% static 'vendor/dataTables/datatables.min.js' %}"></script>
+<script>
+    //letiable global que simula el edificio, seleccion de sig edificio y lista de nodos inicial en tabla
+    let IpEdificio;
+    let IpEdificiovalidator;
+    let SummaryNodes = [];
+
+    //letiables para crear variable data, referente al body de consulta post o put, lista de OIDS y consulta previos
+    let data = {};
+    let OIDsData = [];
+    let Previos = 'None';
+
+    //letiable putNodes que es la informacion necesaria para cambio de nodos
+    let putNodes = [];
+
+    // intervalo de llamado del nuevo dato
+    let Mylet= setInterval(validator, 5000);
+
+    //variable de total de elementos en tabla
+    let limit= 0;
+
+    //funcion toggle que setea el nuevo valor de ip y dibuja su tabla de nodos 
+    async function toggle(el){
+        
+        IpEdificio = el.options[el.selectedIndex].value;
+        document.getElementById("TituloGrafica").innerHTML = "Lista de nodos de "+el.options[el.selectedIndex].text;// cambio de titulo
+        port = {{ port }}
+        //validador si la ip consulta a API y de busqueda por el usuario sean iguales
+        IpEdificiovalidator = IpEdificio;
+        //Consulta api de lista de nodos por edificio
+        const response = await fetch("http://148.204.142.162:"+port+"/database/lista/nodos/?ip="+IpEdificio);
+        //respuesta json
+        const json = await response.json();
+
+        //en caso de error, no hacer una doble consulta
+        if (IpEdificio !=IpEdificiovalidator) return 0;
+        if (json){
+            //limpieza de nodos y variables post
+            SummaryNodes = [];
+            OIDsData = [];
+            Previos = 'None';
+            putNodes = []
+            //llenado de nodos
+            let i = 0;
+            json.nodos.filter(node => node.identificadorCable != "ACCES POINT").forEach(nodo=> {
+                let SummaryNode;
+                if (nodo.activoAdministrativo == null) {
+                    SummaryNode = ["activo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', '<button class="btn btn-dark">Graficar</button>' ];
+                    //console.log(SummaryNode);
+                }else{
+                    if (nodo.activoAdministrativo){
+                        SummaryNode = ["activo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', '<button class="btn btn-dark">Graficar</button>' ];
+                    }else{
+                        SummaryNode = ["desactivo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', '<button class="btn btn-dark">Graficar</button>' ];
+                    }
+                    //console.log("check this out: "+ SummaryNode);
+                }
+                SummaryNodes.push(SummaryNode);
+                i++;
+                let putAux = [nodo.activoAdministrativo, nodo._id, nodo.idPuerto]
+                putNodes.push(putAux);
+                OIDsData.push(nodo.oid);
+            }); 
+            //despues obtener todos los datos necesarios, genero mi letiable data para empezar busquedas post
+            data = {
+                "ip" : IpEdificio, //ip del edificio
+                "oids" : OIDsData, //OIDs a consultar
+                "previos" : Previos // entrada y salida previa en null dado a que empezamos a consultar
+            };
+            limit = OIDsData.length;
+            //se limpia la tabla para no acumular, ni duplicar datos
+            $('#dataTable').DataTable().clear();
+            //se llena la tabla vacia con el nuevo arreglo de datos
+            $('#dataTable').DataTable().rows.add(SummaryNodes).draw();
+            //console.log("Done");
+            
+        }
+    }
+
+    async function validator(){
+        if (IpEdificio == null) return 0;
+        if (IpEdificio != IpEdificiovalidator) return 0;
+        //Consulta api de lista de nodos por edificio
+        const response = await fetch(
+            "http://148.204.142.162:"+port+"/gestor/nodos/lista/",
+            {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }
+        );
+        //respuesta json
+        const json = await response.json();
+        if(json){
+            console.log(json)
+            Previos = JSON.stringify({ entrada: json.octetos_entrada, salida :  json.octetos_salida})
+            data = {
+                "ip" : IpEdificio, //ip del edificio
+                "oids" : OIDsData, //OIDs a consultar
+                "previos" : Previos
+            };
+            
+            let table = $('#dataTable').DataTable();
+            
+            for(let i =0; i<limit; i++){
+                subida = json.consumo_entrada[i];
+                bajada = json.consumo_salida[i];
+                table.cell({row: i, column: 2}).data(subida);
+                table.cell({row: i, column: 3}).data(bajada);
+                table.cell({row: i, column: 4}).data(subida+bajada);
+            }
+
+        }
+        else{
+            console.log("...");
+        }
+    }
+
+     //apartado de iniciacion de tabla
+    
+     var wop = $('#dataTable').DataTable({
+        dom: "<'row'<'col-3'fi><'col-6 text-center'B><'col-3 text-center'p> >" +
+        "<'row'<'col-12'tr>>" +
+        "<'row'<'col-3'i><'col-6 text-center'B><'col-3 text-center'p> >",
+        data: [],
+        buttons: [
+            {
+                text: "Toggle", className:"btn-dark",
+                action: async function (){
+                    console.log("Deteniendo intervalo");
+                    clearInterval(Mylet);
+                    //instancia de tabla
+                    let table = $('#dataTable').DataTable();
+                    //encuentra todos los checkbox selecionados
+                    var selected = table.rows( function ( idx, data,node) {
+                        return $(node).find('input[type="checkbox"][class="checkToggle"]').prop('checked');
+                    } ).indexes().toArray();
+
+                    console.log("obtencion de recursos para metodo Put");
+
+                    // creo un arreglo de nodos segun se solicitan en metodo put
+                    let nodos=[];
+                    selected.forEach( d => {
+                        let aux;
+                        if (putNodes[d][0]==null){
+                            aux = {
+                                "activoAdministrativo" : true,
+                                "_id" : putNodes[d][1],
+                                "idPuerto" : putNodes[d][2]
+                            }
+                        }else{
+                            aux = {
+                                "activoAdministrativo" : putNodes[d][0],
+                                "_id" : putNodes[d][1],
+                                "idPuerto" : putNodes[d][2]
+                            }
+                        }
+                        nodos.push(aux);
+                    })
+
+
+                   // creo el body
+                    data = {
+                        "ip" : IpEdificio,
+                        "nodos" : nodos
+                    }
+
+                    console.log("debug 3");
+                    // consulta put
+                    const response = await fetch(
+                        "http://148.204.142.162:"+port+"/gestor/nodos/toggle/",
+                        {
+                            method: 'PUT',
+                            headers: {
+                                Accept: 'application/json',
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data)
+                        }
+                    );
+
+                    //respuesta put, aqui se muere basicamente
+                    const res = await response.json();
+                    console.log(res)
+                    if(res.code === 200) {
+                        selected.forEach( d => {
+                            console.log(d)
+                            if (table.cell({row: d, column: 0}).data() == "activo"){
+                                table.cell({row: d, column: 0}).data("desactivo");
+                            }else{
+                                table.cell({row: d, column: 0}).data("activo");
+                            }
+                        })
+                    }
+                    alert("respuesta : "+res.code+ " : "+res.message);
+                    Previos = 'None';
+                    data = {
+                        "ip" : IpEdificio, //ip del edificio
+                        "oids" : OIDsData, //OIDs a consultar
+                        "previos" : Previos // entrada y salida previa en null dado a que empezamos a consultar
+                    };
+                    //reactivando intervalo
+                    Mylet = setInterval(validator, 5000);
+
+                }
+            }, 
+
+            {
+                text: "Check all", className:"btn-dark",
+                action: function (){
+                    let table = $('#dataTable').DataTable();
+                    table.cells(null, 5).every( function () {
+                        var cell = this.node();
+                        $(cell).find('input[type="checkbox"][class="checkToggle"]').prop('checked', true); 
+                    });
+                }
+            },
+            {
+                text: "Uncheck all", className:"btn-dark",
+                action: function (){
+                    let table = $('#dataTable').DataTable();
+                    table.cells(null, 5).every( function () {
+                        var cell = this.node();
+                        $(cell).find('input[type="checkbox"][class="checkToggle"]').prop('checked', false); 
+                    });
+                }
+            },
+        ],
+    });
+
+</script>
 {% endblock customJS %}

@@ -1,0 +1,317 @@
+[
+    {
+        "oid": 1,
+        "identificadorCable": "IDF3P1Nip1",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.1",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 2,
+        "identificadorCable": "IDF3P1Nip2",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.2",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 3,
+        "identificadorCable": "IDF3P1Nip3",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.3",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "METALURGICA I (JAVIER RAMIEREZ)",
+        "ip": ""
+    },
+    {
+        "oid": 4,
+        "identificadorCable": "IDF3P1Nip4",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.4",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "METALURGICA II",
+        "ip": ""
+    },
+    {
+        "oid": 5,
+        "identificadorCable": "IDF3P1Nip5",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.5",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 6,
+        "identificadorCable": "IDF3P1Nip6",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.6",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "AMBIENTAL I FATIMA",
+        "ip": ""
+    },
+    {
+        "oid": 8,
+        "identificadorCable": "IDF3P1Nip8",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.8",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "ALIMENTOS II ARMANDO CHAVEZ",
+        "ip": ""
+    },
+    {
+        "oid": 9,
+        "identificadorCable": "IDF3P1Nip9",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.9",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "AMBIENTAL 4",
+        "ip": ""
+    },
+    {
+        "oid": 10,
+        "identificadorCable": "IDF3P1Nip10",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.10",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 12,
+        "identificadorCable": "IDF3P1Nip12",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.12",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 13,
+        "identificadorCable": "IDF3P1Nip13",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.13",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 15,
+        "identificadorCable": "IDF3P1Nip15",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.15",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 16,
+        "identificadorCable": "IDF3P1Nip16",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.16",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "SALA DE MAESTROS ALIMENTOS",
+        "ip": ""
+    },
+    {
+        "oid": 17,
+        "identificadorCable": "IDF3P1Nip17",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.17",
+        "lugar": "UPIIZ",
+        "planta": "",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "",
+        "ip": ""
+    },
+    {
+        "oid": 18,
+        "identificadorCable": "IDF3P2Nip5",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.18",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "ALIMENTOS 2",
+        "ip": ""
+    },
+    {
+        "oid": 19,
+        "identificadorCable": "IDF3P2Nip1",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.19",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "AMBIENTAL 3",
+        "ip": ""
+    },
+    {
+        "oid": 20,
+        "identificadorCable": "IDF3P2Nip2",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.20",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "SALA DE MAESTROS ALIMENTOS",
+        "ip": ""
+    },
+    {
+        "oid": 21,
+        "identificadorCable": "IDF3P2Nip3",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.21",
+        "lugar": "UPIIZ",
+        "planta": "ALTA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "SALA DE MAESTROS ALIMENTOS",
+        "ip": ""
+    },
+    {
+        "oid": 22,
+        "identificadorCable": "IDF3P2Nip4",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.22",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "142",
+        "activoAdministrativo": "1",
+        "usuario": "ALIMENTOS 1",
+        "ip": "148.204.142.127"
+    },
+    {
+        "oid": 23,
+        "identificadorCable": "IDF3P2Nip6",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.23",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "BIOINGENIERIA RAUDEL",
+        "ip": ""
+    },
+    {
+        "oid": 24,
+        "identificadorCable": "IDF3P2Nip7",
+        "edificio": {
+            "nombre": "Pesados II",
+            "ip": "10.204.142.250"
+        },
+        "idPuerto": "fe.1.24",
+        "lugar": "UPIIZ",
+        "planta": "BAJA",
+        "vlan": "",
+        "activoAdministrativo": "1",
+        "usuario": "METALURGICA I",
+        "ip": ""
+    }
+]

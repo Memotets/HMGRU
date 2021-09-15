@@ -1,0 +1,17 @@
+[
+    {
+        "oid": 33,
+        "identificadorCable": "ACCES POINT",
+        "edificio": {
+            "nombre": "Pesados I",
+            "ip": "10.204.142.249"
+        },
+        "idPuerto": "fe.1.33",
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "activoAdministrativo": "1",
+        "usuario": "UPIIZ Pesados I",
+        "ip": "-"
+    }
+]

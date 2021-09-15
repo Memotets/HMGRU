@@ -1,0 +1,17 @@
+[
+    {
+        "oid": 1,
+        "identificadorCable": "ACCES POINT",
+        "idPuerto": "fe.1.1",
+        "edificio": {
+            "nombre": "Cafeteria",
+            "ip": "10.204.142.248"
+        },
+        "lugar": "UPIIZ",
+        "planta": "-",
+        "vlan": "999",
+        "ip": "-",
+        "usuario": "Cafetería",
+        "activoAdministrativo": true
+    }
+]

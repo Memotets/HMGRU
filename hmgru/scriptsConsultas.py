@@ -20,7 +20,7 @@ def consultaGeneral(port, previos):
 
         url = 'http://148.204.142.162:%s/gestor/DatosRed/' %(port)
         #print(url)
-        '''
+        
         # Creaci+on de la consulta http, es importante terminar con el '/' si se enviará por método POST
         # Asignar un valor a 'data' hace que la consulta sea por POST y en lugar de GET
         req = request.Request(url, data = datos)
@@ -31,7 +31,7 @@ def consultaGeneral(port, previos):
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
         
         return lectura
-        '''
+        
     except Exception as e:
         print(e)
         time.sleep(1)

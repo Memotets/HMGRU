@@ -1,8 +1,0 @@
-django
-djnagorestframework
-djongo
-django-environ
-hweel
-Pillow
-mod_wsgi-httpd
-mod_wsgi

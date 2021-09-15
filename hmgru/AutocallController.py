@@ -2,7 +2,7 @@ import time
 import threading
 import environ
 
-from hmgru.scriptsConsultas import *
+from hmgru.scriptsConsultas import consultaGeneral
 
 class AutocallController:
 

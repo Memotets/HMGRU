@@ -13,8 +13,19 @@ def GeneralGraphView(request):
 def BuildingListView(request):
     env = environ.Env()
     environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+    
+    edificios = [
+        env.dict('LIGEROS_I'),
+        env.dict('LIGEROS_II'),
+        env.dict('PESADOS_I'),
+        env.dict('PESADOS_II'),
+        env.dict('CAFETERIA'),
+        env.dict('GOBIERNO'),
+        env.dict('AULAS_I'),
+        env.dict('AULAS_II')
+    ]
 
-    return render(request, "pages/listaEdificios.html", {"port": env("PORT")})
+    return render(request, "pages/listaEdificios.html", {"edificios": edificios, "port": env("PORT")})
 
 def BuildingGraphView(request):
     # Carga del archivo .env para obtener las credenciales
@@ -24,8 +35,8 @@ def BuildingGraphView(request):
     edificios = [
         env.dict('LIGEROS_I'),
         env.dict('LIGEROS_II'),
-        env.dict('PESADOS_II'),
         env.dict('PESADOS_I'),
+        env.dict('PESADOS_II'),
         env.dict('CAFETERIA'),
         env.dict('GOBIERNO'),
         env.dict('AULAS_I'),
