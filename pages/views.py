@@ -2,6 +2,7 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 import environ
 # Create your views here.
+# wop
 from django.views.generic import TemplateView
 
 def GeneralGraphView(request):
