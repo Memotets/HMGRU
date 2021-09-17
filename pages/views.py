@@ -2,7 +2,6 @@ from django.http.response import HttpResponse
 from django.shortcuts import render
 import environ
 # Create your views here.
-# wop
 from django.views.generic import TemplateView
 
 def GeneralGraphView(request):
@@ -48,4 +47,13 @@ def BuildingGraphView(request):
 
     return render(request, "pages/graficaEdificio.html", {"edificios": edificios, "port": port})
     
+def NodeGraphView(request, id):
+    env = environ.Env()
+    environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+    context = {}
+    context["port"] = env("PORT")
+    context["node"] = id
+    
+    return render(request, "pages/graficaGeneral.html", context)
+
 
