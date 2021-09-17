@@ -101,6 +101,7 @@
         IpEdificiovalidator = IpEdificio;
         //Consulta api de lista de nodos por edificio
         const response = await fetch("http://148.204.142.162:"+port+"/database/lista/nodos/?ip="+IpEdificio);
+        console.log("http://148.204.142.162:"+port+"/database/lista/nodos/?ip="+IpEdificio)
         //respuesta json
         const json = await response.json();
 
@@ -144,7 +145,7 @@
             $('#dataTable').DataTable().clear();
             //se llena la tabla vacia con el nuevo arreglo de datos
             $('#dataTable').DataTable().rows.add(SummaryNodes).draw();
-            //console.log("Done");
+            console.log("Done");
             
         }
     }
