@@ -1,6 +1,11 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render
 import environ
+
+#seguimiento particular de un nodo
+from database.models.Nodos import *
+from bson import ObjectId
+
 # Create your views here.
 from django.views.generic import TemplateView
 
@@ -51,9 +56,10 @@ def NodeGraphView(request, id):
     env = environ.Env()
     environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
     context = {}
+    print(id)
     context["port"] = env("PORT")
-    context["node"] = id
-    
-    return render(request, "pages/graficaGeneral.html", context)
+    context["node"] = Nodos.objects.get(_id = ObjectId(id))
+
+    return render(request, "pages/graficaEdificios.html", context)
 
 
