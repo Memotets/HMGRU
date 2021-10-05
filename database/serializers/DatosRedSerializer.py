@@ -4,6 +4,7 @@ from database.models.DatosRed import DatosRed
 class DatosRedSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
+
         return DatosRed.objects.create(**validated_data)
 
     def is_valid(self, raise_exception=False):
@@ -17,5 +18,5 @@ class DatosRedSerializer(serializers.ModelSerializer):
     class Meta:
         app_label = 'database'
         model = DatosRed
-        fields = ['tipo', 'entrada', 'salida', 'edificio', 'createdAt']
+        fields = ['tipo', 'entrada', 'salida', 'edificio', 'nodo', 'createdAt']
         

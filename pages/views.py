@@ -1,5 +1,5 @@
 from django.http.response import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import environ
 
 #seguimiento particular de un nodo
@@ -8,6 +8,9 @@ from bson import ObjectId
 
 # Create your views here.
 from django.views.generic import TemplateView
+
+def index(request):
+    return redirect('grafica.general')
 
 def GeneralGraphView(request):
     env = environ.Env()
@@ -56,10 +59,21 @@ def NodeGraphView(request, id):
     env = environ.Env()
     environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
     context = {}
-    print(id)
-    context["port"] = env("PORT")
-    context["node"] = Nodos.objects.get(_id = ObjectId(id))
+    edificios = [
+        env.dict('LIGEROS_I'),
+        env.dict('LIGEROS_II'),
+        env.dict('PESADOS_I'),
+        env.dict('PESADOS_II'),
+        env.dict('CAFETERIA'),
+        env.dict('GOBIERNO'),
+        env.dict('AULAS_I'),
+        env.dict('AULAS_II')
+    ]
 
-    return render(request, "pages/graficaEdificios.html", context)
+    context["port"]         = env("PORT")
+    context["node"]         = Nodos.objects.get(_id = ObjectId(id))
+    context["id"]           = id
+    context["edificios"]    = edificios
+    return render(request, "pages/graficaNodo.html", context)
 
 

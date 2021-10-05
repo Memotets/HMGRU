@@ -6,6 +6,7 @@ from pages.views import *
 #from pages.prueba import *
 
 urlpatterns = [
+    path('', index),
     path('grafica/general/', GeneralGraphView, name="grafica.general"),
     path('grafica/edificios/', BuildingGraphView, name="grafica.edificios"),
     path('lista/edificios/', BuildingListView, name="lista.edificios"),

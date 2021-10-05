@@ -122,9 +122,9 @@
                     //console.log(SummaryNode);
                 }else{
                     if (nodo.activoAdministrativo){
-                        SummaryNode = ["activo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', '<button class="btn btn-dark">Graficar</button>' ];
+                        SummaryNode = ["activo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', "<a href='http://148.204.142.162:{{port}}/grafica/nodo/"+nodo._id+"' class='btn btn-dark'>Graficar</a>" ];
                     }else{
-                        SummaryNode = ["desactivo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">', '<button class="btn btn-dark">Graficar</button>' ];
+                        SummaryNode = ["desactivo", nodo.idPuerto, 0,0,0, '<input class="checkToggle" type="checkbox" value="'+i+'" name="toPut[]">',  "<a href='http://148.204.142.162:{{port}}/grafica/nodo/"+nodo._id+"' class='btn btn-dark'>Graficar</a>" ];
                     }
                     //console.log("check this out: "+ SummaryNode);
                 }

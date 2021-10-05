@@ -1,0 +1,16 @@
+###
+GET http://148.204.142.162:3032/database/lista/nodos/?ip=10.204.142.251
+
+###
+POST http://148.204.142.162:3032/gestor/nodos/individual/
+Content-Type: application/json
+
+{
+    "ip": "10.204.142.251",
+    "_id": "613f97cdb99f346542f328b9",
+    "oid": 131,
+    "previos": {
+        "entrada": 1888121664,
+        "salida": 2815971399
+    }
+}

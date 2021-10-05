@@ -12,7 +12,7 @@ class DatosRed(models.Model):
         model_container=Edificio,
         null = True
     )
-    nodo = models.ForeignKey(Nodos, on_delete=models.DO_NOTHING, null=True)
+    nodo = models.ForeignKey(to=Nodos, on_delete=models.DO_NOTHING, null=True, related_name='Nodo', db_column='Nodo')
     createdAt = models.DateTimeField(auto_now=False, auto_now_add=True)
 
     def __str__(self):

@@ -3,8 +3,10 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from datetime import datetime
 
-from database.models.DatosRed import DatosRed
+from database.models.DatosRed import Nodos
 from database.serializers.DatosRedSerializer import DatosRedSerializer
+
+from bson import ObjectId
 
 import environ
 import subprocess
@@ -20,11 +22,11 @@ def DatosRed_general_view(request):
         ip = data['ip']
         previos = ast.literal_eval(data['octetos_previos'])
 
-        previos_entrada = 0 if (previos is None) else int(previos['entrada'])
-        previos_salida =  0 if (previos is None) else int(previos['salida'])
+        previos_entrada = -1 if (previos is None) else int(previos['entrada'])
+        previos_salida =  -1 if (previos is None) else int(previos['salida'])
 
-        previos_entrada_edificio = 0 if (previos is None) else previos['edificios_entrada']
-        previos_salida_edificio =  0 if (previos is None) else previos['edificios_salida']
+        previos_entrada_edificio = -1 if (previos is None) else previos['edificios_entrada']
+        previos_salida_edificio =  -1 if (previos is None) else previos['edificios_salida']
 
         datos_entrada, datos_salida = snmp(ip)
 
@@ -33,6 +35,7 @@ def DatosRed_general_view(request):
 
         octetos_entrada = []
         octetos_salida = []
+
         for i in range(57, 65):
             entrada = int(datos_entrada[i].split()[3])
             salida = int(datos_salida[i].split()[3])
@@ -43,7 +46,7 @@ def DatosRed_general_view(request):
             nuevos_entrada += entrada
             nuevos_salida += salida
 
-        if previos_entrada != 0 and previos_salida != 0 and previos_entrada_edificio != 0 and previos_salida_edificio != 0:
+        if previos_entrada > -1 and previos_salida > -1 and previos_entrada_edificio >-1 and previos_salida_edificio > -1 :
             guardarConsulta((nuevos_entrada - int(previos_entrada)), (nuevos_salida - int(previos_salida)), 0)  
 
             edificios = Meta.edificios
@@ -137,13 +140,15 @@ def  DatosRed_lista_nodos(request):
                     dif_entrada: int = octetos_entrada[i] - previos_entrada[i]
                     dif_salida: int = octetos_salida[i] - previos_salida[i]
 
+                    nodo = Nodos.objects.filter(oid=_ids[i], edificio={'ip': ip}).first()
                     # Guardado del consumo del nodo en base a su oid almacenado en la lista "_ids"
-                    Mbps_entrada, Mbps_salida = guardarConsulta(dif_entrada, dif_salida, 2, nodo=_ids[i]) 
+                    Mbps_entrada, Mbps_salida = guardarConsulta(dif_entrada, dif_salida, 2, nodo=ObjectId(nodo._id))
 
                     consumo_entrada.append(Mbps_entrada)
                     consumo_salida.append(Mbps_salida)
-                except:
+                except Exception as e:
                     print("current index %i" %i)
+                    print(e)
                     break
         else:
             for i in range(0, len(oids)):
@@ -156,6 +161,58 @@ def  DatosRed_lista_nodos(request):
             'consumo_entrada': consumo_entrada,
             'consumo_salida': consumo_salida
         }
+
+        return Response(response)
+
+@api_view(['POST'])
+def Datos_Red_nodo(request):
+    if(request.method == 'POST'):
+        data = request.data
+
+        ip = data['ip']
+        _id = data['_id']
+        oid = int(data['oid'])
+        previos = data['previos']
+
+        if(isinstance(previos, str)):
+            previos = ast.literal_eval(previos)
+
+        previos_entrada = -1 if (previos['entrada'] is None) else previos['entrada']
+        previos_salida = -1 if (previos['salida'] is None) else previos['salida']
+
+        usuario = Meta.env('SNMP_USER')
+        clave = Meta.env('SNMP_PASS')
+
+        snmp_entrada = "snmpget -v3 -l authPriv -u %s -a MD5 -A %s -X %s %s .1.3.6.1.2.1.2.2.1.10.%i" %(usuario, clave, clave, ip, oid)
+        snmp_salida = "snmpget -v3 -l authPriv -u %s -a MD5 -A %s -X %s %s .1.3.6.1.2.1.2.2.1.16.%i" %(usuario, clave, clave, ip, oid)
+
+        consulta_entrada = subprocess.Popen(snmp_entrada.split(), stdout=subprocess.PIPE)
+        consulta_salida = subprocess.Popen(snmp_salida.split(), stdout=subprocess.PIPE)
+
+        respuesta_entrada, errores_entrada = consulta_entrada.communicate()
+        respuesta_salida, errores_salida = consulta_salida.communicate()
+
+        datos_entrada = respuesta_entrada.decode().split('Counter32: ') 
+        datos_salida = respuesta_salida.decode().split('Counter32: ')
+
+        entrada = int(datos_entrada[1])
+        salida = int(datos_salida[1])
+
+        response = {
+            "octetos_entrada": entrada,
+            "octetos_salida": salida
+        }
+
+        if(previos_entrada > -1):
+            dif_entrada = previos_entrada - entrada
+            dif_salida = previos_salida - salida
+
+            Mbps_entrada, Mbps_salida = guardarConsulta(dif_entrada, dif_salida, 2, nodo=ObjectId(_id)) 
+
+            response['consumo_entrada'] = Mbps_entrada
+            response['consumo_salida'] = Mbps_salida
+
+
 
         return Response(response)
         
@@ -210,6 +267,7 @@ def guardarConsulta(dif_entrada, dif_salida, tipo, edificio=None, nodo=None):
     if nodo is not None:
         datos['nodo'] = nodo
 
+    #print(datos)
     serializador_datos_red = DatosRedSerializer(data = datos)
     if serializador_datos_red.is_valid():
         datos_red = serializador_datos_red.save()

@@ -1,0 +1,363 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block pageTitle %}Grafica de nodo específico{% endblock pageTitle %}
+{% block titleOnBlock %}Gráfica de nodo específico{% endblock titleOnBlock %}
+{% block customCSS %}{% endblock customCSS %}
+
+{% block content %}
+   <!-- Your HTML Code -->
+    <div class="col-xl-12 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Grafica de edificio</h6></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="margin" class="chart-area">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!-- Card Example -->
+   
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Entrada</div>
+                      <div id="entrada" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fa fa-sign-in-alt fa-2x"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Salida</div>
+                      <div id="salida" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fa fa-sign-out-alt fa-2x"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+   <!-- Earnings (Monthly) Card Example -->
+   <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                          Mbps</div>
+                      <div id="mbps" class="h5 mb-0 font-weight-bold text-gray-800"> </div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-signal fa-2x"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Earnings (Annual) Card Example -->
+  <div class="col-xl-3 col-md-6 mb-4">
+      <div class="card border-left-polyred shadow h-100 py-2">
+          <div class="card-body">
+              <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                       Ultimo registro</div>
+                      <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                  </div>
+                  <div class="col-auto">
+                      <i class="fas fa-coins fa-2x"></i>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--
+      A continuacion se agregan todas las tarjetas presentación del nodo 
+  -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Estado </div>
+                    <div id="ACTIVOADM" class="mb-0 font-weight-bold"> 
+                        {% if node.activoAdministrativo == null %}
+                        Desactivo 
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="far fa-eye-slash fa-2x"></i>
+                </div>
+                        {% else %}
+                        Activo
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="far fa-eye fa-2x"></i>
+                </div>
+                        {% endif %}
+            </div>
+        </div>
+    </div>
+   </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Object Id </div>
+                    <div id="OID" class="mb-0 font-weight-bold">{{id}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-database fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Switch IP </div>
+                    <div id="IP" class="mb-0 font-weight-bold">{{node.edificio.ip}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-sitemap fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   {% for ed in edificios %}
+   {% if ed.ip == node.edificio.ip %}
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Edificio </div>
+                        <div id="EdificioID" class="mb-0 font-weight-bold">{{ed.nombre}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="far fa-building fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+   {% endif%}
+   {% endfor %}
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        OID de puerto</div>
+                    <div id="PortOID" class="mb-0 font-weight-bold">{{node.oid}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-ethernet fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Lugar</div>
+                    <div id="LUGAR" class="mb-0 font-weight-bold">{{node.lugar}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-torii-gate fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Planta</div>
+                    <div id="PLANTA" class="mb-0 font-weight-bold">{{node.planta}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-door-open fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-polyred shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        VLAN</div>
+                    <div id="VLAN" class="mb-0 font-weight-bold">{{node.vlan}}</div>
+                </div>
+                <div class="col-auto">
+                    <i class="fas fa-download fa-2x"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+
+
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    //obtencion de canvas donde se presentara la grafica
+    var ctx = document.getElementById('myChart').getContext('2d');
+    
+    //creacion de grafica sin datos
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [],
+            datasets: [{
+                label: 'Mbps',
+                data: [],
+                backgroundColor: 'rgba(200, 20, 20, 0.2)',
+                borderColor: 'rgba(200, 20, 20, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+             responsive: true,
+             maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    // intervalo de llamado del nuevo dato
+    var myVar= setInterval(validator, 1000, myChart);
+    let data;
+    let previos = JSON.stringify({'entrada' : -1, 'salida' : -1});
+
+    async function validator(chart){   
+        port = {{ port }};
+        console.log()
+        data ={
+            "ip" : document.getElementById("IP").textContent,
+            "_id" : document.getElementById("OID").textContent,
+            "oid" : document.getElementById("PortOID").textContent,
+            "previos" : previos
+        }
+
+        const response = await fetch(
+            "http://148.204.142.162:"+port+"/gestor/nodos/individual/",
+            {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }
+        );
+        const json = await response.json();
+        if(json){
+            console.log(json)
+            if (previos == JSON.stringify({'entrada' : -1, 'salida' : -1})){
+                previos = JSON.stringify({'entrada' : json.octetos_entrada, 'salida' : json.octetos_salida});
+                return 0;    
+            }else{
+                
+                let mbpsSum = json.consumo_entrada+json.consumo_salida;
+                let da = new Date();
+
+                let hour = da.getHours()+":"+da.getMinutes()+":"+da.getSeconds();
+                let dateForm = ""+da.getDate()+"-"+da.getMonth()+"-"+da.getFullYear()+" "+hour;
+
+                document.getElementById("entrada").innerHTML = ""+json.consumo_entrada.toFixed(3);
+                document.getElementById("salida").innerHTML = ""+json.consumo_salida.toFixed(3);
+                document.getElementById("mbps").innerHTML = ""+mbpsSum.toFixed(3);
+                document.getElementById("date").innerHTML = dateForm;
+                if (chart.data.labels.length == 10){
+                    updateData(myChart, hour, mbpsSum);
+                }
+                else{
+                    addData(myChart, hour, mbpsSum);
+                }
+                previos = JSON.stringify({'entrada' : json.octetos_entrada, 'salida' : json.octetos_salida});
+            }
+        }
+   }
+ 
+    //Eliminación de datos de la grafica
+    function deleteData(chart){
+        chart.data.labels= [];
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data = [];
+        });
+        chart.update();
+    }
+    
+    //actualización de puntos en la grafica dezplansando perdiendo el primer registro
+    function updateData(chart, label, data) {
+        chart.data.labels.shift();
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.shift();
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+    //agregado de punto a la grafica sin perdida de puntos
+    function addData(chart, label, data) {
+        chart.data.labels.push(label);
+        chart.data.datasets.forEach((dataset) => {
+            dataset.data.push(data);
+        });
+        chart.update();
+    }
+ 
+ </script>
+{% endblock customJS %}
