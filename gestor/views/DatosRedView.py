@@ -17,16 +17,19 @@ import ast
 def DatosRed_general_view(request):
     
     if(request.method == 'POST'):
+        
         data = request.data
 
         ip = data['ip']
         previos = ast.literal_eval(data['octetos_previos'])
+        print(previos)
 
         previos_entrada = -1 if (previos is None) else int(previos['entrada'])
         previos_salida =  -1 if (previos is None) else int(previos['salida'])
+        print(previos_entrada)
 
-        previos_entrada_edificio = -1 if (previos is None) else previos['edificios_entrada']
-        previos_salida_edificio =  -1 if (previos is None) else previos['edificios_salida']
+        previos_entrada_edificio = [] if (previos is None) else previos['edificios_entrada']
+        previos_salida_edificio =  [] if (previos is None) else previos['edificios_salida']
 
         datos_entrada, datos_salida = snmp(ip)
 
@@ -35,6 +38,7 @@ def DatosRed_general_view(request):
 
         octetos_entrada = []
         octetos_salida = []
+
 
         for i in range(57, 65):
             entrada = int(datos_entrada[i].split()[3])
@@ -45,8 +49,10 @@ def DatosRed_general_view(request):
             
             nuevos_entrada += entrada
             nuevos_salida += salida
+        print('after for')
 
-        if previos_entrada > -1 and previos_salida > -1 and previos_entrada_edificio >-1 and previos_salida_edificio > -1 :
+        if previos_entrada > -1 :
+            print('if > -1')
             guardarConsulta((nuevos_entrada - int(previos_entrada)), (nuevos_salida - int(previos_salida)), 0)  
 
             edificios = Meta.edificios
@@ -65,8 +71,7 @@ def DatosRed_general_view(request):
             'edificios_entrada':  octetos_entrada,
             'edificios_salida': octetos_salida
         }
-        #print(respuesta)
-
+        
         return Response(response)
 
 """ calcula el consumo de los nodos de un edificio """

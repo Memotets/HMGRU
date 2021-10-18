@@ -96,7 +96,18 @@
 
 <script>
 
-   let ctx = document.getElementById('myChart').getContext('2d');
+   var ctx = document.getElementById('myChart').getContext('2d');
+
+   /*** Gradient ***/
+   var gradient = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient.addColorStop(0, 'rgba(255,0,0,1)');   
+        gradient.addColorStop(0.5, 'rgba(0,255,0,1)');
+    /*** Gradient Background ***/
+   var bgGradient = ctx.createLinearGradient(0, 0, 0, 400);
+        bgGradient.addColorStop(0, 'rgba(255,0,0,0.5)');   
+        bgGradient.addColorStop(0.5, 'rgba(0,255,0,0.5)');
+   /***************/
+
    let myChart = new Chart(ctx, {
        type: 'line',
        data: {
@@ -104,8 +115,8 @@
            datasets: [{
                label: 'Mbps',
                data: [],
-               backgroundColor: 'rgba(200, 20, 20, 0.2)',
-               borderColor: 'rgba(200, 20, 20, 1)',
+               backgroundColor: bgGradient,
+               borderColor: gradient,
                borderWidth: 1
            }]
        },

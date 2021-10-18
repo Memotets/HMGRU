@@ -30,8 +30,10 @@ def consultaGeneral(port, previos):
         dec = res.decode('UTF-8') # Decodificacion de la respuesta como bytes
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
         
+
         return lectura
         
     except Exception as e:
+        print("in exception")
         print(e)
         time.sleep(1)

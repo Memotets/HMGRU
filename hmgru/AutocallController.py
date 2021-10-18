@@ -16,6 +16,7 @@ class AutocallController:
             currentTime = time.strftime("%H:%M:%S")
             #Call request
             octetos = consultaGeneral(port = self.env('PORT'), previos = octetos)
+            print('in thread')
             time.sleep(self.env.float('TIMELAPSE')) #espera de 10 ms
         self.timer(startTime, endTime, octetos)
 
