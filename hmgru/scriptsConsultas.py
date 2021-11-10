@@ -35,3 +35,17 @@ def consultaGeneral(port, previos):
     except Exception as e:
         print(e)
         time.sleep(1)
+
+def generarReporte(port):
+    try:
+        url = 'http://148.204.142.162:%s/database/reporte/generar/?fecha=2021-10-15' %(port)
+
+        req = request.Request(url)
+
+        res = request.urlopen(req).read()
+        #dec = res.decode('UTF-8')
+        
+        return
+    except Exception as e:
+        print(e)
+        

@@ -22,6 +22,7 @@ SECRET_KEY = 'a&(l6)y&dg##)syugbn04jyu4h4i%wn#gng&kfur&vabs578!1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+#DEBUG = True
 
 ALLOWED_HOSTS = [
 	"localhost",
@@ -125,15 +126,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 #configuración aceptada en deamon en github, problema de concatenación en ruta "arreglado"
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-print( STATIC_ROOT)
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), '/static')
+
+#STATIC_URL = '/pages/templates/static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     #os.path.join(BASE_DIR, 'pages/templates/static'),
     os.path.join(BASE_DIR, 'static'),
 )
-
-
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
