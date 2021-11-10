@@ -1,12 +1,13 @@
-from rest_framework.views import APIView
+
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from database.models.DatosRed import DatosRed
 from database.serializers.DatosRedSerializer import DatosRedSerializer
 
-class DatosRedView(APIView):
-
-    def get(self, request):
+@api_view(['GET'])
+def grafica_datos(request):
+    if(request.method == 'GET'):
         data = request.query_params
         
         datos = None
@@ -32,3 +33,4 @@ class DatosRedView(APIView):
             datos_serializer = DatosRedSerializer(datos, many = True)
         
         return Response(datos_serializer.data)
+

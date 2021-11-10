@@ -1,1 +1,1 @@
-from database.views.DatosRedView import DatosRedView;
+#from database.views.DatosRedView import DatosRedView;
