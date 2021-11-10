@@ -1,7 +1,7 @@
 {% extends 'layouts/index.html' %}
 {% load static %}
-{% block pageTitle %}Lista de edificios{% endblock pageTitle %}
-{% block titleOnBlock %}Lista de edificios{% endblock titleOnBlock %}
+{% block pageTitle %}Listas de edificios{% endblock pageTitle %}
+{% block titleOnBlock %}Listas de edificios{% endblock titleOnBlock %}
 
 {% block customCSS %}
 <link href="{% static 'vendor/dataTables/datatables.min.css' %}">
@@ -22,14 +22,15 @@
 {% endblock customCSS %}
 
 {% block content %}
+<div class="row row-primary">
 <div class="col-xl-12 mb-5">
     <div class="card">
         <div class="card-header">
             <div class="row">
-                <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Lista de edificio</h6></div>
+                <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Listas de edificios</h6></div>
                 <div class="col-4 text-right">
                     <select class="focus mb-0" name="menu" onchange="toggle(this)">
-                    <option disabled selected> Chose any </option>
+                    <option disabled selected> Seleccionar edificio  </option>
                     {% for ed in edificios %}
                     <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
                     {% endfor %}
@@ -66,6 +67,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 {% endblock content %}
 

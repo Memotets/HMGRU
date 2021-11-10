@@ -1,15 +1,16 @@
 {% extends 'layouts/index.html' %}
 {% load static %}
-{% block pageTitle %}Grafica general{% endblock pageTitle %}
+{% block pageTitle %}Gráfica general{% endblock pageTitle %}
 {% block titleOnBlock %}Gráfica general{% endblock titleOnBlock %}
 {% block customCSS %}{% endblock customCSS %}
 
 {% block content %}
    <!-- Your HTML Code -->
+<div class="row row-primary">
     <div class="col-xl-12 mb-5">
         <div class="card">
             <div class="card-header">
-                <h6 class="font-weight-bold text-truncate">Grafica general</h6>
+                <h6 class="font-weight-bold text-truncate">Consumo de Mbps</h6>
             </div>
             <div class="card-body">
                 <div id="margin" class="chart-area">
@@ -80,7 +81,7 @@
               <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
-                       Ultimo registro</div>
+                       Último registro</div>
                       <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
                   </div>
                   <div class="col-auto">
@@ -90,6 +91,7 @@
           </div>
       </div>
   </div>
+</div>
 {% endblock content %}
 
 {% block customJS %}
@@ -97,15 +99,23 @@
 <script>
 
    let ctx = document.getElementById('myChart').getContext('2d');
+    /*** Gradient ***/
+    var grd = ctx.createLinearGradient(0, 0, 0, 400);
+        grd.addColorStop(0, 'rgba(255,26,255,1)');   
+        grd.addColorStop(0.5, 'rgba(26, 26, 137,1)');
+    var bgGrd = ctx.createLinearGradient(0, 0, 0, 400);
+        bgGrd.addColorStop(0, 'rgba(255,26,255,0.5)');   
+        bgGrd.addColorStop(0.5, 'rgba(26, 26, 137,0.5)');
+
    let myChart = new Chart(ctx, {
        type: 'line',
        data: {
            labels: [],
            datasets: [{
-               label: 'Mbps',
+               label: 'Consumo general',
                data: [],
-               backgroundColor: 'rgba(200, 20, 20, 0.2)',
-               borderColor: 'rgba(200, 20, 20, 1)',
+               backgroundColor: bgGrd,
+               borderColor: grd,
                borderWidth: 1
            }]
        },
