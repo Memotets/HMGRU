@@ -1,0 +1,386 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block pageTitle %}Generar reportes{% endblock pageTitle %}
+{% block titleOnBlock %}Generar reportes{% endblock titleOnBlock %}
+{% block customCSS %}
+<link href="{% static 'vendor/dataTables/datatables.min.css' %}">
+<!--
+    Importaciones JS necesarias en header para la creación del pdf
+-->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+<!--
+    Estilos no definidos
+-->
+<style>
+    .table .table-bordered{
+        color: #000 ;
+    }
+
+    .page-item.active .page-link {
+        background-color: black !important;
+        color: white !important; 
+        border: 1px solid black;
+    }
+    .page-link {
+        color: black !important;
+    }
+</style>
+{% endblock customCSS %}
+
+{% block content %}
+<div class="row row-primary my-3">
+    <div class="col-xl-12 my-3">
+        <div class = "card card-center">
+            <div class="card-header">
+                <div class = row>
+                    <div class="col-8"><h4 class="font-weight-bold text-truncate mb-1" >Panel de control de reportes</h4></div>
+                    <div class="col-4 text-right">
+                        <select class="custom-select mb-0" id="edificio_select" name="menu" data-style ="bnt btn-dark" onchange="toggle()">
+                            <option disabled selected> Seleccionar edificio </option>
+                            {% for ed in edificios %}
+                            <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <button id="btnReporteGeneral" class="btn btn-dark" onclick="GeneratePDFGeneral()">Último reporte de consumo general</button>
+                <button id="btnReporteEdificio" class="btn btn-dark" onclick="GeneratePDFBuilding()" disabled>Último reporte de consumo de Edificio x</button>
+                <input type="date" id="datePicker">
+            </div>
+        </div>
+      </div>
+</div>
+<div class="row row-primary toPDF">
+  <!-- Your HTML Code -->
+    <div class="col-xl-12 my-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGraficaPrincipal"></h6></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="margin" class="chart-area">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 my-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGraficaEntrada">Entrada</h6></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="margin" class="chart-area">
+                    <canvas id="myChartI"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-6 my-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGraficaSalida">Salida</h6></div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div id="margin" class="chart-area">
+                    <canvas id="myChartO"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-12 my-5">
+        <div class="card">
+            <div class="card-header">
+                <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloLista">Lista de nodos significativos</h6></div>
+            </div>
+            <div class="card-body margin">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Edificio</th>
+                                <th>Nodo</th>
+                                <th>Máquina/Responsable</th>
+                                <th>Media de subida</th>
+                                <th>Media de bajada</th>
+                                <th>Media total</th>
+                                <th>Promedio de alto consumo</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Edificio</th>
+                                <th>Nodo</th>
+                                <th>Máquina/Responsable</th>
+                                <th>Media de subida</th>
+                                <th>Media de bajada</th>
+                                <th>Media total</th>
+                                <th>Promedio de alto consumo</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block customJS %}
+<script src="{% static 'vendor/dataTables/datatables.min.js' %}"></script>
+<script>
+    //obtencion de canvas donde se presentara la grafica
+    let ct  = document.getElementById('myChart').getContext('2d');
+    let ct1 = document.getElementById('myChartI').getContext('2d');    
+    let ct2 = document.getElementById('myChartO').getContext('2d');
+    /*** Gradients ***/
+    let grd = ct.createLinearGradient(0, 0, 0, 400);
+        grd.addColorStop(0, 'rgba(255,26,255,1)');   
+        grd.addColorStop(0.5, 'rgba(26, 26, 137,1)');
+    let bgGrd = ct.createLinearGradient(0, 0, 0, 400);
+        bgGrd.addColorStop(0, 'rgba(255,26,255,0.5)');   
+        bgGrd.addColorStop(0.5, 'rgba(26, 26, 137,0.5)');
+    /***************/
+
+    //Variables generales que son parte del reporte
+    let etiquetasGenerales = [
+        "07:00-7:30", "07:30-8:00",
+        "08:00-8:30", "08:30-9:00",
+        "09:00-9:30", "09:30-10:00",
+        "10:00-10:30", "10:30-11:00",
+        "11:00-11:30", "11:30-12:00",
+        "12:00-12:30", "12:30-13:00",
+        "13:00-13:30", "01:30-14:00",
+        "14:00-14:30", "02:30-15:00",
+        "15:00-15:30", "03:30-16:00",  
+    ];
+    let valoresGraficaGeneral = [];
+    let valoresGraficaEntrada = [];
+    let valoresGraficaSalida = [];
+    //arreglo que almacena los datos de nodos en la tabla
+    let summaryNodes = [];
+
+    function toggle(){
+        $("#btnReporteEdificio").removeAttr("disabled")
+    }
+    //creacion de grafica sin datos
+    function DefinirGrafica(ctx, graphLabel, valores){
+
+        grafica = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: etiquetasGenerales,
+                datasets: [{
+                    label: graphLabel,
+                    data: valores,
+                    backgroundColor: bgGrd,
+                    borderColor: grd,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        return grafica;
+    }
+   
+    //variable global indica tipó de reporte
+    let tipoConsulta;
+    let IpEdificio;
+    let fechaReporte;
+    let data;
+    let port = {{ port }}
+
+    let myChart;
+
+    $('.btn').click(function() {
+        $('html, body').animate({
+            scrollTop: $(".toPDF").offset().top
+        });
+    });
+    
+    //Llenado del date picker especifico para las consultas api
+    let today = new Date();
+    let yesterday = new Date(today);
+    yesterday.setDate(yesterday.getDate() - 1);
+    let tomorrow = new Date(today);
+    tomorrow.setDate(yesterday.getDate() + 1);
+    $('#datePicker').val(yesterday.toISOString().substring(0, 10));
+    $(document).ready(function() {
+        $("#datePicker").attr({
+        "max" : tomorrow.toISOString().substring(0, 10),
+        "min" : "2021-10-15"
+        });
+    });
+
+    async function GeneratePDFGeneral(){
+        
+        tipoConsulta=0;
+        fechaReporte=$('#datePicker').val();
+        data="?tipo="+tipoConsulta+"&fecha="+fechaReporte;        
+        var name= "Reporte_"+fechaReporte+"_General";
+        
+        await FullingData();
+        sleep(1000).then(() => { getPDF(name);});
+    }
+    
+    async function GeneratePDFBuilding(){
+
+        tipoConsulta=1;
+        fechaReporte=$('#datePicker').val();
+        IpEdificio = $("#edificio_select option").filter(":selected").val();
+        data="?tipo="+tipoConsulta+"&fecha="+fechaReporte+"&ip="+IpEdificio;
+        var name= "Reporte_"+fechaReporte+"_"+$('#datePicker');
+        console.log(name);
+        await FullingData();
+        sleep(1000).then(() => { getPDF(name);});
+    }
+
+    async function FullingData(){
+        //funcion generación de reportes
+        const response =  await fetch(
+            "http://148.204.142.162:"+port+"/database/reporte/consultar/"+data,
+            {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+            }
+        );
+
+        
+
+        const json = await response.json();
+        defArrays(json);
+        defTable(json);
+
+        document.getElementById("TituloGraficaPrincipal").innerHTML = "Gráfica de general"; // cambio de titulo
+        
+        //console.log(valoresGraficaEntrada)
+        myChart = DefinirGrafica(ct, "Consumo general", valoresGraficaGeneral);
+        myChart.update();
+
+        myChart = DefinirGrafica(ct1, "Consumo entrada", valoresGraficaEntrada);
+        myChart.update();
+
+        myChart = DefinirGrafica(ct2, "Consumo salida", valoresGraficaSalida);
+        myChart.update();
+        
+    }
+    
+    function defArrays(json){
+        valoresGraficaGeneral = [];
+        valoresGraficaEntrada = [];
+        valoresGraficaSalida = [];
+        if(json){
+            //console.log(json)
+            json.reporte.mediaTotal.forEach(entry => {
+                valoresGraficaGeneral.push(entry.valor);
+            });
+            json.reporte.mediaEntrada.forEach(entry => {
+                valoresGraficaEntrada.push(entry.valor);
+            });
+            json.reporte.mediaSalida.forEach(entry => {
+                valoresGraficaSalida.push(entry.valor);
+            });
+        }
+    }
+
+    function defTable(json){
+        summaryNodes=[];
+        if(json){
+            for (let i =0; i < 5; i++ ){
+                //console.log(json.reporte.topNodos[i])
+                let edif = JSON.parse(json.topNodos[i].edificio);
+                let SummaryNode=[
+                    i+1, 
+                    edif.nombre, 
+                    json.topNodos[i].oid, 
+                    json.topNodos[i].usuario,
+                    json.reporte.topNodos[i].mediaSalida,
+                    json.reporte.topNodos[i].mediaEntrada,
+                    json.reporte.topNodos[i].mediaTotal,
+                    0
+                ];
+                summaryNodes.push(SummaryNode);
+            }
+            //se limpia la tabla para no acumular, ni duplicar datos
+            $('#dataTable').DataTable().clear();
+            //se llena la tabla vacia con el nuevo arreglo de datos
+            $('#dataTable').DataTable().rows.add(summaryNodes).draw();
+        }
+    }
+
+    function getPDF(nombrePDF){
+        // --- --- --- Definiciones generales a la hora de crear PDF --- --- --- 
+
+        //Dimenciones del Div a imprimir
+        var HTML_Width = $(".toPDF").width();
+        var HTML_Height = $(".toPDF").height();
+        //Margen estandar para doc pdf y medidas del mismo
+        var top_left_margin = 25;
+        var PDF_Width = HTML_Width+(top_left_margin*2);
+        var PDF_Height = (PDF_Width*1.5)+(top_left_margin*2);
+        //Escala de imagen 1:1
+        var canvas_image_width = HTML_Width;
+        var canvas_image_height = HTML_Height;
+        //Cantidad total de paginas 
+        var totalPDFPages = Math.ceil(HTML_Height/PDF_Height)-1;
+
+        // --- --- --- Conversion de imagen a pdf --- --- --- 
+
+        //obtenemos el div y lo convertimos a un cavas para después pasar el cavas aun formato de imagen
+        html2canvas($(".toPDF")[0],{allowTaint:true}).then(function(canvas) {
+            canvas.getContext('2d');
+            //console.log(canvas.height+"  "+canvas.width);
+            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+
+            //Aquí creamos un pdf con las dimensiones definidas, y agregamos la primer imagen 
+            var pdf = new jsPDF('p', 'pt',  [PDF_Width, PDF_Height]);
+            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin,canvas_image_width,canvas_image_height);
+            
+            //en caso de tener un arreglo de divs con el mismo nombre, se agregan más imagenes  
+            for (var i = 1; i <= totalPDFPages; i++) { 
+                pdf.addPage(PDF_Width, PDF_Height);
+                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+            }
+            //se manda a guardar el pdf resultante
+            pdf.save(nombrePDF+".pdf");
+        });
+    };
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+
+    //Apartado para la definición vacia de la tabla en el reporte
+    var wop = $('#dataTable').DataTable({
+        dom: "<'row'<'col-3'><'col-6 text-center'><'col-3 text-center'> >" +
+        "<'row'<'col-12'tr>>" +
+        "<'row'<'col-3'i><'col-6 text-center'><'col-3 text-center'p> >",
+        data: [],
+        buttons: [],
+    });
+    
+ </script>
+{% endblock customJS %}

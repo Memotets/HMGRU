@@ -2,7 +2,7 @@ import time
 import threading
 import environ
 
-from hmgru.scriptsConsultas import consultaGeneral
+from hmgru.scriptsConsultas import consultaGeneral, generarReporte
 
 class AutocallController:
 
@@ -39,6 +39,9 @@ class AutocallController:
                 #something when wrong so we reactive te serv or serv was active lately
                 #print("Autocall will running on Current time: "+currentTime)
                 break
+
+            if(startTime > "18:00:00" and startTime < "18:03:00"):
+                generarReporte(self.env('PORT'))
 
             #waiting time
             if (startTime ==  "07:00:00" and endTime == "16:00:00"):

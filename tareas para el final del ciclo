@@ -1,0 +1,4 @@
+reactivar gunicorn.socket
+reactivar gunicorn
+reactivar nginx
+configurar el timeout de gunicorn y nginx

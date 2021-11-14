@@ -1,16 +1,17 @@
 {% extends 'layouts/index.html' %}
 {% load static %}
-{% block pageTitle %}Grafica de nodo específico{% endblock pageTitle %}
+{% block pageTitle %}Gráfica de nodo específico{% endblock pageTitle %}
 {% block titleOnBlock %}Gráfica de nodo específico{% endblock titleOnBlock %}
 {% block customCSS %}{% endblock customCSS %}
 
 {% block content %}
    <!-- Your HTML Code -->
+<div class="row row-primary">
     <div class="col-xl-12 mb-5">
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Grafica de edificio</h6></div>
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Consumo de Mbps del nodo {{node.oid}} de {% for ed in edificios %}{% if ed.ip == node.edificio.ip %}{{ed.nombre}}{% endif%}{% endfor %}</h6></div>
                 </div>
             </div>
             <div class="card-body">
@@ -20,9 +21,7 @@
             </div>
         </div>
     </div>
-
    <!-- Card Example -->
-   
   <div class="col-xl-3 col-md-6 mb-4">
       <div class="card border-left-polyred shadow h-100 py-2">
           <div class="card-body">
@@ -82,7 +81,7 @@
               <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
-                       Ultimo registro</div>
+                       Último registro</div>
                       <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
                   </div>
                   <div class="col-auto">
@@ -100,25 +99,31 @@
     <div class="card border-left-polyred shadow h-100 py-2">
         <div class="card-body">
             <div class="row no-gutters align-items-center">
+                {% if node.activoAdministrativo == null %}
                 <div class="col mr-2">
                     <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
-                        Estado </div>
+                        Estado 
+                    </div>
                     <div id="ACTIVOADM" class="mb-0 font-weight-bold"> 
-                        {% if node.activoAdministrativo == null %}
                         Desactivo 
                     </div>
                 </div>
                 <div class="col-auto">
                     <i class="far fa-eye-slash fa-2x"></i>
                 </div>
-                        {% else %}
-                        Activo
+                {% else %}
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
+                        Estado 
+                    </div>
+                    <div id="ACTIVOADM" class="mb-0 font-weight-bold"> 
+                        Activo 
                     </div>
                 </div>
                 <div class="col-auto">
                     <i class="far fa-eye fa-2x"></i>
                 </div>
-                        {% endif %}
+                {% endif %}
             </div>
         </div>
     </div>
@@ -244,7 +249,7 @@
         </div>
     </div>
    </div>
-
+</div>
 
 {% endblock content %}
 
@@ -253,25 +258,35 @@
     //obtencion de canvas donde se presentara la grafica
     var ctx = document.getElementById('myChart').getContext('2d');
     /*** Gradient ***/
-    var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(255,0,0,1)');   
-        gradient.addColorStop(0.5, 'rgba(0,255,0,1)');
-    /*** Gradient Background ***/
-    var bgGradient = ctx.createLinearGradient(0, 0, 0, 400);
-        bgGradient.addColorStop(0, 'rgba(255,0,0,0.5)');   
-        bgGradient.addColorStop(0.5, 'rgba(0,255,0,0.5)');
-    /***************/
+    var grd = ctx.createLinearGradient(0, 0, 0, 400);
+        grd.addColorStop(0, 'rgba(255,26,255,1)');   
+        grd.addColorStop(0.5, 'rgba(26, 26, 137,1)');
+    var bgGrd = ctx.createLinearGradient(0, 0, 0, 400);
+        bgGrd.addColorStop(0, 'rgba(255,26,255,0.5)');   
+        bgGrd.addColorStop(0.5, 'rgba(26, 26, 137,0.5)');
 
+    //Arreglo de string
+    function reemplazarCadena(cadenaVieja, cadenaNueva, cadenaCompleta) {
+        // Reemplaza cadenaVieja por cadenaNueva en cadenaCompleta
+        for (var i = 0; i < cadenaCompleta.length; i++) {
+            if (cadenaCompleta.substring(i, i + cadenaVieja.length) == cadenaVieja) {
+                cadenaCompleta= cadenaCompleta.substring(0, i) + cadenaNueva + cadenaCompleta.substring(i + cadenaVieja.length, cadenaCompleta.length);
+            }
+        }
+        return cadenaCompleta;
+    }
+
+    let GraphLabel = reemplazarCadena("Consumo de Mbps del ", "", document.getElementById("TituloGrafica").innerHTML);
     //creacion de grafica sin datos
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
             labels: [],
             datasets: [{
-                label: 'Mbps',
+                label: GraphLabel,
                 data: [],
-                backgroundColor: bgGradient,
-                borderColor: gradient,
+                backgroundColor: bgGrd,
+                borderColor: grd,
                 borderWidth: 1
             }]
         },

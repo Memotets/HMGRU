@@ -1909,7 +1909,7 @@ input[type="month"].form-control {
 }
 
 select.form-control:focus::-ms-value {
-  color: #6e707e;
+  color: #000;
   background-color: #fff;
 }
 
@@ -3641,8 +3641,8 @@ input[type="button"].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #4e73df;
-  background-color: #4e73df;
+  border-color: #891A1A;
+  background-color: #891A1A;
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
@@ -3711,12 +3711,12 @@ input[type="button"].btn-block {
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 1.75rem 0.375rem 0.75rem;
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 00;
   line-height: 1.5;
-  color: #6e707e;
+  color: #000;
   vertical-align: middle;
-  background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%235a5c69' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat;
-  border: 1px solid #d1d3e2;
+  background: #fff;
+  border: 1px solid #891A1A;
   border-radius: 0.35rem;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -3726,11 +3726,11 @@ input[type="button"].btn-block {
 .custom-select:focus {
   border-color: #bac8f3;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+  box-shadow: 0 0 0 0.15rem #891A1A;
 }
 
 .custom-select:focus::-ms-value {
-  color: #6e707e;
+  color: #000;
   background-color: #fff;
 }
 
@@ -3741,8 +3741,8 @@ input[type="button"].btn-block {
 }
 
 .custom-select:disabled {
-  color: #858796;
-  background-color: #eaecf4;
+  color: #fff;
+  background-color: #000;
 }
 
 .custom-select::-ms-expand {
@@ -4502,7 +4502,7 @@ input[type="button"].btn-block {
 .card-center {
   display: flex;
   justify-content: center !important;
-  border: 1px solid #f70202;
+  border: 4px solid #000;
 }
 
 .card > hr {

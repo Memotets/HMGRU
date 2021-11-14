@@ -1,6 +1,9 @@
 from urllib import request, parse
+from socket import timeout
 import ast
 import time
+
+import logging
 
 def consultaGeneral(port, previos):
     '''
@@ -26,7 +29,7 @@ def consultaGeneral(port, previos):
         req = request.Request(url, data = datos)
 
         # Envío de la consulta y procesamiento de la respuesta
-        res = request.urlopen(req).read() # Lectura de la respuesta
+        res = request.urlopen(req, timeout=-1).read() # Lectura de la respuesta
         dec = res.decode('UTF-8') # Decodificacion de la respuesta como bytes
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
         
@@ -37,3 +40,42 @@ def consultaGeneral(port, previos):
         print("in exception")
         print(e)
         time.sleep(1)
+
+def generarReporte(port):
+    try:
+        logging.basicConfig(
+            filemode='a',
+            filename='Autocall.log',
+            datefmt='%H:%M:%S',
+            format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
+            level=logging.INFO
+        )
+        logger = logging.getLogger(__name__)
+        logger.info(port)
+
+        logger.info('entrando al script')
+        print('entrando la script')
+        url = 'http://148.204.142.162:%s/database/reporte/generar/?fecha=2021-10-15' %(port)
+        logger.info(url)
+
+        req = request.Request(url)
+        logger.info(url)
+
+        res = request.urlopen(req).read()
+        dec = res.decode('UTF-8')
+        
+        logger.info(dec)
+        return
+    except Exception as e:
+        logging.basicConfig(
+            filemode='a',
+            filename='Autocall.log',
+            datefmt='%H:%M:%S',
+            format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
+            level=logging.ERROR
+        )
+        logger = logging.getLogger(__name__)
+
+        logger.error(e)
+        print(e)
+        

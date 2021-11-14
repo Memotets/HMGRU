@@ -1,19 +1,20 @@
 {% extends 'layouts/index.html' %}
 {% load static %}
-{% block pageTitle %}Grafica de edificios{% endblock pageTitle %}
+{% block pageTitle %}Gráfica de edificios{% endblock pageTitle %}
 {% block titleOnBlock %}Gráfica de Edificios{% endblock titleOnBlock %}
 {% block customCSS %}{% endblock customCSS %}
 
 {% block content %}
    <!-- Your HTML Code -->
+<div class="row row-primary">
     <div class="col-xl-12 mb-5">
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Grafica de edificio</h6></div>
+                    <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Consumo de Mbps por edificio</h6></div>
                     <div class="col-4 text-right">
-                        <select class="focus mb-0" name="menu" onchange="toggle(this)">
-                        <option disabled selected> Chose any </option>
+                        <select class="focus mb-0 text-center" name="menu" onchange="toggle(this)">
+                        <option disabled selected>Seleccionar edificio</option>
                         {% for ed in edificios %}
                         <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
                         {% endfor %}
@@ -90,7 +91,7 @@
               <div class="row no-gutters align-items-center">
                   <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-polyred text-uppercase mb-1">
-                       Ultimo registro</div>
+                       Último registro</div>
                       <div id="date" class="h5 mb-0 font-weight-bold text-gray-800"></div>
                   </div>
                   <div class="col-auto">
@@ -100,23 +101,21 @@
           </div>
       </div>
   </div>
+</div>
 {% endblock content %}
 
 {% block customJS %}
 <script>
     //obtencion de canvas donde se presentara la grafica
-    var ctx = document.getElementById('myChart').getContext('2d');
-
-     /*** Gradient ***/
-     var gradient = ctx.createLinearGradient(0, 0, 0, 400);
-        gradient.addColorStop(0, 'rgba(255,0,0,1)');   
-        gradient.addColorStop(0.5, 'rgba(0,255,0,1)');
-    /*** Gradient Background ***/
-    var bgGradient = ctx.createLinearGradient(0, 0, 0, 400);
-        bgGradient.addColorStop(0, 'rgba(255,0,0,0.5)');   
-        bgGradient.addColorStop(0.5, 'rgba(0,255,0,0.5)');
-    /***************/
-
+    let ctx = document.getElementById('myChart').getContext('2d');
+    /*** Gradient ***/
+    var grd = ctx.createLinearGradient(0, 0, 0, 400);
+        grd.addColorStop(0, 'rgba(255,26,255,1)');   
+        grd.addColorStop(0.5, 'rgba(26, 26, 137,1)');
+    var bgGrd = ctx.createLinearGradient(0, 0, 0, 400);
+        bgGrd.addColorStop(0, 'rgba(255,26,255,0.5)');   
+        bgGrd.addColorStop(0.5, 'rgba(26, 26, 137,0.5)');
+    
     //creacion de grafica sin datos
     let myChart = new Chart(ctx, {
         type: 'line',
@@ -125,8 +124,8 @@
             datasets: [{
                 label: 'Mbps',
                 data: [],
-                backgroundColor: bgGradient,
-                borderColor: gradient,
+                backgroundColor: bgGrd,
+                borderColor: grd,
                 borderWidth: 1
             }]
         },
@@ -148,8 +147,9 @@
     //funcion toggle que setea el nuevo valor 
     function toggle(el){
         ipEdificio = el.options[el.selectedIndex].value;
-        document.getElementById("TituloGrafica").innerHTML = "Grafica de "+el.options[el.selectedIndex].text;// cambio de titulo
+        document.getElementById("TituloGrafica").innerHTML = "Consumo de Mbps de "+el.options[el.selectedIndex].text;// cambio de titulo
         deleteData(myChart);//simulación de cambio de grafica
+        myChart.data.datasets[0].label = el.options[el.selectedIndex].text;
     }
     //funcion dentro del intervalo para llamar al nuevo valor
     async function validator(chart){
@@ -218,14 +218,6 @@
             dataset.data.push(data);
         });
         chart.update();
-    }
-//simulacion de sleep
-    function sleep(milliseconds) {
-        const date = Date.now();
-        let currentDate = null;
-        do {
-            currentDate = Date.now();
-        } while (currentDate - date < milliseconds);
     }
  </script>
 {% endblock customJS %}
