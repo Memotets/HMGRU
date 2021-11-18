@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Listas de edificios</h6></div>
                 <div class="col-4 text-right">
-                    <select class="focus mb-0" name="menu" onchange="toggle(this)">
+                    <select class="custom-select focus mb-0" name="menu" onchange="toggle(this)">
                     <option disabled selected> Seleccionar edificio  </option>
                     {% for ed in edificios %}
                     <option value= "{{ed.ip}}"> {{ed.nombre}} </option>

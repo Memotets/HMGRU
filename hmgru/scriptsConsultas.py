@@ -1,9 +1,17 @@
 from urllib import request, parse
-from socket import timeout
 import ast
 import time
 
 import logging
+
+logging.basicConfig(
+    filemode='a',
+    filename='Autocall.log',
+    datefmt='%H:%M:%S',
+    format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
+    level=logging.INFO
+)
+logger = logging.getLogger(__name__)
 
 def consultaGeneral(port, previos):
     '''
@@ -29,7 +37,7 @@ def consultaGeneral(port, previos):
         req = request.Request(url, data = datos)
 
         # Envío de la consulta y procesamiento de la respuesta
-        res = request.urlopen(req, timeout=-1).read() # Lectura de la respuesta
+        res = request.urlopen(req).read() # Lectura de la respuesta
         dec = res.decode('UTF-8') # Decodificacion de la respuesta como bytes
         lectura = ast.literal_eval(dec) # Convercion de la respuesta de bytes a diccionario
         
@@ -37,20 +45,13 @@ def consultaGeneral(port, previos):
         return lectura
         
     except Exception as e:
-        print("in exception")
-        print(e)
+        logger.error("error de consultaa general")
+        logger.error(e)
         time.sleep(1)
+        return previos
 
 def generarReporte(port):
     try:
-        logging.basicConfig(
-            filemode='a',
-            filename='Autocall.log',
-            datefmt='%H:%M:%S',
-            format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
-            level=logging.INFO
-        )
-        logger = logging.getLogger(__name__)
         logger.info(port)
 
         logger.info('entrando al script')
@@ -67,14 +68,6 @@ def generarReporte(port):
         logger.info(dec)
         return
     except Exception as e:
-        logging.basicConfig(
-            filemode='a',
-            filename='Autocall.log',
-            datefmt='%H:%M:%S',
-            format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
-            level=logging.ERROR
-        )
-        logger = logging.getLogger(__name__)
 
         logger.error(e)
         print(e)

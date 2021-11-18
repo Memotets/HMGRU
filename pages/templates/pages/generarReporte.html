@@ -31,7 +31,7 @@
 {% block content %}
 <div class="row row-primary my-3">
     <div class="col-xl-12 my-3">
-        <div class = "card card-center">
+        <div class = "card">
             <div class="card-header">
                 <div class = row>
                     <div class="col-8"><h4 class="font-weight-bold text-truncate mb-1" >Panel de control de reportes</h4></div>
@@ -39,15 +39,15 @@
                         <select class="custom-select mb-0" id="edificio_select" name="menu" data-style ="bnt btn-dark" onchange="toggle()">
                             <option disabled selected> Seleccionar edificio </option>
                             {% for ed in edificios %}
-                            <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
+                            <option value= "{{ed.ip}}">{{ed.nombre}}</option>
                             {% endfor %}
                         </select>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <button id="btnReporteGeneral" class="btn btn-dark" onclick="GeneratePDFGeneral()">Último reporte de consumo general</button>
-                <button id="btnReporteEdificio" class="btn btn-dark" onclick="GeneratePDFBuilding()" disabled>Último reporte de consumo de Edificio x</button>
+                <a id="btnReporteGeneral" class="btn btn-dark btn-user" onclick="GeneratePDFGeneral()">Último reporte de consumo general</a>
+                <a id="btnReporteEdificio" class="btn btn-dark btn-user disabled" onclick="GeneratePDFBuilding()">Último reporte de consumo de Edificio x</a>
                 <input type="date" id="datePicker">
             </div>
         </div>
@@ -173,7 +173,8 @@
     let summaryNodes = [];
 
     function toggle(){
-        $("#btnReporteEdificio").removeAttr("disabled")
+        const botonEdi = document.querySelector('#btnReporteEdificio');
+        botonEdi.classList.remove('disabled');
     }
     //creacion de grafica sin datos
     function DefinirGrafica(ctx, graphLabel, valores){
@@ -239,7 +240,7 @@
         data="?tipo="+tipoConsulta+"&fecha="+fechaReporte;        
         var name= "Reporte_"+fechaReporte+"_General";
         
-        await FullingData();
+        await FullingData(" general");
         sleep(1000).then(() => { getPDF(name);});
     }
     
@@ -248,14 +249,17 @@
         tipoConsulta=1;
         fechaReporte=$('#datePicker').val();
         IpEdificio = $("#edificio_select option").filter(":selected").val();
+        textEdificio = $("#edificio_select option").filter(":selected").text();
+
         data="?tipo="+tipoConsulta+"&fecha="+fechaReporte+"&ip="+IpEdificio;
-        var name= "Reporte_"+fechaReporte+"_"+$('#datePicker');
-        console.log(name);
-        await FullingData();
+        
+        var name= "Reporte_" + fechaReporte + "_"+ textEdificio;
+        
+        await FullingData(" de "+textEdificio.toLowerCase());
         sleep(1000).then(() => { getPDF(name);});
     }
 
-    async function FullingData(){
+    async function FullingData(nameTable){
         //funcion generación de reportes
         const response =  await fetch(
             "http://148.204.142.162:"+port+"/database/reporte/consultar/"+data,
@@ -273,8 +277,8 @@
         const json = await response.json();
         defArrays(json);
         defTable(json);
-
-        document.getElementById("TituloGraficaPrincipal").innerHTML = "Gráfica de general"; // cambio de titulo
+        
+        document.getElementById("TituloGraficaPrincipal").innerHTML = "Gráfica" + nameTable ; // cambio de titulo
         
         //console.log(valoresGraficaEntrada)
         myChart = DefinirGrafica(ct, "Consumo general", valoresGraficaGeneral);

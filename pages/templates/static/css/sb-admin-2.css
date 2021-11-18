@@ -4502,7 +4502,6 @@ input[type="button"].btn-block {
 .card-center {
   display: flex;
   justify-content: center !important;
-  border: 4px solid #000;
 }
 
 .card > hr {
@@ -6491,13 +6490,13 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #5a5c69 !important;
+  background-color: #111 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
-  background-color: #42444e !important;
+  background-color: #000 !important;
 }
 
 .bg-white {
@@ -9911,11 +9910,15 @@ a:focus {
   -webkit-animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
   animation-timing-function: opacity cubic-bezier(0, 1, 0.4, 1);
 }
-
 .bg-gradient-primary {
-  background-color: #4e73df;
-  background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
-  background-size: cover;
+    background-color: #4e73df;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-size: cover;
+}
+.bg-gradient-login {
+    background-color: #891A1A;
+    background-image: linear-gradient(180deg, #993A5C 10%, #891A1A 100%);
+    background-size: cover;
 }
 
 .bg-gradient-secondary {

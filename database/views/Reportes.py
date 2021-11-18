@@ -70,39 +70,46 @@ def datos_reporte(request):
     if(request.method == 'GET'):
         print("consultando")
 
-        data = request.query_params
-        fecha = data['fecha']
+        #data = request.query_params
+        #fecha = str(datetime.date.today())
+        fecha = '2021-11-17'
         port = env('PORT')
 
         f = datetime.date.today()
         print(f.strftime("%Y-%m-%d"))
 
         try:
-            
-
             logger.info("Ligeros I")
             nodos_ligeros_i = reportar(fecha, 1, port, edificio=env.dict('LIGEROS_I'))
             logger.info("Ligeros II")
             nodos_ligeros_ii = reportar(fecha, 1, port, edificio=env.dict('LIGEROS_II'))
+            logger.info("Pesados I")
             nodos_pesados_i = reportar(fecha, 1, port, edificio=env.dict('PESADOS_I'))
+            logger.info("Pesados II")
             nodos_pesados_ii = reportar(fecha, 1, port, edificio=env.dict('PESADOS_II'))
+            logger.info("Cafeteria")
             nodos_cafeteria = reportar(fecha, 1, port, edificio=env.dict('CAFETERIA'))
-            nodos_govierno = reportar(fecha, 1, port, edificio=env.dict('GOBIERNO'))
+            logger.info("Gobierno")
+            nodos_gobierno = reportar(fecha, 1, port, edificio=env.dict('GOBIERNO'))
+            logger.info("Aulad I")
             nodos_aulas_i = reportar(fecha, 1, port, edificio=env.dict('AULAS_I'))
+            logger.info("Aulas II")
             nodos_aulas_ii = reportar(fecha, 1, port, edificio=env.dict('AULAS_II'))
 
-            tops = nodos_ligeros_i + nodos_ligeros_ii + nodos_pesados_i + nodos_pesados_ii + nodos_cafeteria + nodos_govierno + nodos_aulas_i + nodos_aulas_ii
-            
+            tops = nodos_ligeros_i + nodos_ligeros_ii + nodos_pesados_i + nodos_pesados_ii + nodos_cafeteria + nodos_gobierno + nodos_aulas_i + nodos_aulas_ii
+
+            logger.info("Reporte global")            
             reportar(fecha, 0, port, tops=tops)
             
+            logger.info("Reportes generados")
             return Response({'status': True})
         except Exception as e:
-            logger.info(e)
+            logger.error("error general")
+            logger.error(e)
+            return Response({'error': e})
 
 def reportar(fecha, tipo, port, edificio=None, tops=None):
-    logger.info("Reportando")
     consumos = consultaDatos(fecha, tipo, edificio['ip']) if edificio is not None else consultaDatos(fecha, tipo)
-    logger.info(consumos)
     nodos = None
     mediaTotal = []
     mediaEntrada = []
@@ -136,15 +143,14 @@ def reportar(fecha, tipo, port, edificio=None, tops=None):
         topNodos.append(nodo)
 
     datos['topNodos'] = topNodos
-    
+
     serializador_reporte = ReportesSerializer(data=datos)
 
     if serializador_reporte.is_valid():
-        print("All  OK")
         serializador_reporte.save()
     else:
-        print("Something went wrong")
-        print(serializador_reporte.errors)
+        logger.info("ERROR: Something went wrong")
+        logger.info(serializador_reporte.errors)
     
     return nodos
 def consultaDatos(fecha, tipo, ip=None):
@@ -169,10 +175,7 @@ def consultaDatos(fecha, tipo, ip=None):
 
     try:
         for i in range(0,18):
-            print(inicio[i])
-            logger.info(inicio[i])
             datos = DatosRed.objects.filter(tipo = tipo, createdAt__gte = inicio[i], createdAt__lte = fin[i])
-            logger.info(datos)
             
             if(tipo == 1):
                 datos = datos.filter(edificio = {'ip': ip})
@@ -209,7 +212,7 @@ def busquedaNodos(ip, port, fecha):
         rep = rep.replace("}\"", "}") # Eliminación de comillas innecesarias 2
 
         dict = json.loads(rep) # Conberción de la respuesta purgada en diccionario de Python
-
+        
         nodos = dict['nodos'] # Separacion de los nodos del dicconario
 
         promedios = list() # Lista que almacenará los promedios de todos los nodos del edificio 
@@ -223,7 +226,6 @@ def busquedaNodos(ip, port, fecha):
         nodos_monitoreados = DatosRed.objects.filter(tipo=2, createdAt__gte = inicio, createdAt__lte = fin) # filtro de los datos del nodo
         
         ''' Recorremos todos los nodos del edificio y calculamos sus promedios '''
-        print('promedando nodos')
         for nodo in nodos:
             id = nodo['_id'] # _id del nodo que estamos consultando actualmente
             print(id)
@@ -236,7 +238,7 @@ def busquedaNodos(ip, port, fecha):
             for dato in datos:
                 promedio_entrada = promedio_entrada + dato.entrada
                 promedio_salida = promedio_salida + dato.salida
-                promedio = dato.entrada + dato.salida
+                promedio = promedio + dato.entrada + dato.salida
 
             """
                 Si existen registros del nodo calcula el promedio.
@@ -258,8 +260,6 @@ def busquedaNodos(ip, port, fecha):
 
                 promedios.append(elemento)
                 
-        print('Nodos promediados')
-        print('Ordenandos nodos')
         promedios = mergeSort(promedios)
         print('Nodos promediados')
         
@@ -267,9 +267,10 @@ def busquedaNodos(ip, port, fecha):
             return [promedios[0], promedios[1], promedios[2], promedios[3], promedios[4]]
 
         return promedios
-    except Exception as ex:
-        print(ex)
-        return 'error'
+    except Exception as e:
+        logger.error("error en busqueda de nodos")
+        logger.error(e)
+        return []
 
 
 def mergeSort(promedios):

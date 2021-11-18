@@ -8,3 +8,4 @@ sqlparse
 paramiko
 gunicorn
 psycopg2-binary
+schedule

@@ -2620,39 +2620,39 @@ fieldset:disabled a.btn {
 
 .btn-dark {
   color: #fff;
-  background-color: #5a5c69;
-  border-color: #5a5c69;
+  background-color: #000;
+  border-color: #000;
 }
 
 .btn-dark:hover {
   color: #fff;
-  background-color: #484a54;
-  border-color: #42444e;
+  background-color: #000;
+  border-color: #000;
 }
 
 .btn-dark:focus, .btn-dark.focus {
   color: #fff;
-  background-color: #484a54;
-  border-color: #42444e;
-  box-shadow: 0 0 0 0.2rem rgba(115, 116, 128, 0.5);
+  background-color: #000;
+  border-color: #000;
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-dark.disabled, .btn-dark:disabled {
   color: #fff;
-  background-color: #5a5c69;
-  border-color: #5a5c69;
+  background-color: #000;
+  border-color: #000;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active, .btn-dark:not(:disabled):not(.disabled).active,
 .show > .btn-dark.dropdown-toggle {
   color: #fff;
-  background-color: #42444e;
-  border-color: #3d3e47;
+  background-color: #000;
+  border-color: #000;
 }
 
 .btn-dark:not(:disabled):not(.disabled):active:focus, .btn-dark:not(:disabled):not(.disabled).active:focus,
 .show > .btn-dark.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(115, 116, 128, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.5);
 }
 
 .btn-outline-primary {
@@ -4502,7 +4502,6 @@ input[type="button"].btn-block {
 .card-center {
   display: flex;
   justify-content: center !important;
-  border: 2px solid #000;
 }
 
 .card > hr {
@@ -6491,13 +6490,13 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #5a5c69 !important;
+  background-color: #111 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
 button.bg-dark:hover,
 button.bg-dark:focus {
-  background-color: #42444e !important;
+  background-color: #000 !important;
 }
 
 .bg-white {
@@ -9916,6 +9915,12 @@ a:focus {
   background-color: #4e73df;
   background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
   background-size: cover;
+}
+
+.bg-gradient-login {
+    background-color: #891A1A;
+    background-image: linear-gradient(180deg, #993A5C 10%, #891A1A 100%);
+    background-size: cover;
 }
 
 .bg-gradient-secondary {

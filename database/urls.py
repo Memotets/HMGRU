@@ -1,5 +1,4 @@
 from database.views.NodosView import NodosView
-from django.contrib import admin
 from django.urls import path
 
 from database.views.DatosRedView import grafica_datos

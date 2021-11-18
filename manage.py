@@ -3,8 +3,6 @@
 import os
 import sys
 
-from hmgru.AutocallController import AutocallController
-
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'hmgru.settings')
     try:

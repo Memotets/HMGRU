@@ -26,16 +26,13 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gray-900 sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center bg-polyred" href="">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center bg-polyred" href="{% url 'grafica.general' %}">
                 <div class="sidebar-brand-text mx-3">HMGRU</div>
             </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
+            <hr>
             <!-- Heading -->
             <div class="sidebar-heading">
                 Graficas
@@ -63,13 +60,6 @@
                 Listas
             </div>
 
-            <!-- Nav Item - Tables -->
-            <!--li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-fw fa-list"></i>
-                    <span>Tabla General</span></a>
-            </li-->
-
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'lista.edificios' %}">
                     <i class="fas fa-fw fa-building"></i>
@@ -94,7 +84,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-gray-900 topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand navbar-light bg-dark topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">

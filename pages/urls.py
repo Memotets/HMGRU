@@ -7,6 +7,7 @@ from pages.views import *
 
 urlpatterns = [
     path('', index),
+    path("login/", logInView, name="login.hmgru"),
     path('grafica/general/', GeneralGraphView, name="grafica.general"),
     path('grafica/edificios/', BuildingGraphView, name="grafica.edificios"),
     path('lista/edificios/', BuildingListView, name="lista.edificios"),

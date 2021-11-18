@@ -23,11 +23,15 @@ edificios = [
     env.dict('AULAS_II')
 ]
 
+
 def index(request):
-    return redirect('grafica.general')
+    return redirect('login.hmgru')
+
+def logInView(request):
+    return render(request, "pages/logIn.html", {"port" :port})
 
 def GeneralGraphView(request):
-    return render(request, "pages/graficaGeneral.html", {"port": env("PORT")})
+    return render(request, "pages/graficaGeneral.html", {"port" :port})
 
 def BuildingListView(request):
     return render(request, "pages/listaEdificios.html", {"edificios": edificios, "port": port})

@@ -1,67 +1,46 @@
-import time
-import threading
-import environ
-
 from hmgru.scriptsConsultas import consultaGeneral, generarReporte
 
-class AutocallController:
+import time
+import environ
+import logging
 
-    def __init__(self) :
-        self.env = environ.Env()
-        environ.Env.read_env('/home/upiiz/Documents/sistemas/hmgru/hmgru/.env')
+from hmgru.settings import BASE_DIR
 
-    def autocall(self, startTime, endTime, octetos):
+logging.basicConfig(
+    filemode='a',
+    filename='Autocall.log',
+    datefmt='%H:%M:%S',
+    format='[%(asctime)s] %(msecs)d %(name)s: %(levelname)s %(message)s',
+    level=logging.INFO
+)
+logger = logging.getLogger(__name__)
+
+env = environ.Env()
+environ.Env.read_env(BASE_DIR+"/hmgru/.env")
+
+port = env('PORT')
+timelaps = env.float('TIMELAPSE')
+
+def consultaDatos():
+    currentTime = time.strftime("%H:%M:%S")
+
+    data = {
+        'entrada': -1,
+        'salida': -1,
+        'edificios_entrada': [],
+        'edificios_salida': []
+    }
+
+    logger.info("Consultando datos de red")  
+    logger.info(currentTime)  
+
+    while currentTime < "16:00:00":
+        logger.info(data)
+        data = consultaGeneral(port=port, previos=data)
+        time.sleep(timelaps)
         currentTime = time.strftime("%H:%M:%S")
-        while (currentTime < endTime):#avoid recusive problems
-            currentTime = time.strftime("%H:%M:%S")
-            #Call request
-            octetos = consultaGeneral(port = self.env('PORT'), previos = octetos)
-            print('in thread')
-            time.sleep(self.env.float('TIMELAPSE')) #espera de 10 ms
-        self.timer(startTime, endTime, octetos)
 
-    def timer(self, startTime, endTime, octetos):
-        currentTime = time.strftime("%H:%M:%S")
-
-        print(currentTime)
-        while (currentTime != startTime):#avoid recusive problems
-            octetos = {
-                'entrada': 0, 
-                'salida': 0, 
-                'edificios_entrada': 0, 
-                'edificios_salida': 0
-            }
-            
-            currentTime = time.strftime("%H:%M:%S")
-            #in case something went wrong
-            if((startTime<endTime and startTime<currentTime and endTime>currentTime) or 
-            (startTime>endTime and startTime>currentTime and endTime<currentTime)):
-                #something when wrong so we reactive te serv or serv was active lately
-                #print("Autocall will running on Current time: "+currentTime)
-                break
-
-            if(startTime > "18:00:00" and startTime < "18:03:00"):
-                generarReporte(self.env('PORT'))
-
-            #waiting time
-            if (startTime ==  "07:00:00" and endTime == "16:00:00"):
-                currentSec = time.strftime("%S")
-                currentMin = time.strftime("%M")
-                if (currentSec == "00" and currentMin == "00"):
-                    #one hr wait
-                    time.sleep(3600)
-                elif (currentSec == "00" and currentMin != "00"):
-                    #one min wait
-                    time.sleep(60)
-                else:
-                    #one sec wait
-                    time.sleep(1)
-            else:
-                #Test cases
-                time.sleep(1)
-
-        self.autocall(startTime, endTime, octetos)
-
-    def initThread(self):
-        timerThreat = threading.Thread(target=self.timer,args=("07:00:00", "16:00:00", {'entrada': 0, 'salida': 0, 'edificios_entrada': 0, 'edificios_salida': 0}))
-        timerThreat.start()
+def reportar():
+    logger.info("Reportando")
+    generarReporte(port)
+    logger.info("Reportado")
