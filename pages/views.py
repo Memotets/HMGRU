@@ -25,10 +25,10 @@ edificios = [
 
 
 def index(request):
-    return redirect('login.hmgru')
+    return redirect('grafica.general')
 
-def logInView(request):
-    return render(request, "pages/logIn.html", {"port" :port})
+#def logInView(request):
+    #return render(request, "pages/logIn.html", {"port" :port})
 
 def GeneralGraphView(request):
     return render(request, "pages/graficaGeneral.html", {"port" :port})
