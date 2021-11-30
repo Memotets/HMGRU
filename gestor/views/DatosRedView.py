@@ -22,12 +22,10 @@ def DatosRed_general_view(request):
 
         ip = data['ip']
         previos = ast.literal_eval(data['octetos_previos'])
-        print(previos)
-
+        
         previos_entrada = -1 if (previos is None) else int(previos['entrada'])
         previos_salida =  -1 if (previos is None) else int(previos['salida'])
-        print(previos_entrada)
-
+        
         previos_entrada_edificio = [] if (previos is None) else previos['edificios_entrada']
         previos_salida_edificio =  [] if (previos is None) else previos['edificios_salida']
 
@@ -49,10 +47,8 @@ def DatosRed_general_view(request):
             
             nuevos_entrada += entrada
             nuevos_salida += salida
-        print('after for')
 
         if previos_entrada > -1 :
-            print('if > -1')
             guardarConsulta((nuevos_entrada - int(previos_entrada)), (nuevos_salida - int(previos_salida)), 0)  
 
             edificios = Meta.edificios
@@ -152,8 +148,6 @@ def  DatosRed_lista_nodos(request):
                     consumo_entrada.append(Mbps_entrada)
                     consumo_salida.append(Mbps_salida)
                 except Exception as e:
-                    print("current index %i" %i)
-                    print(e)
                     break
         else:
             for i in range(0, len(oids)):
@@ -272,14 +266,12 @@ def guardarConsulta(dif_entrada, dif_salida, tipo, edificio=None, nodo=None):
     if nodo is not None:
         datos['nodo'] = nodo
 
-    #print(datos)
     serializador_datos_red = DatosRedSerializer(data = datos)
     if serializador_datos_red.is_valid():
         datos_red = serializador_datos_red.save()
 
         return Mbps_entrada, Mbps_salida
     else:
-        print("Data not valid")
         return 0, 0
 
 class Meta:

@@ -1,0 +1,165 @@
+{% extends 'layouts/index.html' %}
+{% load static %}
+{% block pageTitle %}Perfil de Usuario{% endblock pageTitle %}
+{% block titleOnBlock %}Mi perfil{% endblock titleOnBlock %}
+{% block customCSS %}{% endblock customCSS %}
+
+{% block content %}
+   <!-- Your HTML Code -->
+<div class="row row-primary">
+    <div class="container-fluid">
+    <div class="row my-4">
+
+        <!-- Content Column -->
+        <div class="col-lg-6 mb-4">
+            <div class="card my-2  border-bottom-dark">
+                <div class="card-header bg-dark py-3">
+                    <h6 class="m-0 font-weight-bold  text-white">Información personal</h6>
+                </div>
+                <div class="card-body">
+                    <h5 class="font-weight-bold">Nombre completo:</h5>
+                    <p>{{ request.user.nombre }} {{request.user.aPaterno}} {{request.user.aMaterno}}</p>
+                    <hr>
+                    <h5 class="font-weight-bold">RFC único:</h5>
+                    {{ request.user.rfc }}
+                    <p class="small"> si no esta seguro de que este sea su rfc <a target="_blank" rel="nofollow" href="https://www.sat.gob.mx/aplicacion/31274/consulta-tu-clave-de-rfc-mediante-curp">consulte esta liga</a></p>
+                    <hr>
+                    <h5 class="font-weight-bold">Email:</h5>
+                    <p>{{ request.user.email}}</p>
+                </div>
+            </div>
+            <div class="card my-2  border-bottom-info">
+                <div class="card-header bg-info py-3">
+                    <h6 class="m-0 font-weight-bold  text-white">Panel de cambios </h6>
+                </div>
+                <div class="card-body">
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="pass-tab" data-toggle="tab" href="#pass" role="tab" aria-controls="pass" aria-selected="true">Contraseña</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="info-tab" data-toggle="tab" href="#info" role="tab" aria-controls="info" aria-selected="false">Información</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="pass" role="tabpanel" aria-labelledby="pass-tab">
+                            {% if error_messages %}
+                                {% for error in error_messages %}
+                                    <div class='alert alert-danger mt-3' role='alert'> {{ error }} </div>
+                                {% endfor %}
+                            {% endif %}
+
+                            {% if password_success %}
+                                <div class='alert alert-success mt-3' role='alert'> "Contraseña actualizada" </div>
+                            {% endif %}
+                            <h5 class="my-3">Cambiar contraseña</h5>
+                            <form class="user" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="operacion" value="change_password">
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="password"
+                                        name="password" placeholder="Antigua contraseña">
+                                </div>
+                                <hr>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="newPassword1"
+                                        name="newPassword1" placeholder="Nueva contraseña">
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" id="newPassword2"
+                                        name="newPassword2" placeholder="Repetir nueva contraseña">
+                                </div>
+                                <button id="SuccesBTN" type="submit"
+                                    class="btn btn-info btn-user btn-block">Guardar cambios</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="info" role="tabpanel" aria-labelledby="info-tab">
+                            <h5 class="my-3">Editar información</h5>
+                            <form class="user" method="POST"> 
+                                {% csrf_token %}
+                                <input type="hidden" name="operacion" value="update_user">
+                                <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="nombre"
+                                        name="nombre" value="{{ request.user.nombre }}">
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="aPaterno"
+                                            name="aPaterno" value="{{request.user.aPaterno}}">
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control form-control-user" id="aMaterno"
+                                            name="aMaterno" value="{{request.user.aMaterno}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="hidden" class="form-control form-control-user" id="RFC"
+                                        name="rfc" value="{{request.user.rfc}}">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" id="emailEntrada"
+                                        name="email" value="{{request.user.email}}">
+                                </div>
+                                <input id="SuccesBTN" type="submit"
+                                    class="btn btn-info btn-user btn-block" value="Guardar cambios" />
+                            </form>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6 mb-4">
+
+            <!-- Illustrations -->
+            <div class="card my-2  border-bottom-secondary">
+                <div class="card-header bg-secondary py-3">
+                    <h6 class="m-0 font-weight-bold text-white">Descripción - [ApM]</h6>
+                </div>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 20rem;" src="{% static 'img/120-600x200.jpg' %}" alt="...">
+                    </div>
+                    <p>Este apartado esta dedicado para que en el futuro se agrege una descripción 
+                        del usuario, donde pueda agregar lo que el desee transmitir de su persona
+                        en forma de texto, al igual que editar la imagen que se despliega en este 
+                        con la finalidad de tener mayor personalización</p>
+                </div>
+            </div>
+
+            <!-- Approach -->
+            <div class="card shadow mb-4 border-bottom-secondary">
+                <div class="card-header bg-secondary py-3">
+                    <h6 class="m-0 font-weight-bold text-white">Administración de Reportes - [ApM]</h6>
+                </div>
+                <div class="card-body">
+                    <h5>Deseo qué los reportes generados...</h5>
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                        <label class="custom-control-label" for="customSwitch1">llegen a mi correo</label>
+                    </div>
+
+                    <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                        <label class="custom-control-label" for="customSwitch2">Se guarden en el sistema</label>
+                    </div> 
+                    <hr>
+
+                    <button id="SuccesBTN" type="submit"
+                                    class="btn btn-secondary btn-user btn-block">Guardar cambios</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block customJS %}
+
+<script>
+</script>
+{% endblock customJS %}

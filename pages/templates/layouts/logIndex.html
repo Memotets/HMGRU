@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HMGRU - {% block pageTitle %}{% endblock pageTitle %}</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="{% static 'css/sb-admin-2.css' %}" rel="stylesheet">
+    {% block customCSS %}{% endblock customCSS %}
+
+</head>
+
+<body class="bg-gradient-login">
+    <div class="container">
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            {% if form.errors %}
+            <div class="alert alert-danger" role="alert">El RFC o contraseña es incorrecto</div>
+            {% endif %}
+            <div class="card-body p-0">
+                    {% block content %}
+                    {% endblock content %}
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+    {% block customJS %}{% endblock customJS %}
+
+</body>
+
+</html>

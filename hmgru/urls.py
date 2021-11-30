@@ -23,4 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gestor/', include('gestor.urls')),
     path('database/', include('database.urls')),
+    path('accounts/', include('authentication.urls', namespace='accounts'))
 ]
+
+handler404 = 'pages.views.page404View'

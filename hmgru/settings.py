@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'environ',
     'mod_wsgi.server',
-    'database.apps.DatabaseConfig',
-    'gestor.apps.GestorConfig',
-    'pages.apps.PagesConfig'
+    'gestor',
+    'pages',
+    'database',
+    'authentication',
 ]
 
 MIDDLEWARE = [
@@ -107,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+AUTH_USER_MODEL = 'authentication.Usuarios'
 
 
 # Internationalization

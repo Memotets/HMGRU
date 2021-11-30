@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Grafica de edificio</h6></div>
                     <div class="col-4 text-right">
-                        <select class="focus mb-0" name="menu" onchange="toggle(this)">
+                        <select class="focus mb-0" name="menu" id="edificio-select" onchange="toggle(this)">
                         <option disabled selected> Chose any </option>
                         <option value="5">5</option>
                         <option value="10">10</option>
@@ -113,6 +113,7 @@
 
 {% block customJS %}
 <script>
+    
     //obtencion de canvas donde se presentara la grafica
     var ctx = document.getElementById('myChart').getContext('2d');
     

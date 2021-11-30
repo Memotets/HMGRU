@@ -1,0 +1,69 @@
+{% extends 'layouts/logIndex.html' %}
+{% load static %}
+{% block pageTitle %}Log In{% endblock pageTitle %}
+{% block customCSS %}
+<style>
+    #InputUser,
+    #InputPassword {
+        font-size: 18px;
+    }
+
+    #SuccesBTN {
+        font-size: 20px;
+    }
+
+    .bg-login-image-custom {
+        background: url("{% static 'img/undraw_posting_photo.svg' %}");
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+{% endblock customCSS %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-5 d-none d-lg-block bg-login-image-custom"></div>
+    <div class="col-lg-7">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h3 text-gray-900 mb-4">HMGRU le da la bienvenida</h1>
+            </div>
+            <form class="user" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" class="form-control form-control-user"
+                        id="InputUser" aria-describedby="userHelp" minlength="13" maxlength="13"
+                        placeholder="Ingrese su usuario...">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" class="form-control form-control-user"
+                        id="InputPassword" placeholder="Ingrese su contraseña">
+                </div>
+                <hr>
+                <button id="SuccesBTN" type="submit"
+                    class="btn btn-dark btn-user btn-block">Login</button>
+                </a>
+                <hr>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    $(document).ready(function () {
+        console.log('Document ready');
+        $('#InputUser').keyup(function () {
+            const rfc = $(this).val();
+
+            if (rfc.length > 13) rfc = rfc.silice(0, 13);
+
+            $(this).val(rfc.toUpperCase());
+        });
+    });
+</script>
+{% endblock customJS %}

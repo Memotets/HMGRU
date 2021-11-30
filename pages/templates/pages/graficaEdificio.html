@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Consumo de Mbps por edificio</h6></div>
                     <div class="col-4 text-right">
-                        <select class="focus custom-select mb-0" name="menu" onchange="toggle(this)">
+                        <select class="focus custom-select mb-0" name="menu" id="edificio-select" onchange="toggle(this)">
                         <option disabled selected>Seleccionar edificio</option>
                         {% for ed in edificios %}
                         <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
@@ -106,6 +106,10 @@
 
 {% block customJS %}
 <script>
+    $(document).ready(function() {
+        $('#edificio-select option:eq(0)').prop('selected', 'selected');
+    });
+
     //obtencion de canvas donde se presentara la grafica
     let ctx = document.getElementById('myChart').getContext('2d');
     /*** Gradient ***/

@@ -1,0 +1,100 @@
+{% extends 'layouts/logIndex.html' %}
+{% load static %}
+{% block pageTitle %}Sign up{% endblock pageTitle %}
+{% block customCSS %}
+<style>
+    #nombre,
+    #aPaterno,
+    #aMaterno,
+    #RFC,
+    #emailEntrada {
+        font-size: 18px;
+    }
+
+    #SuccesBTN {
+        font-size: 20px;
+    }
+
+    .bg-login-image-custom {
+        background: url("{% static 'img/undraw_posting_photo.svg' %}");
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+{% endblock customCSS %}
+
+{% block content %}
+
+{% if status %}
+    {% if status == 'error' %}
+        {% for m in messages.values %}
+            <div class='alert alert-danger' role='alert'> {{ m }} </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-success" role="alert">El usuario se creo con la contraseña: <b>{{ messages }}</b>. <a href="/">Regresar a la página principal</a></div>
+    {% endif %}
+{% endif %}
+
+<div class="row">
+    <div class="col-lg-5 d-none d-lg-block bg-login-image-custom"></div>
+    <div class="col-lg-7">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h3 text-gray-900 mb-4">Registro de usuario</h1>
+            </div>
+            <form class="user" method="POST">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="nombre"
+                        {% if form %} value="{{ form.nombre }}" {% endif %}
+                        name="nombre" placeholder="Nombre(s)">
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <input type="text" class="form-control form-control-user" id="aPaterno"
+                            {% if form %} value="{{ form.aPaterno }}" {% endif %}
+                            name="aPaterno" placeholder="Apellido paterno">
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control form-control-user" id="aMaterno"
+                            {% if form %} value="{{ form.aMaterno }}" {% endif %}
+                            name="aMaterno" placeholder="Apellido materno">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="RFC"
+                        {% if form %} value="{{ form.rfc }}" {% endif %}
+                        name="rfc" placeholder="RFC único">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-user" id="emailEntrada"
+                        {% if form %} value="{{ form.email }}" {% endif %}
+                        name="email" placeholder="Email">
+                </div>
+                <button id="SuccesBTN" type="submit"
+                    class="btn btn-dark btn-user btn-block">Registrarse</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                <a class="small" href="{% url 'grafica.general' %}">No quiero registrar otro usuario</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block customJS %}
+<script>
+    $(document).ready(function () {
+        console.log('Document ready');
+        $('#RFC').keyup(function () {
+            const rfc = $(this).val();
+
+            if (rfc.length > 13) rfc = rfc.silice(0, 13);
+
+            $(this).val(rfc.toUpperCase());
+        });
+    });
+</script>
+{% endblock customJS %}

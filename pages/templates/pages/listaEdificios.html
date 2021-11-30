@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-8"><h6 class="font-weight-bold text-truncate mb-1" id="TituloGrafica">Listas de edificios</h6></div>
                 <div class="col-4 text-right">
-                    <select class="custom-select focus mb-0" name="menu" onchange="toggle(this)">
+                    <select class="custom-select focus mb-0" name="menu" id="edificio-select" onchange="toggle(this)">
                     <option disabled selected> Seleccionar edificio  </option>
                     {% for ed in edificios %}
                     <option value= "{{ed.ip}}"> {{ed.nombre}} </option>
@@ -74,6 +74,10 @@
 {% block customJS %}
 <script src="{% static 'vendor/dataTables/datatables.min.js' %}"></script>
 <script>
+    $(document).ready(function() {
+        $('#edificio-select option:eq(0)').prop('selected', 'selected');
+    });
+
     //letiable global que simula el edificio, seleccion de sig edificio y lista de nodos inicial en tabla
     let IpEdificio;
     let IpEdificiovalidator;
